@@ -21,7 +21,7 @@ function Home() {
           <Hamburger className='fixed right-0'/>
         </nav>
         <ErtdfgcvbBG className='z-0'/>
-        <AnimatedText text="TIMELINE" className="font-neuebit uppercase text-9xl"/>
+        <AnimatedText text="TIMELINE" className="font-neuebit uppercase text-9xl" customText='グミヸ✨' time={2} preStyle='font-neuebit uppercase text-9xl text-yellow-500'/>
         <Timeline className='z-10'/>
         <Footer />
         {/* <BackgroundEffect /> */}
