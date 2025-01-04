@@ -4,6 +4,7 @@ const AnimatedText = ({ text, className }) => {
   const [animatedTitle, setAnimatedTitle] = useState(text || '');
   const intervalRef = useRef(null);
 
+  // More ASCII SYMBOLS REQUIRED :/
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   const handleMouseOver = () => {
@@ -26,7 +27,7 @@ const AnimatedText = ({ text, className }) => {
 
         if (iteration >= text.length) {
           clearInterval(intervalRef.current);
-          setAnimatedTitle(text); // Ensure the final text is set correctly
+          setAnimatedTitle(text);
         }
       }, 30);
     }
@@ -36,7 +37,7 @@ const AnimatedText = ({ text, className }) => {
 
   const handleMouseOut = () => {
     clearInterval(intervalRef.current);
-    setAnimatedTitle(text); // Reset to the original text
+    setAnimatedTitle(text);
   };
 
   return (
