@@ -1,11 +1,12 @@
 import React, { useState, useRef } from 'react';
+import { pre } from '../assets/ertdfgcvb/programsJS/cube';
 
 const AnimatedText = ({ text, className = '', customText = '', time = 1, preStyle = '' }) => {
   const [animatedTitle, setAnimatedTitle] = useState(text || '');
   const intervalRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  const finalClass = isHovered ? preStyle : className;
+  const finalClass = isHovered ? preStyle || className : className;
 
   // Emojis work too :))
   const letters = customText === '' ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : customText;
