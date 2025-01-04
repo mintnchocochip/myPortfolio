@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 
-const AnimatedText = ({ text, className }) => {
+const AnimatedText = ({ text, className = '', customText = '' }) => {
   const [animatedTitle, setAnimatedTitle] = useState(text || '');
   const intervalRef = useRef(null);
 
-  // More ASCII SYMBOLS REQUIRED :/
-  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  // Emojis work too :))
+  const letters = customText === '' ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : customText;
 
   const handleMouseOver = () => {
     let iteration = 0;
@@ -41,9 +41,11 @@ const AnimatedText = ({ text, className }) => {
   };
 
   return (
-    <p className={className} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-      {animatedTitle}
-    </p>
+      <div>
+        <p className={`${className} inline`} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+          {animatedTitle}
+        </p>
+      </div>
   );
 };
 
