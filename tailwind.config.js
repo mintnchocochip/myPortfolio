@@ -3,8 +3,8 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./src/login/*.{jsx}",
-    "./src/signup/*.{jsx}"
+    "./src/login/*.jsx",
+    "./src/signup/*.jsx"
 
   ],
   theme: {
