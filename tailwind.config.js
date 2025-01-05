@@ -41,31 +41,52 @@ export default {
         'orbitron': ['Orbitron', 'sans-serif'] // Adding Orbitron Font by Amiitesh
       },
       keyframes: { // Keyframes for the login page by Amiitesh
-        'roaming-line': {
+        border: {
           '0%': { 
-            'border-width': '2px',
-            'border-style': 'solid',
-            'border-color': '#1cd41c transparent transparent transparent'
+            borderTopColor: '#1cd41c',
+            borderRightColor: 'transparent',
+            borderBottomColor: 'transparent',
+            borderLeftColor: 'transparent'
           },
-          '25%': { 
-            'border-width': '2px',
-            'border-style': 'solid',
-            'border-color': 'transparent #1cd41c transparent transparent'
+          '25%': {
+            borderTopColor: 'transparent',
+            borderRightColor: '#1cd41c',
+            borderBottomColor: 'transparent',
+            borderLeftColor: 'transparent'
           },
-          '50%': { 
-            'border-width': '2px',
-            'border-style': 'solid',
-            'border-color': 'transparent transparent #1cd41c transparent'
+          '50%': {
+            borderTopColor: 'transparent',
+            borderRightColor: 'transparent',
+            borderBottomColor: '#1cd41c',
+            borderLeftColor: 'transparent'
           },
-          '75%': { 
-            'border-width': '2px',
-            'border-style': 'solid',
-            'border-color': 'transparent transparent transparent #1cd41c'
+          '75%': {
+            borderTopColor: 'transparent',
+            borderRightColor: 'transparent',
+            borderBottomColor: 'transparent',
+            borderLeftColor: '#1cd41c'
           },
-          '100%': { 
-            'border-width': '2px',
-            'border-style': 'solid',
-            'border-color': '#1cd41c transparent transparent transparent'
+          '100%': {
+            borderTopColor: '#1cd41c',
+            borderRightColor: 'transparent',
+            borderBottomColor: 'transparent',
+            borderLeftColor: 'transparent'
+          }
+        },
+        glow: {
+          '0%, 100%': {
+            textShadow: '0 0 10px #1cd41c, 0 0 20px #1cd41c, 0 0 30px #1cd41c, 0 0 40px #1cd41c'
+          },
+          '50%': {
+            textShadow: '0 0 20px #1cd41c, 0 0 30px #1cd41c, 0 0 40px #1cd41c, 0 0 50px #1cd41c'
+          }
+        },
+        float: {
+          '0%, 100%': {
+            transform: 'translateY(0)'
+          },
+          '50%': {
+            transform: 'translateY(-10px)'
           }
         }
       },
