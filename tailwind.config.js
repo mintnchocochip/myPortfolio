@@ -3,7 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "" // Add the source file for the LoginPage
+    "./src/login/*.{jsx}"
   ],
   theme: {
     extend: {
