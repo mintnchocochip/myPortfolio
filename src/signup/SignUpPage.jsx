@@ -1,69 +1,63 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SignUpPage = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex items-center justify-center w-full h-screen bg-bg-enigma-black text-white font-orbitron">
-      <div className="bg-[#1a1a1a] p-8 rounded-lg shadow-lg w-96 flex flex-col items-center border-2 border-transparent animate-roaming-line">
-        <h2 className="text-2xl mb-5 text-center text-enigma-green font-bold tracking-wide drop-shadow-glow">
-          Enigma25 Sign Up
+    <div className="flex justify-center items-center min-w-[320px] min-h-screen bg-[#1a1a1a] text-white font-orbitron">
+      <div className="bg-[#1a1a1a] p-8 rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.1)] w-[350px] flex flex-col items-center relative animate-roaming-line">
+        <h2 className="text-4xl mb-5 text-center text-[#1cd41c] font-bold tracking-[2px] drop-shadow-enigma-glow">
+          Sign Up
         </h2>
-        <form onSubmit={(e) => {
-          e.preventDefault();
-          // Add your signup here
-        }}>
-          <p className="text-base text-gray-400 mb-1 hover:text-enigma-green transition-transform transform hover:-translate-y-1">
+        <form className="w-full" onSubmit={(e) => e.preventDefault()}>
+          <p className="text-base text-[#bbb] mb-1 transition-transform duration-300 ease-in-out hover:translate-y-[-4px] hover:text-[#1cd41c] tracking-[1px]">
             Username
           </p>
-          <input 
-            type="text" 
-            placeholder="Choose a username" 
+          <input
+            type="text"
+            className="w-full p-[10px] my-[10px] border border-[#1cd41c] rounded bg-[#2c2c2c] text-white transition-all duration-300 ease-in-out hover:translate-y-[-4px] hover:border-[#1cd41c] hover:shadow-[0_0_8px_2px_rgba(28,212,28,0.8)] focus:translate-y-[-4px] focus:border-[#1cd41c] focus:shadow-[0_0_8px_2px_rgba(28,212,28,0.8)] focus:outline-none placeholder:text-[#1cd41c] tracking-[1px]"
+            placeholder="Choose a username"
             required
-            className="w-full p-2 mb-3 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-enigma-green focus:border-enigma-green focus:ring-2 focus:ring-enigma-green transition-transform transform hover:-translate-y-1"
           />
-          
-          <p className="text-base text-gray-400 mb-1 hover:text-enigma-green transition-transform transform hover:-translate-y-1">
+          <p className="text-base text-[#bbb] mb-1 transition-transform duration-300 ease-in-out hover:translate-y-[-4px] hover:text-[#1cd41c] tracking-[1px]">
             Email
           </p>
-          <input 
-            type="email" 
-            placeholder="Enter your email" 
+          <input
+            type="email"
+            className="w-full p-[10px] my-[10px] border border-[#1cd41c] rounded bg-[#2c2c2c] text-white transition-all duration-300 ease-in-out hover:translate-y-[-4px] hover:border-[#1cd41c] hover:shadow-[0_0_8px_2px_rgba(28,212,28,0.8)] focus:translate-y-[-4px] focus:border-[#1cd41c] focus:shadow-[0_0_8px_2px_rgba(28,212,28,0.8)] focus:outline-none placeholder:text-[#1cd41c] tracking-[1px]"
+            placeholder="Enter your email"
             required
-            className="w-full p-2 mb-3 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-enigma-green focus:border-enigma-green focus:ring-2 focus:ring-enigma-green transition-transform transform hover:-translate-y-1"
           />
-          
-          <p className="text-base text-gray-400 mb-1 hover:text-enigma-green transition-transform transform hover:-translate-y-1">
+          <p className="text-base text-[#bbb] mb-1 transition-transform duration-300 ease-in-out hover:translate-y-[-4px] hover:text-[#1cd41c] tracking-[1px]">
             Password
           </p>
-          <input 
-            type="password" 
-            placeholder="Choose a password" 
+          <input
+            type="password"
+            className="w-full p-[10px] my-[10px] border border-[#1cd41c] rounded bg-[#2c2c2c] text-white transition-all duration-300 ease-in-out hover:translate-y-[-4px] hover:border-[#1cd41c] hover:shadow-[0_0_8px_2px_rgba(28,212,28,0.8)] focus:translate-y-[-4px] focus:border-[#1cd41c] focus:shadow-[0_0_8px_2px_rgba(28,212,28,0.8)] focus:outline-none placeholder:text-[#1cd41c] tracking-[1px]"
+            placeholder="Choose a password"
             required
-            className="w-full p-2 mb-3 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-enigma-green focus:border-enigma-green focus:ring-2 focus:ring-enigma-green transition-transform transform hover:-translate-y-1"
           />
-          
-          <p className="text-base text-gray-400 mb-1 hover:text-enigma-green transition-transform transform hover:-translate-y-1">
+          <p className="text-base text-[#bbb] mb-1 transition-transform duration-300 ease-in-out hover:translate-y-[-4px] hover:text-[#1cd41c] tracking-[1px]">
             Confirm Password
           </p>
-          <input 
-            type="password" 
-            placeholder="Confirm your password" 
+          <input
+            type="password"
+            className="w-full p-[10px] my-[10px] border border-[#1cd41c] rounded bg-[#2c2c2c] text-white transition-all duration-300 ease-in-out hover:translate-y-[-4px] hover:border-[#1cd41c] hover:shadow-[0_0_8px_2px_rgba(28,212,28,0.8)] focus:translate-y-[-4px] focus:border-[#1cd41c] focus:shadow-[0_0_8px_2px_rgba(28,212,28,0.8)] focus:outline-none placeholder:text-[#1cd41c] tracking-[1px]"
+            placeholder="Confirm your password"
             required
-            className="w-full p-2 mb-3 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-enigma-green focus:border-enigma-green focus:ring-2 focus:ring-enigma-green transition-transform transform hover:-translate-y-1"
           />
-          
-          <button 
-            type="submit" 
-            className="w-full py-2 bg-transparent text-enigma-green text-lg uppercase border-2 border-enigma-green rounded-lg hover:bg-enigma-green hover:text-white shadow-lg transition-all transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-enigma-green"
+          <button
+            type="submit"
+            className="w-full py-3 px-4 mt-[10px] bg-transparent text-[#1cd41c] text-base font-medium rounded-lg border-2 border-[#1cd41c] shadow-[0_4px_8px_rgba(0,0,0,0.2)] transition-all duration-300 ease-in-out uppercase tracking-[2px] hover:translate-y-[-4px] hover:shadow-[0_0_8px_2px_rgba(28,212,28,0.8),0_0_16px_4px_rgba(28,212,28,0.6)] hover:bg-[#1cd41c] hover:text-white hover:border-[#1cd41c]"
           >
             Create Account
           </button>
         </form>
-        <button 
-          type="button" 
-          className="w-3/5 py-2 mt-5 bg-transparent text-gray-400 border border-gray-400 rounded-lg hover:bg-gray-400 hover:text-white shadow-lg transition-all transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-gray-400"
-          onClick={() => {
-            // Add your navigation here
-          }}
+        <button
+          type="button"
+          className="bg-transparent text-[#888] border-2 border-[#888] px-4 py-3 mt-5 rounded-lg transition-all duration-300 ease-in-out uppercase tracking-[2px] hover:translate-y-[-4px] hover:shadow-[0_0_8px_2px_rgba(136,136,136,0.8),0_0_16px_4px_rgba(136,136,136,0.6)] hover:bg-[#888] hover:text-white hover:border-[#888]"
+          onClick={() => navigate('/login')}
         >
           Back to Login
         </button>
@@ -73,4 +67,3 @@ const SignUpPage = () => {
 };
 
 export default SignUpPage;
-

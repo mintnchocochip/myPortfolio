@@ -5,7 +5,6 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./src/login/*.jsx",
     "./src/signup/*.jsx"
-
   ],
   theme: {
     extend: {
@@ -43,15 +42,36 @@ export default {
       },
       keyframes: { // Keyframes for the login page by Amiitesh
         'roaming-line': {
-          '0%': { borderColor: 'transparent #1cd41c transparent transparent' },
-          '25%': { borderColor: 'transparent transparent #1cd41c transparent' },
-          '50%': { borderColor: 'transparent transparent transparent #1cd41c' },
-          '75%': { borderColor: '#1cd41c transparent transparent transparent' },
-        },
-        animation: {
-        'roaming-line': 'roaming-line 1s linear infinite', // By Amiitesh for the animation 
-      }
+          '0%': { 
+            'border-width': '2px',
+            'border-style': 'solid',
+            'border-color': '#1cd41c transparent transparent transparent'
+          },
+          '25%': { 
+            'border-width': '2px',
+            'border-style': 'solid',
+            'border-color': 'transparent #1cd41c transparent transparent'
+          },
+          '50%': { 
+            'border-width': '2px',
+            'border-style': 'solid',
+            'border-color': 'transparent transparent #1cd41c transparent'
+          },
+          '75%': { 
+            'border-width': '2px',
+            'border-style': 'solid',
+            'border-color': 'transparent transparent transparent #1cd41c'
+          },
+          '100%': { 
+            'border-width': '2px',
+            'border-style': 'solid',
+            'border-color': '#1cd41c transparent transparent transparent'
+          }
+        }
       },
+      animation: {
+        'roaming-line': 'roaming-line 2s linear infinite'
+      }
     },
   },
   plugins: [
@@ -60,4 +80,3 @@ export default {
     require('@tailwindcss/aspect-ratio'),
   ],
 }
-

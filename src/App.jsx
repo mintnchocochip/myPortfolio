@@ -8,6 +8,8 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Home from "./Home";
 import About from "./About";
 import PageNotFound from "./404";
+import LoginPage from "./login/LoginPage";
+import SignUpPage from "./signup/SignUpPage";
 import PageTransition from "./components/PageTransition";
 import { gsap } from "gsap";
 import './App.css';
@@ -40,6 +42,8 @@ function App() {
                     <Routes location={location}>
                         <Route exact path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
+                        <Route path="/login" element={<LoginPage />} />
+                        <Route path="/signup" element={<SignUpPage />} />
                         <Route path="*" element={<PageNotFound />} />
                     </Routes>
                 </CSSTransition>
