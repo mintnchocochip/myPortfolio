@@ -1,3 +1,5 @@
+*.tsx linguist-language=typescript
+
 # Logs
 logs
 *.log
