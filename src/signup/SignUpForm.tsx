@@ -1,12 +1,13 @@
 import React from 'react';
-import InputField from './InputField';
 import { useNavigate } from 'react-router-dom';
+import InputField from './InputField';
 
-const LoginForm = () => {
+const SignUpForm = () => {
   const navigate = useNavigate();
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add login logic here
+    // Add signup logic here
   };
 
   return (
@@ -15,13 +16,25 @@ const LoginForm = () => {
         <InputField
           label="Username"
           type="text"
-          placeholder="Username"
+          placeholder="Choose a username"
+          required
+        />
+        <InputField
+          label="Email"
+          type="email"
+          placeholder="Enter your email"
           required
         />
         <InputField
           label="Password"
           type="password"
-          placeholder="Password"
+          placeholder="Choose a password"
+          required
+        />
+        <InputField
+          label="Confirm Password"
+          type="password"
+          placeholder="Confirm your password"
           required
         />
         <button
@@ -32,22 +45,22 @@ const LoginForm = () => {
                    hover:shadow-[0_0_8px_2px_rgba(28,212,28,0.8),0_0_16px_4px_rgba(28,212,28,0.6)]
                    focus:outline-none focus:ring-2 focus:ring-[#1cd41c] focus:ring-opacity-50"
         >
-          Login
+          Create Account
         </button>
       </form>
       <button
         type="button"
-        onClick={() => navigate('/signup')}
+        onClick={() => navigate('/login')}
         className="mt-6 px-6 py-2 bg-transparent text-gray-400 border-2 border-gray-400 rounded-lg
                  font-medium tracking-wider uppercase transition-all duration-300
                  hover:transform hover:-translate-y-1 hover:bg-gray-400 hover:text-white
                  hover:shadow-[0_0_8px_2px_rgba(156,156,156,0.8)]
                  focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
       >
-        Sign Up
+        Back to Login
       </button>
     </>
   );
 };
 
-export default LoginForm;
+export default SignUpForm;
