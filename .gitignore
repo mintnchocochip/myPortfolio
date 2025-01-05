@@ -1,5 +1,6 @@
 *.tsx linguist-language=typescript
 
+
 # Logs
 logs
 *.log
@@ -13,7 +14,7 @@ node_modules
 dist
 dist-ssr
 *.local
-
+*.html
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
