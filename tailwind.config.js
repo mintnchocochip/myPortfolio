@@ -91,13 +91,11 @@ export default {
         }
       },
       animation: {
-        'roaming-line': 'roaming-line 2s linear infinite'
+        border: 'border 2s linear infinite',
+        glow: 'glow 2s ease-in-out infinite',
+        float: 'float 3s ease-in-out infinite'
       }
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
-  ],
+  plugins: [],
 }
