@@ -46,6 +46,7 @@ const PageNotFound = () => {
 
     return (
         <div className="relative bg-bg-black min-h-screen">
+            <div className="fixed p-[3vw]">left</div>
             <ErtdfgcvbBG className="absolute inset-0 z-0 h-full w-full"/>
             <div className="fixed inset-0 flex items-center justify-center bg-opacity-0 z-10 mix-blend-exclusion">
                 <div className="grid gap-0">
