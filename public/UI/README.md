@@ -19,6 +19,11 @@ This component is inspired from https://hikeys.hellohello.is/
 Check it out for the animations and the interactions.
 ![alt text](speaker.png)
 
+## CTFs list
+Make this page for the list of CTFs. It should contain around 5 categories, which will be listed later.
+This is inspired from https://wondermake.xyz/work
+![alt text](ctfs-list.png)
+
 ## Challenge Page
 Self explainable
 ![alt text](<Challenge Page.png>)
