@@ -33,7 +33,7 @@ const PageNotFound = () => {
                 row.push(
                     <div
                         key={`${i}-${j}`}
-                        className={`cell border border-double border-white w-16 h-16 ${isWhiteCell ? 'bg-enigma-green' : 'bg-opacity-0'}`}
+                        className={`cell border border-double border-white w-[5vw] h-[5vw] ${isWhiteCell ? 'bg-enigma-green' : 'bg-opacity-0'}`}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                     ></div>

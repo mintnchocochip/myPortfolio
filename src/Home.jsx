@@ -18,7 +18,7 @@ function Home() {
         {/* <ErtdfgcvbBG className='fixed z-0'/> */}
         <Join className='z-20'/>
         <nav className="sticky top-0 flex justify-between w-full px-10 py-5 z-20">
-          <div className='text-5xl font-neuebit text-left pt-3'>ENIGMA</div>
+          <div className='text-5xl font-neuebit text-left pt-1'>ENIGMA</div>
           <Hamburger className='fixed right-0'/>
         </nav>
         <div className="h-screen"></div>
