@@ -1,19 +1,22 @@
-import React, { useState, useRef } from 'react';
-import { pre } from '../assets/ertdfgcvb/programsJS/cube';
+import React, { useState, useRef, useEffect } from 'react';
+import defaultTypeSound from '/sfx/type.wav';
+import clickSound from '/sfx/click.wav';
 
-const AnimatedText = ({ text, className = '', customText = '', time = 1, preStyle = '' }) => {
+const AnimatedText = ({ text, className = '', customText = '', time = 1, preStyle = '', audioSrc = defaultTypeSound }) => {
   const [animatedTitle, setAnimatedTitle] = useState(text || '');
   const intervalRef = useRef(null);
+  const audioRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
   const finalClass = isHovered ? preStyle || className : className;
-
-  // Emojis work too :))
   const letters = customText === '' ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : customText;
 
   const handleMouseOver = () => {
     let iteration = 0;
     setIsHovered(true);
+    audioRef.current = new Audio(audioSrc);
+    audioRef.current.loop = true;
+    audioRef.current.play();
 
     function animateText() {
       intervalRef.current = setInterval(() => {
@@ -27,12 +30,13 @@ const AnimatedText = ({ text, className = '', customText = '', time = 1, preStyl
           .join('');
         
         setAnimatedTitle(randomText);
-
         iteration += 0.5/time;
 
         if (iteration >= text.length) {
           clearInterval(intervalRef.current);
           setAnimatedTitle(text);
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
         }
       }, 30);
     }
@@ -44,11 +48,29 @@ const AnimatedText = ({ text, className = '', customText = '', time = 1, preStyl
     setIsHovered(false);
     clearInterval(intervalRef.current);
     setAnimatedTitle(text);
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
   };
+
+  const handleClick = () => {
+    const clickAudio = new Audio(clickSound);
+    clickAudio.play();
+  };
+
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, []);
 
   return (
       <div>
-        <p className={`${finalClass} inline`} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+        <p className={`${finalClass} inline`} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={handleClick}>
           {animatedTitle}
         </p>
       </div>
