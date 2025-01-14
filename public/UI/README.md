@@ -1,3 +1,6 @@
+## Theme
+![alt text](manifesto.png)
+
 ## Hero Component
 The background is a procedurally generated and is availiable in this repo. The component is responsive and can be used in both desktop and mobile view.
 ![alt text](hero-desktop.png)
