@@ -10,9 +10,9 @@ const HeroSection = () => {
         gsap.registerPlugin(ScrollTrigger)
         let split = new SplitText("#hero", { type: "chars" });
         gsap.from(split.chars, {
-            scrollTrigger :{trigger:"#container",
-                start: "top center" ,
-            },
+            //scrollTrigger :{trigger:"#container",
+            //    start: "top center" ,
+            //},
             scale : 4 ,
             x : 100,
             opacity : 0 ,
@@ -31,7 +31,7 @@ const HeroSection = () => {
       <>
       <section>
         <div id="container" className='min-h-1 justify-center p-1 flex '>
-      <p id='hero' className='text-5xl font-neuebit max-w-5xl justify-center items-center'> ENGIMA, DO YOU WANT TO FEEL THE ULTIMATE CTF TOURNAMENT EVER OF YOUR LIFE ? </p>
+      <p id='hero' className='text-8xl font-neuebit max-w-6xl justify-center items-center'> ENGIMA, DO YOU WANT TO FEEL THE ULTIMATE EVENT EVER OF YOUR LIFE ? </p>
       </div>
       </section>
       </>
