@@ -69,8 +69,8 @@ const AnimatedText = ({ text, className = '', customText = '', time = 1, preStyl
   }, []);
 
   return (
-      <div>
-        <p className={`${finalClass} inline`} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={handleClick}>
+      <div className='z-50'>
+        <p className={`${finalClass} inline z-50`} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={handleClick}>
           {animatedTitle}
         </p>
       </div>
