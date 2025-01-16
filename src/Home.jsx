@@ -24,7 +24,9 @@ function Home() {
         </nav>
       <HeroSection/>
         <div className="h-screen"></div>
-        <AnimatedText text="TIMELINE" className="font-neuebit uppercase text-9xl z-50" customText='グミヸ✨' time={2} preStyle='font-neuebit uppercase text-9xl text-yellow-500 z-50'/>
+        <div className="relative">
+          <AnimatedText text="TIMELINE" className="font-neuebit uppercase text-9xl z-50" customText='グミヸ✨' time={2} preStyle='font-neuebit uppercase text-9xl text-yellow-500 z-50'/>
+        </div>
         <Timeline className='z-10'/>
         <Footer />
         {/* <BackgroundEffect /> */}
