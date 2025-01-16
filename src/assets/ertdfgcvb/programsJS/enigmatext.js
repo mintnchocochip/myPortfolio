@@ -10,7 +10,7 @@ const density = sort('/\MXYZabc!?=-. ', 'Simple Console', false)
 
 export const settings = {
     fps: 60,
-    backgroundColor: 'black',
+    backgroundColor: 'rgba(0,0,0,0)',
     color: 'white',
     fontSize: '1em',
     fontWeight: 'lighter'
@@ -42,14 +42,14 @@ export function main(coord, context, cursor, buffer) {
     const c = 1.0 - Math.exp(-5 * Math.abs(proximity - radius))
     const index = Math.floor(c * density.length)
 
-    const charColor = proximity < radius ? 'black' : `rgb(24,24,24)`
-    const backgroundColor = proximity > radius ? `rgb(17, 17, 17)` : 'green'
+    const charColor = proximity < radius ? 'black' : `rgba(22, 236, 8, 0.2)`
+    const backgroundColor = proximity > radius ? `rgba(11, 11, 11, 0)` : 'rgba(22, 236, 8, 0.6)'
 
     // background goes here
 	
     const aFrame = context.frame * 0.1
 	
-    const frameFactor = Math.floor((1 - Math.cos(aFrame)) * 5) + 1
+    const frameFactor = Math.floor((1 - Math.cos(aFrame)) * 7.5) + 1
 	
 	
     const wrapIndex = Math.floor(aFrame / TAU) % 10 + 1

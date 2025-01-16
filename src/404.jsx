@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import ErtdfgcvbBG from './components/ertdfgcvb game of life';
 import { gsap } from 'gsap';
+import ChevronSvg from '/icons/chevron.svg';
+import { Link } from 'react-router-dom';
 
 const PageNotFound = () => {
     useEffect(() => {
@@ -46,7 +48,11 @@ const PageNotFound = () => {
 
     return (
         <div className="relative bg-bg-black min-h-screen">
-            <div className="fixed p-[3vw]">left</div>
+                <Link to="/h">
+                  <div className="fixed py-10 px-4 md:p-[3vw] h-40 z-50 top-0 left-0">
+                    <img src={ChevronSvg} alt='mySvgImage' className='h-9'/>
+                  </div>
+                </Link>
             <ErtdfgcvbBG className="absolute inset-0 z-0 h-full w-full"/>
             <div className="fixed inset-0 flex items-center justify-center bg-opacity-0 z-10 mix-blend-exclusion">
                 <div className="grid gap-0">
