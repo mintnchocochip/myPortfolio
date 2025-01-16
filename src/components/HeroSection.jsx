@@ -8,16 +8,16 @@ const HeroSection = () => {
     useGSAP(() => {
         gsap.registerPlugin(SplitText);
         gsap.registerPlugin(ScrollTrigger)
-        let split = new SplitText("#hero", { type: "chars" });
-        gsap.from(split.chars, {
+        let split = new SplitText("#hero", { type: "words" });
+        gsap.from(split.words, {
             //scrollTrigger :{trigger:"#container",
             //    start: "top center" ,
             //},
             scale : 4 ,
             x : 100,
             opacity : 0 ,
-            duration : 0.05 ,
-            stagger: 0.05
+            duration : 0.2 ,
+            stagger: 0.1
         })
         // if you want to have get reverse effect on any click event
         //const button = document.querySelector('#AnyID'); // set the required ID
