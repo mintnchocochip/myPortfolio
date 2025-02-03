@@ -6,7 +6,7 @@ The background is a procedurally generated and is availiable in this repo. The c
 ![alt text](hero-desktop.png)
 
 ## Prizes Component
-This component requires GSAP Scrolltrigger and ThreeJS to work. When the user scrolls in, the trophy rotates and the text fades in. This first happens for the first trophy and then the second trophy and then the third trophy.
+This component requires GSAP Scrolltrigger and ThreeJS to work. When the user scrolls in, the first trophy rotates and the text fades in. Then from behind the 1st trophy, the second trophy goes to the left. Then, the third trophy behind the first trophy goes to the right. This first happens for the first trophy and then the second trophy and then the third trophy.
 ![alt text](prizes.png)
 
 ## Marketing / Content Component
