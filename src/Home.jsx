@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import './App.css';
 import Hamburger from './components/hamburger';
 import Footer from './components/footer';
@@ -7,9 +7,10 @@ import Join from './components/join';
 // import BackgroundEffect from './components/background-hover';
 import Scene from './components/timelinetest';
 // import Timeline from './components/timeline';
-import ErtdfgcvbBG from './components/enigmatextbg';
+// import ErtdfgcvbBG from './components/enigmatextbg';
 import AnimatedText from './components/text';
 import HeroSection from './components/HeroSection';
+import Content from "./components/content.jsx";
 
 function Home() {
   return (
@@ -26,7 +27,8 @@ function Home() {
         </nav>
 
       <HeroSection/>
-        <div className="h-screen"></div>
+        <Content />
+        {/*<div className="h-screen"></div>*/}
         <div className="relative">
           <AnimatedText text="TIMELINE" className="font-neuebit uppercase text-9xl z-50" customText='グミヸ✨' time={2} preStyle='font-neuebit uppercase text-9xl text-yellow-500 z-50'/>
         </div>
