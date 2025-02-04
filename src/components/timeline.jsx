@@ -8,6 +8,14 @@ import { gsap } from 'gsap';
 const noise4D = createNoise4D();
 const height = 0.08;
 const speed = 0.75;
+const curvee = [
+  new THREE.Vector3(0, 5, 0),
+  new THREE.Vector3(1, 5, -10),
+  new THREE.Vector3(20, 5, -20),
+  new THREE.Vector3(30, 5, -30),
+  new THREE.Vector3(40, 5, -40),
+  new THREE.Vector3(50, 5, -40)
+];
 
 const events = [
   { name: "Event 1", description: "Registration" },
@@ -55,14 +63,7 @@ function Scene() {
 function CameraAnimation() {
   const { camera } = useThree();
   const scroll = useScroll();
-  const curve = new THREE.CatmullRomCurve3([
-    new THREE.Vector3(0, 5, 0),
-    new THREE.Vector3(1, 5, -10),
-    new THREE.Vector3(20, 5, -20),
-    new THREE.Vector3(30, 5, -30),
-    new THREE.Vector3(40, 5, -40),
-    new THREE.Vector3(50, 5, -40),
-  ]);
+  const curve = new THREE.CatmullRomCurve3(curvee);
 
   useFrame(() => {
     const scrollOffset = scroll.offset;
@@ -122,14 +123,7 @@ function Sphere({ position, onHover, onClick, name }) {
 }
 
 function Spheres({ onHover, onClick }) {
-  const positions = [
-    // new THREE.Vector3(0, 5, 0),
-    new THREE.Vector3(1, 5, -10),
-    new THREE.Vector3(20, 5, -20),
-    new THREE.Vector3(30, 5, -30),
-    new THREE.Vector3(40, 5, -40),
-    new THREE.Vector3(50, 5, -40),
-  ];
+  const positions = curvee;
 
   return (
     <>
