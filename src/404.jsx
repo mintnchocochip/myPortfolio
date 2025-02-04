@@ -48,7 +48,7 @@ const PageNotFound = () => {
 
     return (
         <div className="relative bg-bg-black min-h-screen">
-                <Link to="/h">
+                <Link to="/">
                   <div className="fixed py-10 px-4 md:p-[3vw] h-40 z-50 top-0 left-0">
                     <img src={ChevronSvg} alt='mySvgImage' className='h-9'/>
                   </div>
