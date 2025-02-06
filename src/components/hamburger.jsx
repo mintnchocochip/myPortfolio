@@ -40,6 +40,7 @@ export default function Hamburger() {
                             <li><Link to="/timeline" onClick={handleLinkClick}><AnimatedText className="hover:p-2 text-2xl text-white hover:bg-enigma-green hover:text-black" text="Timeline" customText='▂▄▆█'/></Link></li>
                             <li><Link to="/rules" onClick={handleLinkClick}><AnimatedText className="hover:p-2 text-2xl text-white hover:bg-enigma-green hover:text-black" text="Rules" customText='▂▄▆█'/></Link></li>
                             <li><Link to="/about" onClick={handleLinkClick}><AnimatedText text="About" className="hover:p-2 text-2xl text-white hover:bg-enigma-green hover:text-black" customText='▂▄▆█'/></Link></li>
+                            <li><Link to="/leaderboard" onClick={handleLinkClick}><AnimatedText text="Leaderboard" className="hover:p-2 text-2xl text-white hover:bg-enigma-green hover:text-black" customText='▂▄▆█'/></Link></li>
                         </ul>
         </div>
             <div ref={menuRef} className={` sm:hidden flex flex-col justify-end text-black bg-enigma-green font-neuebit uppercase ${isOpen ? 'w-full' : 'w-auto'}`}>
@@ -54,6 +55,7 @@ export default function Hamburger() {
                             <li><Link to="/timeline" onClick={handleLinkClick}><AnimatedText className="text-black hover:bg-white hover:text-black" text="Timeline"/></Link></li>
                             <li><Link to="/rules" onClick={handleLinkClick}><AnimatedText className="text-black hover:bg-white hover:text-black" text="Rules"/></Link></li>
                             <li><Link to="/about" onClick={handleLinkClick}><AnimatedText text="About" className="text-black hover:bg-white hover:text-black"/></Link></li>
+                            <li><Link to="/leaderboard" onClick={handleLinkClick}><AnimatedText text="Leaderboard" className="text-black hover:bg-white hover:text-black"/></Link></li>
                         </ul>
                     </div>
                 )}
