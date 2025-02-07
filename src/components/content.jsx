@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import AnimatedText from './text';
 
 function Content() {
     gsap.registerPlugin(ScrollTrigger);
@@ -22,20 +23,31 @@ function Content() {
             end: "+=" + scrollWidth,
             pin: true,
             animation: tween,
-            scrub: 2
+            scrub: 2,
         })
     })
 
     return (
-        <div ref={scrollRef} className={"flex"}>
-            <div ref={wrapperRef} className={"flex flex-row gap-x-20 h-screen items-center px-10"}>
-                <h2 className={"text-9xl"}>Placeholder</h2>
-                <h2 className={"text-9xl"}>Placeholder</h2>
-                <h2 className={"text-9xl"}>Placeholder</h2>
-                <h2 className={"text-9xl"}>Placeholder</h2>
-                <h2 className={"text-9xl"}>Placeholder</h2>
-                <h2 className={"text-9xl"}>Placeholder</h2>
-                <h2 className={"text-9xl"}>Placeholder</h2>
+        <div>
+            <div className="text-left px-10 py-7 z-20">
+                <AnimatedText
+                    text="CONTENT"
+                    className="font-neuebit uppercase text-9xl z-50 cursor-pointer w-screen text-left"
+                    customText='@!#$%^&*'
+                    time={2}
+                    preStyle='font-neuebit uppercase text-9xl text-yellow-500 z-50 cursor-pointer text-left'
+                />
+            </div>
+            <div ref={scrollRef} className={"flex"}>
+                <div ref={wrapperRef} className={"flex flex-row gap-x-20 h-[100vh] items-center px-10 bg-enigma-green text-black font-neuebit"}>
+                    <h2 className={"text-9xl"}>Placeholder</h2>
+                    <h2 className={"text-9xl"}>Placeholder</h2>
+                    <h2 className={"text-9xl"}>Placeholder</h2>
+                    <h2 className={"text-9xl"}>Placeholder</h2>
+                    <h2 className={"text-9xl"}>Placeholder</h2>
+                    <h2 className={"text-9xl"}>Placeholder</h2>
+                    <h2 className={"text-9xl"}>Placeholder</h2>
+                </div>
             </div>
         </div>
     )
