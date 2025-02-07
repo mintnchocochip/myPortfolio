@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+import { useEffect } from 'react';
 import './App.css';
 import Hamburger from './components/hamburger';
 import Footer from './components/footer';
@@ -11,8 +11,28 @@ import ErtdfgcvbBG from './components/enigmatextbg';
 import AnimatedText from './components/text';
 import HeroSection from './components/HeroSection';
 import Content from "./components/content.jsx";
+import Lenis from 'lenis';
 
 function Home() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <div className='py-2'>
       {/* <div className="h-screen"></div> */}
