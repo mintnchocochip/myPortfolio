@@ -27,8 +27,3 @@ This is inspired from https://wondermake.xyz/work
 ## Challenge Page
 Self explainable
 ![alt text](<Challenge Page.png>)
-
-## Leaderboard Page
-This page should contain the leaderboard of all the Teams.
-![alt text](<leaderboard/Leaderboard 1.png>)
-![alt text](<leaderboard/Leaderboard 2.png>)
