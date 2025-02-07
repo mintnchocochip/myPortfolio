@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Hamburger from './components/hamburger';
 import Footer from './components/footer';
@@ -8,8 +8,12 @@ import ErtdfgcvbBG from './components/enigmatextbg';
 import HeroSection from './components/HeroSection';
 import Content from "./components/content.jsx";
 import Lenis from 'lenis';
+import Preloader from './components/PreLoader.jsx';
 
 function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [showPreloader, setShowPreloader] = useState(!sessionStorage.getItem('preloaderShown'));
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -24,6 +28,10 @@ function Home() {
 
     requestAnimationFrame(raf);
 
+    window.addEventListener('load', () => {
+      setIsLoaded(true);
+    });
+
     return () => {
       lenis.destroy();
     };
@@ -31,6 +39,7 @@ function Home() {
 
   return (
     <div className='py-2'>
+      <Preloader isLoaded={isLoaded} />
       <Join className='z-20'/>
       
       <nav className="sticky top-0 flex justify-between w-full px-10 py-5 z-20 mix-blend-difference">
@@ -43,7 +52,7 @@ function Home() {
       <Content />
 
       <Scene className="fixed top-0"/>
-        <Footer />
+      <Footer />
     </div>
   );
 }
