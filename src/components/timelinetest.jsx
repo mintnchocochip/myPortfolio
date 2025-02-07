@@ -10,6 +10,7 @@ import homevideo from "../assets/font-jsons/Home Video_Regular.json"
 import ppneuebit from "../assets/font-jsons/PP NeueBit_Bold.json";
 import React, { useRef, useEffect } from 'react';
 import AnimatedText from "./text";
+import { Element, Link as LinkScroll } from "react-scroll";
 gsap.registerPlugin(ScrollTrigger);
 extend({ TextGeometry });
 
@@ -143,6 +144,7 @@ export default function Scene() {
         <AnimatedText text="TIMELINE" className="font-neuebit uppercase text-9xl z-50 cursor-pointer w-screen text-left" customText='グミヸ✨' time={2} preStyle='font-neuebit uppercase text-9xl text-yellow-500 z-50 cursor-pointer text-left'/>
       </div>
       
+      <Element name="timeline">
       <div ref={sceneRef} className="w-full h-screen">
         <Canvas>
           <Fog />
@@ -156,6 +158,7 @@ export default function Scene() {
           <AnimatedPlane />
         </Canvas>
       </div>
-  </div>
+      </Element>
+    </div>
   );
 }

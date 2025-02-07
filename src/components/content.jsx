@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import AnimatedText from './text';
+import { Element, Link as LinkScroll } from "react-scroll";
 
 function Content() {
     gsap.registerPlugin(ScrollTrigger);
@@ -29,6 +30,7 @@ function Content() {
 
     return (
         <div>
+            <Element name="content">
             <div className="text-left px-10 py-7 z-20">
                 <AnimatedText
                     text="CONTENT"
@@ -36,7 +38,7 @@ function Content() {
                     customText='@!#$%^&*'
                     time={2}
                     preStyle='font-neuebit uppercase text-9xl text-yellow-500 z-50 cursor-pointer text-left'
-                />
+                    />
             </div>
             <div ref={scrollRef} className={"flex"}>
                 <div ref={wrapperRef} className={"flex flex-row gap-x-20 h-[100vh] items-center px-10 bg-enigma-green text-black font-neuebit"}>
@@ -49,6 +51,7 @@ function Content() {
                     <h2 className={"text-9xl"}>Placeholder</h2>
                 </div>
             </div>
+            </Element>
         </div>
     )
 }
