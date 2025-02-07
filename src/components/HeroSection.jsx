@@ -1,12 +1,14 @@
 import React from 'react'
 import AnimatedText from './text';
+import { Element, Link as LinkScroll } from "react-scroll";
 
 const HeroSection = () => {
 
 
   return (
       <>
-        <section className='h-[100vh] '>
+        <Element name="home" className="element">
+        <section className='h-[85vh] '>
             <div id="container" className='h-[75vh] flex justify-left items-center p-4 z-50'>
             <div id='hero' className='text-7xl font-neuebit text-center z-50 md:text-8xl'>
             <div className="flex flex-wrap gap-x-4 p-2 md:p-0 max-w-full justify-center">
@@ -28,6 +30,8 @@ const HeroSection = () => {
             </div>
           </div>
         </section>
+        </Element>
+
       </>
   )
 }

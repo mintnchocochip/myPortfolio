@@ -7,7 +7,7 @@ import Join from './components/join';
 // import BackgroundEffect from './components/background-hover';
 import Scene from './components/timelinetest';
 // import Timeline from './components/timeline';
-// import ErtdfgcvbBG from './components/enigmatextbg';
+import ErtdfgcvbBG from './components/enigmatextbg';
 import AnimatedText from './components/text';
 import HeroSection from './components/HeroSection';
 import Content from "./components/content.jsx";
@@ -16,7 +16,6 @@ function Home() {
   return (
     <div className='py-2'>
       {/* <div className="h-screen"></div> */}
-      {/* <ErtdfgcvbBG className='fixed z-0'/> */}
       <Join className='z-20'/>
       
       <nav className="sticky top-0 flex justify-between w-full px-10 py-5 z-20 mix-blend-difference">
@@ -24,6 +23,7 @@ function Home() {
         <Hamburger className='fixed right-0'/>
       </nav>
 
+      <ErtdfgcvbBG className='z-0 top-0'/>
       <HeroSection/>
       <Content />
 

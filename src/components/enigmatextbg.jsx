@@ -19,7 +19,7 @@ const ErtdfgcvbBG = () => {
 
     const text_col = 'black';
     return (
-        <div className='fixed'>
+        <div className='absolute top-0'>
             <pre data-selection-enabled="false" style={{ userSelect: 'none' }} className='w-screen h-screen'>
                 <span style={{ display: 'block' }}>
                     <span style={{ fontWeight: 100 }}>zyxCA .+|10yxBACyz1|+.ABxz1═+.ACxz1|:.ACyz1|:.ACxz1═+: BCxz0═|+. ABxyz01═|</span>

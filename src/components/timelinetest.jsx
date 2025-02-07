@@ -26,10 +26,10 @@ const speed = 0.75;
 const timeSpent = 100
 
 const textContent = ["Registration",
-                      "Meow",
-                      "Purr",
-                      "stuff",
-                      "More cat stuff"];
+                      "Speakers",
+                      "Jeopardy",
+                      "Attack & Defense",
+                      "More CTF stuff"];
 
 function Text({ text }) {
   const font = new FontLoader().parse(ppneuebit);
