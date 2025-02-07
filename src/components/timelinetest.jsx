@@ -6,7 +6,7 @@ import { Plane } from "@react-three/drei";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
-import homevideo from "../assets/font-jsons/Home Video_Regular.json"
+// import homevideo from "../assets/font-jsons/Home Video_Regular.json"
 import ppneuebit from "../assets/font-jsons/PP NeueBit_Bold.json";
 import React, { useRef, useEffect } from 'react';
 import AnimatedText from "./text";

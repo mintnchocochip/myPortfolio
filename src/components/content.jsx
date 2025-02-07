@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import AnimatedText from './text';
-import { Element, Link as LinkScroll } from "react-scroll";
+import { Element } from "react-scroll";
 
 function Content() {
     gsap.registerPlugin(ScrollTrigger);

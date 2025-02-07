@@ -3,12 +3,8 @@ import './App.css';
 import Hamburger from './components/hamburger';
 import Footer from './components/footer';
 import Join from './components/join';
-// import MovableSquare from './components/cursor';
-// import BackgroundEffect from './components/background-hover';
 import Scene from './components/timelinetest';
-// import Timeline from './components/timeline';
 import ErtdfgcvbBG from './components/enigmatextbg';
-import AnimatedText from './components/text';
 import HeroSection from './components/HeroSection';
 import Content from "./components/content.jsx";
 import Lenis from 'lenis';
@@ -35,7 +31,6 @@ function Home() {
 
   return (
     <div className='py-2'>
-      {/* <div className="h-screen"></div> */}
       <Join className='z-20'/>
       
       <nav className="sticky top-0 flex justify-between w-full px-10 py-5 z-20 mix-blend-difference">

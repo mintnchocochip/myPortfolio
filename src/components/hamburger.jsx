@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
 import AnimatedText from './text';
 import { Link as ScrollLink } from 'react-scroll';
+import { useGSAP } from '@gsap/react';
 
 const NavLink = ({ title, link }) => (
     <ScrollLink to={link} smooth={true} duration={500} className="hover:p-2 text-2xl text-white hover:bg-enigma-green hover:text-black cursor-pointer">
@@ -18,7 +19,7 @@ export default function Hamburger() {
         setIsOpen(!isOpen);
     };
 
-    useEffect(() => {
+    useGSAP(() => {
         if (isOpen) {
             gsap.to(menuRef.current, {
                 width: '100%',
