@@ -57,3 +57,10 @@
   font-display: swap;
   src: url(/fonts/Montreal-Medium.otf);
 }
+
+*{
+  cursor: url('/cursors/normal.cur'), auto;
+}
+.pointy{
+  cursor: url('/cursors/pointer.cur'), pointer;
+}
