@@ -9,7 +9,7 @@ import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import homevideo from "../assets/font-jsons/Home Video_Regular.json"
 import ppneuebit from "../assets/font-jsons/PP NeueBit_Bold.json";
 import React, { useRef, useEffect } from 'react';
-
+import AnimatedText from "./text";
 gsap.registerPlugin(ScrollTrigger);
 extend({ TextGeometry });
 
@@ -106,7 +106,7 @@ function CameraController({ triggerRef }) {
       scrollTrigger: {
         trigger: triggerRef.current,
         start: "top 0%",
-        end: "bottom top",
+        end: "+=" + (window.innerHeight * 3),
         scrub: 1,
         pin: true,
       },
@@ -138,18 +138,24 @@ export default function Scene() {
   const sceneRef = useRef(null);
 
   return (
-    <div ref={sceneRef} className="w-full h-screen">
-      <Canvas>
-        <Fog />
-        <CameraController triggerRef={sceneRef}/>
-        <ambientLight intensity={1} />
-        {cubePositions.map((pos, index) => (
-          <mesh key={index} position={pos}>
-            <Text text={textContent[index]} />
-          </mesh>
-        ))}
-        <AnimatedPlane />
-      </Canvas>
-    </div>
+    <div>
+      <div className="relative text-left px-10 py-7 z-20">
+        <AnimatedText text="TIMELINE" className="font-neuebit uppercase text-9xl z-50 cursor-pointer w-screen text-left" customText='グミヸ✨' time={2} preStyle='font-neuebit uppercase text-9xl text-yellow-500 z-50 cursor-pointer text-left'/>
+      </div>
+      
+      <div ref={sceneRef} className="w-full h-screen">
+        <Canvas>
+          <Fog />
+          <CameraController triggerRef={sceneRef}/>
+          <ambientLight intensity={1} />
+          {cubePositions.map((pos, index) => (
+            <mesh key={index} position={pos}>
+              <Text text={textContent[index]} />
+            </mesh>
+          ))}
+          <AnimatedPlane />
+        </Canvas>
+      </div>
+  </div>
   );
 }
