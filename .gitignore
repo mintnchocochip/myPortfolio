@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Blend1 files
-public/*/*.blend1
+public/**/*.blend1
