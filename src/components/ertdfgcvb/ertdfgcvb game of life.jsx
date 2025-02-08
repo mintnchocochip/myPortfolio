@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { run } from '../../assets/ertdfgcvb/programsJS/src/run.js'
 import * as program from '../../assets/ertdfgcvb/programsJS/time_milliseconds.js'
-import '../assets/ertdfgcvb/style.css'
+import '../../assets/ertdfgcvb/style.css'
 
 const ErtdfgcvbBG = () => {
   useEffect(() => {
