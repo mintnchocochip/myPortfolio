@@ -42,7 +42,7 @@ export function main(coord, context, cursor, buffer) {
     const c = 1.0 - Math.exp(-5 * Math.abs(proximity - radius))
     const index = Math.floor(c * density.length)
 
-    const charColor = proximity < radius ? 'black' : `rgba(22, 236, 8, 0.2)`
+    const charColor = proximity < radius ? 'black' : `rgba(22, 236, 8, 0.05)`
     const backgroundColor = proximity > radius ? `rgba(11, 11, 11, 0)` : 'rgba(22, 236, 8, 0.6)'
 
     // background goes here
