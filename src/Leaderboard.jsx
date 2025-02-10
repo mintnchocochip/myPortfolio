@@ -1,5 +1,6 @@
 import Hamburger from "./components/hamburger";
 import LeaderBox from "./components/LeaderBox";
+import LeaderEntry from "./components/LeaderEntry";
 function Leaderboard() {
   return (
     <div className="py-2 w-screen h-screen">
