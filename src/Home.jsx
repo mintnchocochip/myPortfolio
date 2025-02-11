@@ -8,7 +8,7 @@ import ErtdfgcvbBG from './components/enigmatextbg';
 import HeroSection from './components/HeroSection';
 import Content from "./components/content.jsx";
 import Lenis from 'lenis';
-import Speaker from './components/Speaker.jsx';
+import Speakers from './components/Speakers.jsx';
 
 function Home() {
   useEffect(() => {
@@ -43,11 +43,8 @@ function Home() {
       <HeroSection/>
       <Content />
       <Scene className="fixed top-0"/>
+      <Speakers />
       
-      <Speaker name="Yeyati Prasher" subname="Linux Basics" values={{topic1: "description1", topic2: "description2", topic3: "description3", topic4: "description4", topic5: "description5", topic6: "description6", topic7: "description7", topic8: "description8",}} ></Speaker>
-      <Speaker ct="👶" name="Sid Karnam" subname="Binary Exploitation" values={{topic1: "description1", topic2: "description2", topic3: "description3", topic4: "description4", topic5: "description5", topic6: "description6", topic7: "description7", topic8: "description8",}} ></Speaker>
-      <Speaker ct="🦜" name="Goutham Rajeev" subname="Web" values={{topic1: "description1", topic2: "description2", topic3: "description3", topic4: "description4", topic5: "description5", topic6: "description6", topic7: "description7", topic8: "description8",}} ></Speaker>
-      <Speaker ct="🧏🤫" name="Preetham Pemmasani" subname="OSINT" values={{topic1: "description1", topic2: "description2", topic3: "description3", topic4: "description4", topic5: "description5", topic6: "description6", topic7: "description7", topic8: "description8",}} ></Speaker>
       <Footer />
     </div>
   );
