@@ -7,12 +7,12 @@ import {
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Home from "./Home";
 import About from "./About";
+import Leaderboard from "./Leaderboard";
 import SignUp from "./SignUp";
 import PageNotFound from "./404";
 import PageTransition from "./components/PageTransition";
 import { gsap } from "gsap";
 import './App.css';
-// import ChallengePage1 from "./ChallengePage1";
 import ChallengePage from "./ChallengePage";
 // import ErtdfgcvbBGprivacy from "./components/ertdfgcvbprivacy";
 
@@ -46,6 +46,7 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/sign-up" element={<SignUp />} />
                         <Route path="/challenge" element={<ChallengePage />} />
+                        <Route path="/leaderboard" element={<Leaderboard />} />
                         {/* <Route path="/privacy" element={<ErtdfgcvbBGprivacy />} /> */}
                         <Route path="*" element={<PageNotFound />} />
                     </Routes>

@@ -1,3 +1,5 @@
+*.tsx linguist-language=typescript
+*.jsx linguist-language=typescript
 # Logs
 logs
 *.log
@@ -11,7 +13,6 @@ node_modules
 dist
 dist-ssr
 *.local
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -24,4 +25,4 @@ dist-ssr
 *.sw?
 
 # Blend1 files
-public/*/*.blend1
+public/**/*.blend1
