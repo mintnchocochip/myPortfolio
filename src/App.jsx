@@ -12,6 +12,8 @@ import PageNotFound from "./404";
 import PageTransition from "./components/PageTransition";
 import { gsap } from "gsap";
 import './App.css';
+// import ChallengePage1 from "./ChallengePage1";
+import ChallengePage from "./ChallengePage";
 // import ErtdfgcvbBGprivacy from "./components/ertdfgcvbprivacy";
 
 function App() {
@@ -43,6 +45,7 @@ function App() {
                         <Route exact path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/sign-up" element={<SignUp />} />
+                        <Route path="/challenge" element={<ChallengePage />} />
                         {/* <Route path="/privacy" element={<ErtdfgcvbBGprivacy />} /> */}
                         <Route path="*" element={<PageNotFound />} />
                     </Routes>
