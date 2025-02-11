@@ -1,65 +1,84 @@
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import AnimatedText from "./text";
 
-function Speaker({ values, name, subname, image }) {
+function Speaker({
+  values = {},
+  name = "Ankit Prasad",
+  subname = "Mr. Prasad",
+  ct="",
+  image,
+}) {
   const containerRef = useRef(null);
   const rowRefs = useRef([]);
   const lineRefs = useRef([]);
   const valueRefs = useRef([]);
 
-  useGSAP(() => {
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top center",
-        toggleActions: "play reverse play reverse",
-      },
-    });
-
-    timeline.fromTo(
-      lineRefs.current,
-      {
-        scaleX: 0,
-        transformOrigin: "left",
-      },
-      {
-        scaleX: 1,
-        duration: 0.8,
-      }
-    );
-
-    timeline.fromTo(
-      rowRefs.current,
-      {
-        x: "-100%",
-      },
-      {
-        x: 0,
-        duration: 0.3,
-      },
-      "-=0.8"
-    );
-
-    timeline.fromTo(
-      valueRefs.current,
-      {
-        x: "-100%",
-      },
-      {
-        x: 0,
-        duration: 0.3,
-      },
-      "-=0.8"
-    );
-  }, []);
+    useGSAP(() => {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top center",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+    
+      timeline.fromTo(
+        lineRefs.current,
+        {
+          scaleX: 0,
+          transformOrigin: "left",
+        },
+        {
+          scaleX: 1,
+          duration: 0.8,
+          ease: "power3.out",
+        }
+      );
+    
+      timeline.fromTo(
+        rowRefs.current,
+        {
+          x: "-100%",
+        },
+        {
+          x: 0,
+          duration: 0.3,
+          ease: "power3.out",
+        },
+        "-=0.8"
+      );
+    
+      timeline.fromTo(
+        valueRefs.current,
+        {
+          x: "-100%",
+        },
+        {
+          x: 0,
+          duration: 0.3,
+          ease: "power3.out",
+        },
+        "-=0.8"
+      );
+    
+      timeline.reverse(0.1);
+    }, []);
 
   return (
-    <div className="bg-black w-screen flex justify-between items-center px-10 font-neubit">
-      <div className="w-full flex flex-nowrap border-t-2 border-white h-[2px] gap-32">
-        <div className="w-[40vw] font-neubit mt-3">
-          <div className="text-6xl text-white">{name}</div>
-          <div className="text-6xl text-white pb-3">{subname}</div>
+    <div className="w-screen flex justify-between items-center px-10 pt-10">
+      <div className="w-full flex flex-nowrap border-t-2 border-white gap-32">
+        <div className="w-[40vw] font-neubit text-left">
+          <AnimatedText
+          customText={ct}
+            text={name}
+            time={1}
+            className="text-6xl text-white font-neuebit text-left uppercase"
+          />
+          <div className="text-6xl text-white pb-3 font-neuebit text-left">
+            {subname}
+          </div>
           <img
             src={image}
             alt=""
@@ -72,21 +91,23 @@ function Speaker({ values, name, subname, image }) {
             <div key={key}>
               <div className="flex flex-wrap justify-start items-center">
                 <div className="overflow-hidden">
-                  <div
-                    ref={(el) => (rowRefs.current[index] = el)}
-                    className="text-sm text-green-500 tracking-wider uppercase"
-                  >
-                    {key}
+                  <div ref={(el) => (rowRefs.current[index] = el)}>
+                    <AnimatedText
+                      text={key}
+                      time={1}
+                      className="text-lg text-green-500 tracking-wider uppercase font-neuebit w-full"
+                    />
                   </div>
                 </div>
 
                 <div className="ml-[25vw]">
                   <div className="overflow-hidden">
-                    <div
-                      ref={(el) => (valueRefs.current[index] = el)}
-                      className="text-sm tracking-wider uppercase"
-                    >
-                      {value}
+                    <div ref={(el) => (valueRefs.current[index] = el)}>
+                      <AnimatedText
+                        text={value}
+                        time={1}
+                        className="text-white text-lg tracking-wider uppercase font-neuebit w-full"
+                      />
                     </div>
                   </div>
                 </div>
