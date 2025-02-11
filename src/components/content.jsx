@@ -34,10 +34,10 @@ function Content() {
             <div className="text-left px-10 py-7 z-20">
                 <AnimatedText
                     text="CONTENT"
-                    className="font-neuebit uppercase text-9xl z-50 cursor-pointer w-screen text-left"
+                    className="font-neuebit uppercase text-6xl md:text-8xl lg:9xl z-50 cursor-pointer w-screen text-left"
                     customText='@!#$%^&*'
                     time={2}
-                    preStyle='font-neuebit uppercase text-9xl text-yellow-500 z-50 cursor-pointer text-left'
+                    preStyle='font-neuebit uppercase text-6xl md:text-8xl lg:9xl text-yellow-500 z-50 cursor-pointer text-left'
                     />
             </div>
             <div ref={scrollRef} className={"flex"}>
