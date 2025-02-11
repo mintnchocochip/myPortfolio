@@ -7,9 +7,9 @@ function Speakers() {
     <>  
         <div className="text-left px-10 z-20">
         <AnimatedText
-            text="CONTENT"
+            text="SPEAKERS"
             className="font-neuebit uppercase text-9xl z-50 cursor-pointer w-screen text-left"
-            customText='@!#$%^&*'
+            customText='_-'
             time={2}
             preStyle='font-neuebit uppercase text-9xl text-yellow-500 z-50 cursor-pointer text-left'
             />
