@@ -1,6 +1,7 @@
 import Hamburger from "./components/hamburger";
 import LeaderBox from "./components/LeaderBox";
 import LeaderEntry from "./components/LeaderEntry";
+
 function Leaderboard() {
   return (
     <div className="py-2 w-screen h-screen">
@@ -10,6 +11,7 @@ function Leaderboard() {
       </nav>
       <h1 className="font-neuebit text-9xl">LEADERBOARD</h1>
       <LeaderBoxPanel />
+      <LeaderEntry />
     </div>
   );
 }

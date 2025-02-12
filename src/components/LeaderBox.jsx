@@ -1,20 +1,17 @@
 const LeaderBox = ({ teamName, teamPoints, ctfsSolved, number }) => {
   return (
-    <div className="border border-green-500 bg-black text-green-500 w-64 h-96 p-4 relative">
-      <div className="absolute top-4 right-4 text-white">NO.{number}</div>
-      <div className="h-full flex flex-col justify-between">
-        <div className="text-center text-2xl font-mono uppercase">
-          {teamName}
+    <div className="flex justify-around mt-10">
+      <div className="border-2 border-white p-5 w-96 bg-black flex flex-col justify-between h-96">
+        <h3 className="text-sm mb-auto">NO.{number}</h3>
+        <h4 className="text-lime-500">{teamName}</h4>
+        <hr className="border-none h-0.5 bg-lime-500 mx-2.5 my-0" />
+        <div className="flex justify-between">
+            <p>TEAM POINTS</p>
+            <p>{teamPoints}</p>
         </div>
-        <div className="space-y-2">
-          <div className="flex justify-between">
-            <span>TEAM POINTS</span>
-            <span>{teamPoints}</span>
-          </div>
-          <div className="flex justify-between">
-            <span>CTFS SOLVED</span>
-            <span>{ctfsSolved}</span>
-          </div>
+        <div className="flex justify-between">
+            <p>CTFS SOLVED</p>
+            <p>{ctfsSolved}</p>
         </div>
       </div>
     </div>
