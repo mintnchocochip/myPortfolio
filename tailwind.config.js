@@ -1,11 +1,15 @@
+import fluid, { extract } from 'fluid-tailwind'
+
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
+  content: {files:[
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     "./src/login/*.jsx",
     "./src/signup/*.jsx"
   ],
+  extract},
+
   theme: {
     extend: {
       colors: {
@@ -41,7 +45,6 @@ export default {
         'neuebit': ['NeueBit', 'sans-serif'],
         'montreal-medium': ['Montreal-Medium', 'sans-serif'],
         'montreal-book': ['Montreal-Book', 'sans-serif'],
-        'orbitron': ['Orbitron', 'sans-serif'] // Adding Orbitron Font by Amiitesh
       },
       keyframes: { // Keyframes for the login page by Amiitesh
         border: {
@@ -100,5 +103,5 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [fluid],
 }

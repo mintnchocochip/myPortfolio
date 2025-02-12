@@ -39,7 +39,7 @@ const SignUp = () => {
           <AnimatedText 
             text="Enigma25" 
             className="text-3xl font-bold text-[#1cd41c] tracking-wider drop-shadow-enigma-glow"
-            time={0.5}
+            time={1.0}
           />
         </div>
         
@@ -49,14 +49,14 @@ const SignUp = () => {
             className={`mr-4 ${isLogin ? 'text-[#1cd41c]' : 'text-gray-500'} 
               hover:scale-105 transition-transform duration-300`}
           >
-            Login
+            <AnimatedText text="Login" time={1.0} />
           </button>
           <button 
             onClick={() => setIsLogin(false)}
             className={`${!isLogin ? 'text-[#1cd41c]' : 'text-gray-500'}
               hover:scale-105 transition-transform duration-300`}
           >
-            Sign Up
+            <AnimatedText text="Sign Up" time={1.0} />
           </button>
         </div>
 
@@ -98,19 +98,19 @@ const SignUp = () => {
               hover:scale-105 
               active:scale-95"
           >
-            {isLogin ? 'Login' : 'Sign Up'}
+            <AnimatedText text={isLogin ? 'Login' : 'Sign Up'} time={1.0} />
           </button>
         </form>
         
         {isLogin && (
           <div className="mt-4 text-sm text-gray-400">
-            Don't have an account? 
+            <AnimatedText text="Don't have an account?" time={1.0} className="inline" />
             <button 
               onClick={() => setIsLogin(false)}
               className="ml-2 text-[#1cd41c] hover:underline 
                 hover:scale-105 transition-transform duration-300"
             >
-              Sign Up
+              <AnimatedText text="Sign Up" time={1.0} />
             </button>
           </div>
         )}
@@ -123,7 +123,11 @@ const SignUp = () => {
 const InputField = ({ label, type, placeholder, required, value, onChange }) => {
   return (
     <div className="mb-4">
-      <label className="block text-sm text-gray-300 mb-2">{label}</label>
+      <AnimatedText 
+        text={label} 
+        className="block text-sm text-gray-300 mb-2" 
+        time={1.0}
+      />
       <input
         type={type}
         placeholder={placeholder}

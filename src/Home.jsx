@@ -8,6 +8,7 @@ import ErtdfgcvbBG from './components/enigmatextbg';
 import HeroSection from './components/HeroSection';
 import Content from "./components/content.jsx";
 import Lenis from 'lenis';
+import Speakers from './components/Speakers.jsx';
 
 function Home() {
   useEffect(() => {
@@ -41,9 +42,10 @@ function Home() {
       <ErtdfgcvbBG className='z-0 top-0'/>
       <HeroSection/>
       <Content />
-
       <Scene className="fixed top-0"/>
-        <Footer />
+      <Speakers />
+      
+      <Footer />
     </div>
   );
 }
