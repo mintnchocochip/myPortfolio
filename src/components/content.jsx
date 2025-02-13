@@ -40,8 +40,8 @@ function Content() {
                     preStyle='font-neuebit uppercase text-6xl md:text-8xl lg:9xl text-yellow-500 z-50 cursor-pointer text-left'
                     />
             </div>
-            <div ref={scrollRef} className={"flex"}>
-                <div ref={wrapperRef} className={"flex flex-row gap-x-20 h-[100vh] items-center px-10 bg-enigma-green text-black font-neuebit"}>
+            <div ref={scrollRef} className={"flex overflow-x-hidden"}>
+                <div ref={wrapperRef} className={"flex flex-row gap-x-20 h-screen items-center px-10 bg-enigma-green text-black font-neuebit"}>
                     <h2 className={"text-9xl"}>Placeholder</h2>
                     <h2 className={"text-9xl"}>Placeholder</h2>
                     <h2 className={"text-9xl"}>Placeholder</h2>
