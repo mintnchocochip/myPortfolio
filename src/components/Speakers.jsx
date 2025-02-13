@@ -15,7 +15,7 @@ function Speakers() {
             />
         </div>
         <Speaker name="Yeyati Prasher" subname="Linux Basics" values={{topic1: "description1", topic2: "description2", topic3: "description3", topic4: "description4", topic5: "description5", topic6: "description6", topic7: "description7", topic8: "description8",}} ></Speaker>
-        <Speaker ct="👶" name="Sid Karnam" subname="Binary Exploitation" values={{topic1: "description1", topic2: "description2", topic3: "description3", topic4: "description4", topic5: "description5", topic6: "description6", topic7: "description7", topic8: "description8",}} ></Speaker>
+        <Speaker ct="👶" name="Sid Karnam" image="/cool-peeps/sid.jpg" subname="Binary Exploitation" values={{topic1: "description1", topic2: "description2", topic3: "description3", topic4: "description4", topic5: "description5", topic6: "description6", topic7: "description7", topic8: "description8",}} ></Speaker>
         <Speaker ct="🦜" name="Goutham Rajeev" subname="Web" values={{topic1: "description1", topic2: "description2", topic3: "description3", topic4: "description4", topic5: "description5", topic6: "description6", topic7: "description7", topic8: "description8",}} ></Speaker>
         <Speaker ct="🧏🤫" name="Preetham Pemmasani" subname="OSINT" values={{topic1: "description1", topic2: "description2", topic3: "description3", topic4: "description4", topic5: "description5", topic6: "description6", topic7: "description7", topic8: "description8",}} ></Speaker>
     </>

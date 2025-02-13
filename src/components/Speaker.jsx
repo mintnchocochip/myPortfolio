@@ -82,6 +82,8 @@ function Speaker({
           <img
             src={image}
             alt=""
+            width={"1024px"}
+            height={"1024px"}
             className="w-full h-[60vh] rounded-lg shadow-lg"
           />
         </div>
