@@ -38,7 +38,11 @@ export function main(coord, context, cursor, buffer) {
 	const c = 1.0 - Math.exp(-5 * Math.abs(d))
 	const index = Math.floor(c * density.length)
 
-	return density[index]
+	return {
+		char:density[index],
+		backgroundColor: "black",
+        color: "green"
+	}
 
 }
 
@@ -49,7 +53,7 @@ export function post(context, cursor, buffer) {
 
 // Uncomment this to calculate the cursor position only once
 // and pass it to the main function as a global
-/*
+
 const p = vec2(0, 0)
 export function pre(context, cursor, buffer) {
    	const m = Math.min(context.cols, context.rows)
@@ -57,4 +61,4 @@ export function pre(context, cursor, buffer) {
 	p.x = 2.0 * (cursor.x - context.cols / 2) / m * a,
 	p.y = 2.0 * (cursor.y - context.rows / 2) / m
 }
-*/
+
