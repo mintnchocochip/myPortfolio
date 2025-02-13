@@ -7,9 +7,9 @@ import Scene from './components/timelinetest';
 import ErtdfgcvbBG from './components/enigmatextbg';
 import HeroSection from './components/HeroSection';
 import Content from "./components/content.jsx";
-import Prize from './components/prize.jsx';
+// import Prize from './components/prize.jsx';
 import Speakers from './components/Speakers.jsx';
-import { Canvas } from '@react-three/fiber'
+// import { Canvas } from '@react-three/fiber'
 
 import Lenis from 'lenis';
 function Home() {
