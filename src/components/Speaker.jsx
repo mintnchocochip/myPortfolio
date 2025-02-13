@@ -20,8 +20,7 @@ function Speaker({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top center",
-          stop: "top center",
-          toggleActions: "play play play reverse",
+          toggleActions: "play reverse play reverse",
         },
       });
     
