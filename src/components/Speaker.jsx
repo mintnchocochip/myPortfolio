@@ -15,63 +15,63 @@ function Speaker({
   const lineRefs = useRef([]);
   const valueRefs = useRef([]);
 
-    useGSAP(() => {
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-      });
-    
-      timeline.fromTo(
-        lineRefs.current,
-        {
-          scaleX: 0,
-          transformOrigin: "left",
-        },
-        {
-          scaleX: 1,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      );
-    
-      timeline.fromTo(
-        rowRefs.current,
-        {
-          x: "-100%",
-        },
-        {
-          x: 0,
-          duration: 0.3,
-          ease: "power3.out",
-        },
-        "-=0.8"
-      );
-    
-      timeline.fromTo(
-        valueRefs.current,
-        {
-          x: "-100%",
-        },
-        {
-          x: 0,
-          duration: 0.3,
-          ease: "power3.out",
-        },
-        "-=0.8"
-      );
-    
-      timeline.reverse(0.1);
-    }, []);
+  useGSAP(() => {
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top center",
+        toggleActions: "play reverse play reverse",
+      },
+    });
+
+    timeline.fromTo(
+      lineRefs.current,
+      {
+        scaleX: 0,
+        transformOrigin: "left",
+      },
+      {
+        scaleX: 1,
+        duration: 0.8,
+        ease: "power3.out",
+      }
+    );
+
+    timeline.fromTo(
+      rowRefs.current,
+      {
+        x: "-100%",
+      },
+      {
+        x: 0,
+        duration: 0.3,
+        ease: "power3.out",
+      },
+      "-=0.8"
+    );
+
+    timeline.fromTo(
+      valueRefs.current,
+      {
+        x: "-100%",
+      },
+      {
+        x: 0,
+        duration: 0.3,
+        ease: "power3.out",
+      },
+      "-=0.8"
+    );
+
+    timeline.reverse(0.1);
+  }, []);
 
   return (
     <div className="w-screen flex justify-between items-center px-10 pt-10">
       <div className="w-full flex flex-nowrap border-t-2 border-white gap-32">
         <div className="w-[40vw] font-neubit text-left">
           <AnimatedText
-          customText={ct}
+            customText={ct}
             text={name}
             time={1}
             className="text-6xl text-white font-neuebit text-left uppercase"
@@ -82,9 +82,9 @@ function Speaker({
           <img
             src={image}
             alt=""
-            width={"1024px"}
-            height={"1024px"}
-            className="w-full h-[60vh] rounded-lg shadow-lg"
+            width="1024"
+            height="1024"
+            className="w-90 h-90 rounded-lg shadow-lg"
           />
         </div>
 
