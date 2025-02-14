@@ -15,75 +15,80 @@ function Speaker({
   const lineRefs = useRef([]);
   const valueRefs = useRef([]);
 
-    useGSAP(() => {
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top center",
-          stop: "top center",
-          toggleActions: "play play play reverse",
-        },
-      });
-    
-      timeline.fromTo(
-        lineRefs.current,
-        {
-          scaleX: 0,
-          transformOrigin: "left",
-        },
-        {
-          scaleX: 1,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      );
-    
-      timeline.fromTo(
-        rowRefs.current,
-        {
-          x: "-100%",
-        },
-        {
-          x: 0,
-          duration: 0.3,
-          ease: "power3.out",
-        },
-        "-=0.8"
-      );
-    
-      timeline.fromTo(
-        valueRefs.current,
-        {
-          x: "-100%",
-        },
-        {
-          x: 0,
-          duration: 0.3,
-          ease: "power3.out",
-        },
-        "-=0.8"
-      );
-    
-      timeline.reverse(0.1);
-    }, []);
+  useGSAP(() => {
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top center",
+        toggleActions: "play reverse play reverse",
+      },
+    });
+
+    timeline.fromTo(
+      lineRefs.current,
+      {
+        scaleX: 0,
+        transformOrigin: "left",
+      },
+      {
+        scaleX: 1,
+        duration: 0.8,
+        ease: "power3.out",
+      }
+    );
+
+    timeline.fromTo(
+      rowRefs.current,
+      {
+        x: "-100%",
+      },
+      {
+        x: 0,
+        duration: 0.3,
+        ease: "power3.out",
+      },
+      "-=0.8"
+    );
+
+    timeline.fromTo(
+      valueRefs.current,
+      {
+        x: "-100%",
+      },
+      {
+        x: 0,
+        duration: 0.3,
+        ease: "power3.out",
+      },
+      "-=0.8"
+    );
+
+    timeline.reverse(0.1);
+  }, []);
 
   return (
     <div className="w-screen flex justify-between items-center px-10 pt-10">
       <div className="w-full flex flex-nowrap border-t-2 border-white gap-32">
         <div className="w-[40vw] font-neubit text-left">
           <AnimatedText
-          customText={ct}
+            customText={ct}
             text={name}
             time={1}
             className="text-6xl text-white font-neuebit text-left uppercase"
           />
-          <div className="text-6xl text-white pb-3 font-neuebit text-left">
-            {subname}
-          </div>
+          <br />
+          <AnimatedText
+            customText={ct}
+            text={subname}
+            time={1}
+            className="text-5xl text-white font-neuebit text-left uppercase"
+          />
           <img
             src={image}
             alt=""
-            className="w-full h-[60vh] rounded-lg shadow-lg"
+            width="1024"
+            height="1024"
+            className="w-90 h-90 rounded-lg shadow-lg mix-blend-screen"
           />
         </div>
 
@@ -91,7 +96,7 @@ function Speaker({
           {Object.entries(values).map(([key, value], index) => (
             <div key={key}>
               <div className="flex flex-wrap justify-start items-center">
-                <div className="overflow-hidden">
+                <div className="overflow-hidden w-[25vw]">
                   <div ref={(el) => (rowRefs.current[index] = el)}>
                     <AnimatedText
                       text={key}
@@ -101,12 +106,12 @@ function Speaker({
                   </div>
                 </div>
 
-                <div className="ml-[25vw]">
+                <div className="flex-grow ml-4">
                   <div className="overflow-hidden">
                     <div ref={(el) => (valueRefs.current[index] = el)}>
                       <AnimatedText
                         text={value}
-                        time={1}
+                        time={0.2}
                         className="text-white text-lg tracking-wider uppercase font-neuebit w-full"
                       />
                     </div>

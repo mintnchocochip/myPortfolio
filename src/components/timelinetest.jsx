@@ -41,7 +41,7 @@ function Text({ text }) {
           {
             font: font,
             size: 2,
-            height: 0,
+            depth: 0,
             curveSegments: 12,
             bevelEnabled: true,
             bevelThickness: 0.03,

@@ -7,9 +7,11 @@ import Scene from './components/timelinetest';
 import ErtdfgcvbBG from './components/enigmatextbg';
 import HeroSection from './components/HeroSection';
 import Content from "./components/content.jsx";
-import Lenis from 'lenis';
+// import Prize from './components/prize.jsx';
 import Speakers from './components/Speakers.jsx';
+// import { Canvas } from '@react-three/fiber'
 
+import Lenis from 'lenis';
 function Home() {
   useEffect(() => {
     const lenis = new Lenis({
@@ -41,9 +43,14 @@ function Home() {
 
       <ErtdfgcvbBG className='z-0 top-0'/>
       <HeroSection/>
+      {/* <div className="h-screen">
+        <Canvas className='w-screen h-screen'>
+          <Prize className='w-screen h-screen'/>
+        </Canvas>
+      </div> */}
       <Content />
       <Scene className="fixed top-0"/>
-      <Speakers />
+       {/* <Speakers /> */}
       
       <Footer />
     </div>
