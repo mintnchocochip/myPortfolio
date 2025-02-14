@@ -87,8 +87,8 @@ export function main(coord, context, cursor) {
 
 	let d = 1e10
 	const n = box.edges.length
-	const thickness = map(cursor.x, 0, context.cols, 0.001, 0.1)
-	const expMul = map(cursor.y, 0, context.rows, -100, -5)
+	const thickness = map(12, 0, context.cols, 0.001, 0.1)
+	const expMul = map(12, 0, context.rows, -100, -5)
 	for (let i=0; i<n; i++) {
 		const a = boxProj[box.edges[i][0]]
 		const b = boxProj[box.edges[i][1]]
