@@ -58,26 +58,6 @@ const ErtdfgcvbBG = () => {
   if (!program) {
     return null
   }
-  useEffect(() => {
-    if (program) {
-      const settings = {
-        element: document.querySelector('pre')
-      }
-
-      run(program, settings)
-        .then(function (e) {
-          console.log(e)
-        })
-        .catch(function (e) {
-          console.warn(e.message)
-          console.log(e.error)
-        })
-    }
-  }, [program])
-
-  if (!program) {
-    return null
-  }
 
   const text_col = 'black'
   return (

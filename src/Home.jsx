@@ -9,6 +9,7 @@ import HeroSection from './components/HeroSection'
 import Content from './components/content.jsx'
 import Lenis from 'lenis'
 import Speakers from './components/Speakers.jsx'
+import Rules from './components/Rules.jsx'
 
 function Home() {
   useEffect(() => {
@@ -38,7 +39,7 @@ function Home() {
         <Hamburger className="fixed right-0" />
       </nav>
 
-      {/*<ErtdfgcvbBG className="top-0 z-0" />*/}
+      <ErtdfgcvbBG className="top-0 z-0" />
       <HeroSection />
       {/* <div className="h-screen">
         <Canvas className='w-screen h-screen'>
