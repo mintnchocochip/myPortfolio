@@ -1,6 +1,7 @@
 import Hamburger from "./components/hamburger";
 import LeaderBox from "./components/LeaderBox";
 import LeaderEntry from "./components/LeaderEntry";
+
 function Leaderboard() {
   return (
     <div className="py-2 w-screen h-screen">
@@ -8,21 +9,27 @@ function Leaderboard() {
         <div className="text-5xl font-neuebit text-left pt-1">ENIGMA</div>
         <Hamburger className="fixed right-0" />
       </nav>
-      <h1 className="font-neuebit text-9xl">LEADERBOARD</h1>
-      <LeaderBoxPanel />
+      <div className="w-[90%] items-center mx-auto">
+        <h1 className="font-neuebit text-[calc(18.25vw)] text-center">LEADERBOARD</h1>
+        <LeaderBoxPanel />
+        <LeaderEntry />
+      </div>
     </div>
   );
 }
 
 const LeaderBoxPanel = ({ teams = [] }) => {
-  const displayTeams = teams.length > 0 ? teams : [
-    { name: 'TEAM ALPHA', teamPoints: 0, ctfsSolved: 0 },
-    { name: 'ONLYCTFS', teamPoints: 0, ctfsSolved: 0 },
-    { name: 'ZETABYTES', teamPoints: 0, ctfsSolved: 0 }
-  ];
+  const displayTeams =
+    teams.length > 0
+      ? teams
+      : [
+          { name: "TEAM ALPHA", teamPoints: 0, ctfsSolved: 0 },
+          { name: "ONLYCTFS", teamPoints: 0, ctfsSolved: 0 },
+          { name: "ZETABYTES", teamPoints: 0, ctfsSolved: 0 },
+        ];
 
   return (
-    <div className="flex gap-4 p-4">
+    <div className="flex mb-[calc(1.5vw)] w-full gap-[calc(1.5vw)]">
       {displayTeams.map((team, index) => (
         <LeaderBox
           key={team.name}
