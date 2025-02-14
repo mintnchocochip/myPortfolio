@@ -1,20 +1,29 @@
+import AnimatedText from "./text";
+
 const LeaderBox = ({ teamName, teamPoints, ctfsSolved, number }) => {
   return (
-    <div className="border border-green-500 bg-black text-green-500 w-64 h-96 p-4 relative">
-      <div className="absolute top-4 right-4 text-white">NO.{number}</div>
-      <div className="h-full flex flex-col justify-between">
-        <div className="text-center text-2xl font-mono uppercase">
-          {teamName}
+    <div className="flex">
+      <div className="border-2 font-neuebit border-zinc-500 p-5 w-[calc(33vw-3vw-1vw)] flex flex-col justify-between h-[calc(25vw)]">
+        <h3 className="text-xl mb-auto">
+          <AnimatedText text={`NO.${number}`} className="text-xl mb-auto" />
+        </h3>
+        <h4 className="text-enigma-green text-left text-2xl">
+          <AnimatedText text={teamName} />
+        </h4>
+        <hr className="border-none h-0.5 bg-zinc-600 my-0" />
+        <div className="flex justify-between">
+          <AnimatedText text={"TEAM POINTS"} />
+          <AnimatedText
+            text={teamPoints.toString()}
+            className="text-enigma-green"
+          />
         </div>
-        <div className="space-y-2">
-          <div className="flex justify-between">
-            <span>TEAM POINTS</span>
-            <span>{teamPoints}</span>
-          </div>
-          <div className="flex justify-between">
-            <span>CTFS SOLVED</span>
-            <span>{ctfsSolved}</span>
-          </div>
+        <div className="flex justify-between">
+          <AnimatedText text={"CTFS SOLVED"} />
+          <AnimatedText
+            text={ctfsSolved.toString()}
+            className="text-enigma-green"
+          />
         </div>
       </div>
     </div>

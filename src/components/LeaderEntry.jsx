@@ -4,18 +4,18 @@ import AnimatedText from "./text";
 
 const RowEntry = ({ rank, team, score, solved }) => {
   return (
-    <div className="flex w-full p-2 border-b-2 border-zinc-500 px-6 text-white bg-transparent">
+    <div className="group flex w-full p-2 border-b-2 hover:bg-enigma-green border-zinc-500 px-6 text-white bg-transparent">
       <div className="w-1/6 text-left">
-        <AnimatedText text={rank.toString()} className="text-white" />
+        <AnimatedText text={rank.toString()} className="text-white group-hover:text-black" />
       </div>
       <div className="w-1/2 text-left">
-        <AnimatedText text={team} className="text-white" />
+        <AnimatedText text={team} className="text-white group-hover:text-black" />
       </div>
       <div className="w-1/6 text-left">
-        <AnimatedText text={score.toString()} className="text-white" />
+        <AnimatedText text={score.toString()} className="text-white group-hover:text-black" />
       </div>
       <div className="w-1/6 text-left">
-        <AnimatedText text={solved.toString()} className="text-white" />
+        <AnimatedText text={solved.toString()} className="text-white group-hover:text-black" />
       </div>
     </div>
   );
@@ -39,7 +39,7 @@ const LeaderEntry = () => {
   const sortedTeams = [...teams].sort((a, b) => b.score - a.score || b.solved - a.solved);
 
   return (
-    <div className="flex flex-col items-center w-[90%] mx-auto border border-zinc-500 p-0">
+    <div className="flex flex-col items-center mx-auto border border-zinc-500 p-0">
 
       <div className="flex w-full text-white text-sm bg-transparent p-2">
         <div className="w-full text-center">TYPE TEAMNAME</div>
