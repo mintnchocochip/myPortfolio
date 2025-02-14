@@ -1,41 +1,179 @@
-import React from 'react';
-import AnimatedText from './text';
-import { Element } from "react-scroll";
+import React from 'react'
+import AnimatedText from './text'
+import { Element } from 'react-scroll'
 
 const HeroSection = () => {
+  //   return (
+  //     <>
+  //       <Element name="home">
+  //         <div
+  //           id="hero"
+  //           className="z-50 flex h-screen w-full flex-col justify-center gap-6 overflow-hidden text-center font-neuebit text-7xl md:items-center md:text-8xl"
+  //         >
+  //           <AnimatedText
+  //             text="ENIGMA"
+  //             className="text-[2em] md:text-[2em]"
+  //             preStyle="text-black text-[2em] mix mix-blend-difference bg-enigma-green pt-2 px-3 cursor-cell w-full"
+  //           />
+  //           <div className="flex w-fit max-w-full flex-col flex-wrap gap-x-4 gap-y-0 p-2 align-middle md:p-0">
+  //             <div className="flex w-full flex-wrap justify-start gap-x-8">
+  //               <AnimatedText
+  //                 text="FIGHT"
+  //                 className="text-[0.6em] md:text-[1em]"
+  //                 preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+  //               />
+  //               <AnimatedText
+  //                 text="TO"
+  //                 className="text-[0.6em] md:text-[1em]"
+  //                 preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+  //               />
+  //               <AnimatedText
+  //                 text="SURVIVE"
+  //                 className="text-[0.6em] md:text-[1em]"
+  //                 preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+  //               />
+  //             </div>
+  //             <div className="flex w-full flex-wrap justify-center gap-x-8">
+  //               <AnimatedText
+  //                 text="ALL'S"
+  //                 className="text-[0.6em] md:text-[1em]"
+  //                 preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+  //               />
+  //               <AnimatedText
+  //                 text="FAIR"
+  //                 className="text-[0.6em] md:text-[1em]"
+  //                 preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+  //               />
+  //               <AnimatedText
+  //                 text="IN"
+  //                 className="text-[0.6em] md:text-[1em]"
+  //                 preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+  //               />
+  //               <AnimatedText
+  //                 text="LOVE"
+  //                 className="text-[0.6em] md:text-[1em]"
+  //                 preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+  //               />
+  //               <AnimatedText
+  //                 text="AND"
+  //                 className="text-[0.6em] md:text-[1em]"
+  //                 preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+  //               />
+  //               <AnimatedText
+  //                 text="WAR"
+  //                 className="text-[0.6em] md:text-[1em]"
+  //                 preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+  //               />
+  //             </div>
+  //             <div className="flex w-full flex-wrap justify-end gap-x-8">
+  //               <AnimatedText
+  //                 text="THIS"
+  //                 className="text-[0.6em] md:text-[1em]"
+  //                 preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+  //               />
+  //               <AnimatedText
+  //                 text="IS"
+  //                 className="text-[0.6em] md:text-[1em]"
+  //                 preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+  //               />
+  //               <AnimatedText
+  //                 text="WAR"
+  //                 className="text-[0.6em] md:text-[1em]"
+  //                 preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+  //               />
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </Element>
+  //     </>
+  //   )
+  // }
+
   return (
     <>
       <Element name="home">
-        <section className='h-[85vh]'>
-          <div id="container" className='h-[75vh] flex justify-left items-center p-4 z-50'>
-            <div id='hero' className='text-7xl font-neuebit text-center z-50 md:text-8xl flex justify-between w-full gap-6 md:flex-row flex-col md:items-center'>
-              <AnimatedText id="txt" text="ENIGMA" className="text-[2em] md:text-[2em]" preStyle='text-black text-[2em] mix mix-blend-difference bg-enigma-green pb-0 md:pb-3 px-3 cursor-cell w-full'/>
-              <div className="flex flex-wrap flex-col gap-x-4 p-2 md:p-0 max-w-full md:justify-end align-middle w-full gap-y-0">
-                <div className="flex flex-wrap gap-x-8 w-full md:justify-end">
-                  <AnimatedText id="txt" text="FIGHT" className="text-[0.6em] md:text-[1em]" preStyle='text-black mix mix-blend-difference bg-enigma-green pb-0 md:pb-3 px-3 cursor-cell'/>
-                  <AnimatedText id="txt" text="TO" className="text-[0.6em] md:text-[1em]" preStyle='text-black mix mix-blend-difference bg-enigma-green pb-0 md:pb-3 px-3 cursor-cell'/>
-                  <AnimatedText id="txt" text="SURVIVE" className="text-[0.6em] md:text-[1em]" preStyle='text-black mix mix-blend-difference bg-enigma-green pb-0 md:pb-3 px-3 cursor-cell'/>
-                </div>
-                <div className="flex flex-wrap gap-x-8 w-full md:justify-end">
-                  <AnimatedText id="txt" text="ALL'S" className="text-[0.6em] md:text-[1em]" preStyle='text-black mix mix-blend-difference bg-enigma-green pb-0 md:pb-3 px-3 cursor-cell'/>
-                  <AnimatedText id="txt" text="FAIR" className="text-[0.6em] md:text-[1em]" preStyle='text-black mix mix-blend-difference bg-enigma-green pb-0 md:pb-3 px-3 cursor-cell'/>
-                  <AnimatedText id="txt" text="IN" className="text-[0.6em] md:text-[1em]" preStyle='text-black mix mix-blend-difference bg-enigma-green pb-0 md:pb-3 px-3 cursor-cell'/>
-                  <AnimatedText id="txt" text="LOVE" className="text-[0.6em] md:text-[1em]" preStyle='text-black mix mix-blend-difference bg-enigma-green pb-0 md:pb-3 px-3 cursor-cell'/>
-                  <AnimatedText id="txt" text="AND" className="text-[0.6em] md:text-[1em]" preStyle='text-black mix mix-blend-difference bg-enigma-green pb-0 md:pb-3 px-3 cursor-cell'/>
-                  <AnimatedText id="txt" text="WAR" className="text-[0.6em] md:text-[1em]" preStyle='text-black mix mix-blend-difference bg-enigma-green pb-0 md:pb-3 px-3 cursor-cell'/>
-                </div>
-                <div className="flex flex-wrap gap-x-8 w-full md:justify-end">
-                  <AnimatedText id="txt" text="THIS" className="text-[0.6em] md:text-[1em]" preStyle='text-black mix mix-blend-difference bg-enigma-green pb-0 md:pb-3 px-3 cursor-cell'/>
-                  <AnimatedText id="txt" text="IS" className="text-[0.6em] md:text-[1em]" preStyle='text-black mix mix-blend-difference bg-enigma-green pb-0 md:pb-3 px-3 cursor-cell'/>
-                  <AnimatedText id="txt" text="WAR" className="text-[0.6em] md:text-[1em]" preStyle='text-black mix mix-blend-difference bg-enigma-green pb-0 md:pb-3 px-3 cursor-cell'/>
-                </div>
-              </div>
+        <div
+          id="hero"
+          className="z-50 flex h-screen w-full flex-col justify-center gap-6 overflow-hidden px-10 font-neuebit text-7xl md:text-8xl"
+        >
+          <div className="flex w-full flex-wrap justify-start gap-x-8">
+            <AnimatedText
+              text="ENIGMA"
+              className="w-full text-[1.5em] md:text-[3em]"
+              preStyle="text-black md:text-[3em] mix mix-blend-difference bg-enigma-green pt-2 cursor-cell w-full"
+            />
+          </div>
+          <div className="flex w-full max-w-full flex-col flex-wrap align-middle">
+            <div className="flex w-full flex-wrap justify-end gap-x-8">
+              <AnimatedText
+                text="FIGHT"
+                className="text-[0.6em] md:text-[1em]"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+              />
+              <AnimatedText
+                text="TO"
+                className="text-[0.6em] md:text-[1em]"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+              />
+              <AnimatedText
+                text="SURVIVE"
+                className="text-[0.6em] md:text-[1em]"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+              />
+            </div>
+            <div className="flex w-full flex-wrap justify-end gap-x-8">
+              <AnimatedText
+                text="ALL'S"
+                className="text-[0.6em] md:text-[1em]"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+              />
+              <AnimatedText
+                text="FAIR"
+                className="text-[0.6em] md:text-[1em]"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+              />
+              <AnimatedText
+                text="IN"
+                className="text-[0.6em] md:text-[1em]"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+              />
+              <AnimatedText
+                text="LOVE"
+                className="text-[0.6em] md:text-[1em]"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+              />
+              <AnimatedText
+                text="AND"
+                className="text-[0.6em] md:text-[1em]"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+              />
+              <AnimatedText
+                text="WAR"
+                className="text-[0.6em] md:text-[1em]"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+              />
+            </div>
+            <div className="flex w-full flex-wrap justify-end gap-x-8">
+              <AnimatedText
+                text="THIS"
+                className="text-[0.6em] md:text-[1em]"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+              />
+              <AnimatedText
+                text="IS"
+                className="text-[0.6em] md:text-[1em]"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+              />
+              <AnimatedText
+                text="WAR"
+                className="text-[0.6em] md:text-[1em]"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+              />
             </div>
           </div>
-        </section>
+        </div>
       </Element>
     </>
-  );
+  )
 }
-
-export default HeroSection;
+export default HeroSection
