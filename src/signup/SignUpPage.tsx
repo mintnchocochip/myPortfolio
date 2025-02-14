@@ -1,6 +1,6 @@
 import React from 'react';
 import SignUpForm from './SignUpForm';
-import { Terminal } from 'lucide-react';
+// import { Terminal } from 'lucide-react';
 
 const SignUpPage = () => {
   return (
