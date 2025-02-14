@@ -7,6 +7,8 @@ import Scene from './components/timelinetest';
 import ErtdfgcvbBG from './components/enigmatextbg';
 import HeroSection from './components/HeroSection';
 import Content from "./components/content.jsx";
+import Rules from './components/Rules.jsx';
+
 // import Prize from './components/prize.jsx';
 import Speakers from './components/Speakers.jsx';
 // import { Canvas } from '@react-three/fiber'
@@ -50,6 +52,7 @@ function Home() {
       </div> */}
       <Content />
       <Scene className="fixed top-0"/>
+      <Rules />
        {/* <Speakers /> */}
       
       <Footer />

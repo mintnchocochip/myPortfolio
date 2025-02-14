@@ -14,6 +14,7 @@ export default {
     extend: {
       colors: {
         'enigma-green': '#22EC08',
+        'enigma-yellow': '#EAB308',
         'bg-black': '#111111',
         'bg-enigma-black': '#111111',
         'login-line': '#1cd41c', // Added for login component by Amiitesh
