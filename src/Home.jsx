@@ -39,8 +39,9 @@ function Home() {
         <Hamburger className="fixed right-0" />
       </nav>
 
-      <ErtdfgcvbBG className="top-0 z-0" />
-      <HeroSection />
+      <video src="/videos/0001-0301.mkv" className='absolute top-0 mix-blend-screen' loop autoPlay muted></video>
+      {/* <ErtdfgcvbBG className="top-0 z-0" /> */}
+      <HeroSection className="mix-blend-difference"/>
       {/* <div className="h-screen">
         <Canvas className='w-screen h-screen'>
           <Prize className='w-screen h-screen'/>
