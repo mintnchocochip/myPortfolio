@@ -39,7 +39,7 @@ const LeaderEntry = () => {
   const sortedTeams = [...teams].sort((a, b) => b.score - a.score || b.solved - a.solved);
 
   return (
-    <div className="flex flex-col items-center w-[90%] mx-auto border border-zinc-500 p-0">
+    <div className="flex flex-col items-center mx-auto border border-zinc-500 p-0">
 
       <div className="flex w-full text-white text-sm bg-transparent p-2">
         <div className="w-full text-center">TYPE TEAMNAME</div>

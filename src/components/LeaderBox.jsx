@@ -2,8 +2,8 @@ import AnimatedText from "./text";
 
 const LeaderBox = ({ teamName, teamPoints, ctfsSolved, number }) => {
   return (
-    <div className="flex mt-10">
-      <div className="border-2 font-neuebit border-zinc-500 p-5 w-96 flex flex-col justify-between h-96">
+    <div className="flex">
+      <div className="border-2 font-neuebit border-zinc-500 p-5 w-[calc(33vw-3vw-1vw)] flex flex-col justify-between h-[calc(25vw)]">
         <h3 className="text-xl mb-auto">
           <AnimatedText text={`NO.${number}`} className="text-xl mb-auto" />
         </h3>
