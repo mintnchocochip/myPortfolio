@@ -1,18 +1,20 @@
-import React from 'react';
+import React from 'react'
 
 const LoginPage = () => {
   return (
-    <div style={{
-      margin: 0,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minWidth: '320px',
-      minHeight: '100vh',
-      backgroundColor: '#111111',
-      color: 'rgba(255, 255, 255, 0.87)',
-      fontFamily: "'Orbitron', sans-serif"
-    }}>
+    <div
+      style={{
+        margin: 0,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minWidth: '320px',
+        minHeight: '100vh',
+        backgroundColor: '#111111',
+        color: 'rgba(255, 255, 255, 0.87)',
+        fontFamily: "'Orbitron', sans-serif"
+      }}
+    >
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
@@ -165,24 +167,42 @@ const LoginPage = () => {
 
       <div className="login-container">
         <h2>Enigma25 Login</h2>
-        <form onSubmit={(e) => {
-          e.preventDefault();
-          // Add your login here
-        }}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            // Add your login here
+          }}
+        >
           <p>Username</p>
-          <input type="text" className="input-field" placeholder="Username" required />
+          <input
+            type="text"
+            className="input-field"
+            placeholder="Username"
+            required
+          />
           <p>Password</p>
-          <input type="password" className="input-field" placeholder="Password" required />
-          <button type="submit" className="btn">Login</button>
+          <input
+            type="password"
+            className="input-field"
+            placeholder="Password"
+            required
+          />
+          <button type="submit" className="btn">
+            Login
+          </button>
         </form>
-        <button type="button" className="btn btn-signup" onClick={() => {
-          // Add your signup navigation here
-        }}>
+        <button
+          type="button"
+          className="btn btn-signup"
+          onClick={() => {
+            // Add your signup navigation here
+          }}
+        >
           Sign Up
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LoginPage;
+export default LoginPage

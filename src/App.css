@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 *::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
@@ -16,7 +16,6 @@
   padding: 0rem;
   text-align: center;
 }
-
 
 @font-face {
   font-family: 'Calcio';
@@ -58,9 +57,9 @@
   src: url(/fonts/Montreal-Medium.otf);
 }
 
-*{
+* {
   cursor: url('/cursors/normal.cur'), auto;
 }
-.pointy{
+.pointy {
   cursor: url('/cursors/pointer.cur'), pointer;
 }
