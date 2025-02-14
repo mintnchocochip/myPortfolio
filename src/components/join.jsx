@@ -22,7 +22,7 @@ export default function Join({ className }) {
             <p  className="fixed bottom-0 right-16 rounded-none
             text-right m-6 x-6 py-4 text-black
             font-neuebit text-3xl flex items-center justify-center h-24  ">
-            {day}-{month}-{year}
+            04 Mar 25
             </p>
             </div>
         </a>
