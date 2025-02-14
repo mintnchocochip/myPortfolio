@@ -1,4 +1,4 @@
-import fluid, { extract } from 'fluid-tailwind'
+import fluid, { extract, screens, fontSize } from 'fluid-tailwind'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -11,6 +11,8 @@ export default {
   extract},
 
   theme: {
+    screens,
+    fontSize,
     extend: {
       colors: {
         'enigma-green': '#22EC08',
