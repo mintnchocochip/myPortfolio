@@ -25,7 +25,7 @@ const ErtdfgcvbBG = () => {
     useEffect(() => {
         const loadProgram = async () => {
             if (isMdOrLarger) {
-                const module = await import('../assets/ertdfgcvb/programsJS/enigmatext.js');
+                const module = await import('../assets/ertdfgcvb/programsJS/cube_desktop.js');
                 setProgram(module);
             } else {
                 const module = await import('../assets/ertdfgcvb/programsJS/cube.js');

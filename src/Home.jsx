@@ -50,7 +50,7 @@ function Home() {
       </div> */}
       <Content />
       <Scene className="fixed top-0"/>
-       <Speakers />
+       {/* <Speakers /> */}
       
       <Footer />
     </div>

@@ -10,7 +10,7 @@ theta and phi (below) must be small enough to fill
 all the gaps.
 */
 
-export const settings = { backgroundColor : 'whitesmoke' }
+export const settings = { backgroundColor : 'black' }
 
 export function pre(context, cursor, buffer) {
 
@@ -75,7 +75,7 @@ export function pre(context, cursor, buffer) {
 	}
 }
 
-import { drawInfo } from '/src/modules/drawbox.js'
+// import { drawInfo } from '/src/modules/drawbox.js'
 export function post(context, cursor, buffer) {
 	drawInfo(context, cursor, buffer, {
 		color : 'white', backgroundColor : 'royalblue', shadowStyle : 'gray'
