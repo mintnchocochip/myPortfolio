@@ -36,6 +36,7 @@ export default function Hamburger() {
         ease: 'back.out(1.6)'
       })
     } else {
+      //TODO: hamburger menu closing animation looks broken (going out of page bounds)
       gsap.to(menuRef.current, {
         width: 'auto',
         duration: 0.5,
