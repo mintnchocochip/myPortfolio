@@ -12,6 +12,8 @@ import './App.css'
 import ChallengePage from './ChallengePage'
 import Rules from './components/Rules'
 import CTFs from './questions/page'
+import PowerPage from './powerups/Page'
+
 // import ErtdfgcvbBGprivacy from "./components/ertdfgcvbprivacy";
 
 function App() {
@@ -57,6 +59,7 @@ function App() {
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/rules" element={<Rules />} />
             <Route path="/challenges" element={<CTFs />} />
+            <Route path="/powerups" element={<PowerPage />} />
 
             {/* <Route path="/privacy" element={<ErtdfgcvbBGprivacy />} /> */}
             <Route path="*" element={<PageNotFound />} />

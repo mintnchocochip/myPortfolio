@@ -32,7 +32,6 @@ function Home() {
   }, [])
 
   return (
-
     <div>
       <Join className="z-20" />
       <nav className="absolute top-0 z-20 flex w-full justify-between px-10 py-5 mix-blend-difference">
@@ -40,9 +39,15 @@ function Home() {
         <Hamburger className="fixed right-0" />
       </nav>
 
-      <video src="/videos/0001-0301.mkv" className='absolute top-0 left-0 w-full h-full object-cover mix-blend-screen' loop autoPlay muted></video>
+      <video
+        src="/videos/0001-0301.mkv"
+        className="absolute left-0 top-0 h-full w-full object-cover mix-blend-screen"
+        loop
+        autoPlay
+        muted
+      ></video>
       {/* <ErtdfgcvbBG className="top-0 z-0" /> */}
-      <HeroSection className="mix-blend-difference"/>
+      <HeroSection className="mix-blend-difference" />
       {/* <div className="h-screen">
         <Canvas className='w-screen h-screen'>
           <Prize className='w-screen h-screen'/>

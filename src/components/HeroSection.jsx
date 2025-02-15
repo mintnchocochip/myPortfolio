@@ -94,7 +94,7 @@ const HeroSection = () => {
       <Element name="home">
         <div
           id="hero"
-          className="z-50 flex h-screen w-full flex-col justify-center gap-6 overflow-hidden px-10 font-neuebit text-7xl md:text-8xl mix-blend-difference"
+          className="z-50 flex h-screen w-full flex-col justify-center gap-6 overflow-hidden px-10 font-neuebit text-7xl mix-blend-difference md:text-8xl"
         >
           <div className="flex w-full flex-wrap justify-start gap-x-8">
             <AnimatedText

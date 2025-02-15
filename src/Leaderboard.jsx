@@ -9,7 +9,7 @@ function Leaderboard() {
         <div className="pt-1 text-left font-neuebit text-5xl">ENIGMA</div>
         <Hamburger className="fixed right-0" />
       </nav>
-      <div className="mx-auto w-[90%] items-center mb-10">
+      <div className="mx-auto mb-10 w-[90%] items-center">
         <h1 className="text-center font-neuebit text-[calc(18.25vw)]">
           LEADERBOARD
         </h1>

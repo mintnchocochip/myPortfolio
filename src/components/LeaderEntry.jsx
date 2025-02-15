@@ -48,9 +48,11 @@ const LeaderEntry = () => {
     { team: 'Xenos', score: 860, solved: 6 }
   ])
 
-  const sortedTeams = [...teams].sort((a, b) => b.score - a.score || b.solved - a.solved)
+  const sortedTeams = [...teams].sort(
+    (a, b) => b.score - a.score || b.solved - a.solved
+  )
 
-  const filteredTeams = sortedTeams.filter(team =>
+  const filteredTeams = sortedTeams.filter((team) =>
     team.team.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
@@ -60,7 +62,7 @@ const LeaderEntry = () => {
         <input
           type="text"
           placeholder="TYPE TEAM NAME"
-          className="w-full bg-transparent text-center outline-none font-mono text-white placeholder-gray-400"
+          className="w-full bg-transparent text-center font-mono text-white placeholder-gray-400 outline-none"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -83,7 +85,8 @@ const LeaderEntry = () => {
 
       <div className="max-h-96 w-full overflow-y-scroll border-t border-gray-700 font-mono">
         {filteredTeams.map((team) => {
-          const originalRank = sortedTeams.findIndex(t => t.team === team.team) + 1;
+          const originalRank =
+            sortedTeams.findIndex((t) => t.team === team.team) + 1
           return (
             <RowEntry
               key={team.team}
