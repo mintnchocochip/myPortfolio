@@ -1,14 +1,14 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import InputField from './InputField';
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import InputField from './InputField'
 
 const SignUpForm = () => {
-  const navigate = useNavigate();
-  
+  const navigate = useNavigate()
+
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     // Add signup logic here
-  };
+  }
 
   return (
     <>
@@ -39,11 +39,7 @@ const SignUpForm = () => {
         />
         <button
           type="submit"
-          className="w-full py-3 px-4 mt-4 bg-transparent text-[#1cd41c] border-2 border-[#1cd41c] rounded-lg 
-                   font-medium tracking-wider uppercase transition-all duration-300
-                   hover:transform hover:-translate-y-1 hover:bg-[#1cd41c] hover:text-white
-                   hover:shadow-[0_0_8px_2px_rgba(28,212,28,0.8),0_0_16px_4px_rgba(28,212,28,0.6)]
-                   focus:outline-none focus:ring-2 focus:ring-[#1cd41c] focus:ring-opacity-50"
+          className="mt-4 w-full rounded-lg border-2 border-[#1cd41c] bg-transparent px-4 py-3 font-medium uppercase tracking-wider text-[#1cd41c] transition-all duration-300 hover:-translate-y-1 hover:transform hover:bg-[#1cd41c] hover:text-white hover:shadow-[0_0_8px_2px_rgba(28,212,28,0.8),0_0_16px_4px_rgba(28,212,28,0.6)] focus:outline-none focus:ring-2 focus:ring-[#1cd41c] focus:ring-opacity-50"
         >
           Create Account
         </button>
@@ -51,16 +47,12 @@ const SignUpForm = () => {
       <button
         type="button"
         onClick={() => navigate('/login')}
-        className="mt-6 px-6 py-2 bg-transparent text-gray-400 border-2 border-gray-400 rounded-lg
-                 font-medium tracking-wider uppercase transition-all duration-300
-                 hover:transform hover:-translate-y-1 hover:bg-gray-400 hover:text-white
-                 hover:shadow-[0_0_8px_2px_rgba(156,156,156,0.8)]
-                 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
+        className="mt-6 rounded-lg border-2 border-gray-400 bg-transparent px-6 py-2 font-medium uppercase tracking-wider text-gray-400 transition-all duration-300 hover:-translate-y-1 hover:transform hover:bg-gray-400 hover:text-white hover:shadow-[0_0_8px_2px_rgba(156,156,156,0.8)] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
       >
         Back to Login
       </button>
     </>
-  );
-};
+  )
+}
 
-export default SignUpForm;
+export default SignUpForm

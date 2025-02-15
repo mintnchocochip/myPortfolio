@@ -22,12 +22,12 @@ function MovableSquare() {
       {positions.map((position, index) => (
         <div
           key={index}
-          className='fixed w-3 h-3 bg-enigma-green pointer-events-none mix-blend-difference'
+          className="pointer-events-none fixed h-3 w-3 bg-enigma-green mix-blend-difference"
           style={{
             top: position.y,
             left: position.x,
             transition: 'top 0.1s, left 0.1s',
-            opacity: 1 - index * 0.1,
+            opacity: 1 - index * 0.1
           }}
         ></div>
       ))}

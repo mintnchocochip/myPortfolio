@@ -36,6 +36,7 @@ function App() {
     );
   };
 
+
   return (
     <>
       {showTransition && (
@@ -57,6 +58,7 @@ function App() {
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/rules" element={<Rules />} />
             <Route path="/ctfs" element={<CTFs />} />
+
             {/* <Route path="/privacy" element={<ErtdfgcvbBGprivacy />} /> */}
             <Route path="*" element={<PageNotFound />} />
           </Routes>

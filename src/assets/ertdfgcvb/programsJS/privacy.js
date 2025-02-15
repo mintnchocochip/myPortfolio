@@ -18,19 +18,19 @@ const density = sort(' .x?▂▄▆█', 'Simple Console', false)
 const data = []
 
 export function pre(context, cursor, buffer) {
-	const a = context.metrics.aspect
+  const a = context.metrics.aspect
 
-	// The canvas is resized so that 1 cell -> 1 pixel
-	can.resize(context.cols, context.rows)
-	// The cover() function draws an image (cam) to the canvas covering
-	// the whole frame. The aspect ratio can be adjusted with the second
-	// parameter.
-	can.cover(cam, a).mirrorX().normalize().writeTo(data)
+  // The canvas is resized so that 1 cell -> 1 pixel
+  can.resize(context.cols, context.rows)
+  // The cover() function draws an image (cam) to the canvas covering
+  // the whole frame. The aspect ratio can be adjusted with the second
+  // parameter.
+  can.cover(cam, a).mirrorX().normalize().writeTo(data)
 }
 
 export function main(coord, context, cursor, buffer) {
-	// Coord also contains the index of each cell:
-	const color = data[coord.index]
-	const index = Math.floor(color.v * (density.length-1))
-	return density[index]
+  // Coord also contains the index of each cell:
+  const color = data[coord.index]
+  const index = Math.floor(color.v * (density.length - 1))
+  return density[index]
 }
