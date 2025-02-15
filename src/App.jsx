@@ -13,6 +13,7 @@ import ChallengePage from './ChallengePage'
 import Rules from './components/Rules'
 import CTFs from './questions/page'
 import PowerPage from './powerups/Page'
+import TeamPage from './components/teamPage'
 
 // import ErtdfgcvbBGprivacy from "./components/ertdfgcvbprivacy";
 
@@ -60,6 +61,8 @@ function App() {
             <Route path="/rules" element={<Rules />} />
             <Route path="/challenges" element={<CTFs />} />
             <Route path="/powerups" element={<PowerPage />} />
+            <Route path="/team" element={<TeamPage />} />
+
 
             {/* <Route path="/privacy" element={<ErtdfgcvbBGprivacy />} /> */}
             <Route path="*" element={<PageNotFound />} />
