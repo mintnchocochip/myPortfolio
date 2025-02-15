@@ -60,6 +60,7 @@ function Speakers() {
           "Bypassing file restrictions": "Circumvent file validations.",
           "Path traversal via File Upload": "Exploit directory traversal."
         }}
+        customaudio="/sfx/parrots.wav"
       ></Speaker>
       <Speaker
         ct="🧏🤫"
