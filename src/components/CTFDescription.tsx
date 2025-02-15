@@ -1,34 +1,46 @@
-import React from "react";
+import React from 'react'
+import AnimatedText from './text'
 
 interface CTFDescriptionProps {
-  description: string;
-  points: number;
-  solved: number;
+  description: string
+  points: number
+  author: string
+  tags: string[]
 }
 
 const CTFDescription = ({
   description,
   points,
-  solved,
+  author,
+  tags
 }: CTFDescriptionProps) => {
   return (
-    <div className="flex flex-col w-[40%]">
-      <span className="font-neuebit w-full text-3xl p-8 border border-white text-left text-ellipsis">
+    <div className="flex w-[40%] flex-col">
+      <span className="w-full text-ellipsis border border-white p-8 text-left font-neuebit text-3xl uppercase">
         {description ||
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat ratione nemo ipsum iure amet mollitia dolores eveniet assumenda ab? Quidem earum, esse nam nemo quis labore doloremque beatae eaque veniam."}
+          'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat ratione nemo ipsum iure amet mollitia dolores eveniet assumenda ab? Quidem earum, esse nam nemo quis labore doloremque beatae eaque veniam.'}
       </span>
-      <div className="flex flex-row px-8 py-4 text-3xl w-full border border-white justify-between">
+      <div className="flex w-full flex-row justify-between border border-white px-8 py-4 text-3xl">
         <span className="text-3xl">
-          <span className="text-enigma-green pr-2">{points || 0}</span>
-          POINTS
+          <span className="pr-2 text-enigma-green">{points || 0}</span>
+          <AnimatedText text={'POINTS'} />
         </span>
-        <span className="text-3xl">
-          <span className="text-enigma-green pr-2">{solved || 0}</span>
-          SOLVED
+        <span className="uppercase text-enigma-yellow">
+          {author || 'Author'}
         </span>
       </div>
+      <div className="flex w-full flex-row justify-end">
+        {tags.map((tag) => (
+          <span
+            key={tag}
+            className="w-fit text-ellipsis border border-white px-8 py-4 text-right font-neuebit text-3xl uppercase text-enigma-yellow"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default CTFDescription;
+export default CTFDescription

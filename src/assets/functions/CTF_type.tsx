@@ -1,21 +1,21 @@
 const challengeTypes = [
-  "Miscellaneous",
-  "Forensics",
-  "Web",
-  "Binary",
-  "Reversing",
-  "Crypto",
-  "OSINT",
-];
+  'Miscellaneous',
+  'Forensics',
+  'Web',
+  'Binary',
+  'Reversing',
+  'Crypto',
+  'OSINT'
+]
 
-function getTypesFromMask(mask: number) {
-  const result: string[] = [];
+export default function getTypesFromMask(mask: number) {
+  const result: string[] = []
 
   for (let i = 0; i < challengeTypes.length; i++) {
     if (mask & (1 << i)) {
-      result.push(challengeTypes[i]);
+      result.push(challengeTypes[i])
     }
   }
 
-  return result;
+  return result
 }

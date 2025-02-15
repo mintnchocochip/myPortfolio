@@ -1,22 +1,28 @@
-import React, { useMemo } from "react";
-import CTFQuestionItem from "./CTFQuestionItem";
+import React, { useMemo, useRef } from 'react'
+import CTFQuestionItem from './CTFQuestionItem'
+import { useSmoothScroll } from '../hooks/useSmoothScroll'
 
 interface Question {
-  questionId: string;
-  question: string;
-  description: string;
-  points: number;
-  solved: number;
+  questionId: string
+  question: string
+  description: string
+  points: number
+  solved: number
 }
 
 interface CTFListProps {
-  ctfList: Question[];
-  onHover: (questionId: string) => void;
+  ctfList: Question[]
+  onHover: (questionId: string) => void
+  onClick: (questionId: string) => void
 }
 
-CTFQuestionItem.displayName = "CTFQuestionItem";
+CTFQuestionItem.displayName = 'CTFQuestionItem'
 
-const CTFList = ({ ctfList, onHover }: CTFListProps) => {
+const CTFList = ({ ctfList, onHover, onClick }: CTFListProps) => {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useSmoothScroll(containerRef)
+
   const renderedList = useMemo(
     () =>
       ctfList.map((ctf, index) => (
@@ -25,18 +31,29 @@ const CTFList = ({ ctfList, onHover }: CTFListProps) => {
           question={ctf.question}
           key={`ctf-${index}-${ctf.questionId}`}
           onHover={(questionId: string) => {
-            onHover(questionId);
+            onHover(questionId)
+          }}
+          onClick={(questionId: string) => {
+            onClick(questionId)
           }}
         />
       )),
-    [ctfList],
-  );
+    [ctfList, onHover]
+  )
 
   return (
-    <div className="w-[40%] border border-white h-fit bg-enigma-green">
-      {renderedList}
+    <div
+      ref={containerRef}
+      className="scrollbar-hide relative h-fit max-h-[70vh] w-[40%] overflow-y-auto border border-white"
+      style={{
+        scrollSnapType: 'y mandatory',
+        scrollBehavior: 'smooth',
+        overscrollBehavior: 'contain'
+      }}
+    >
+      <div className="space-y-0">{renderedList}</div>
     </div>
-  );
-};
+  )
+}
 
-export default React.memo(CTFList);
+export default React.memo(CTFList)
