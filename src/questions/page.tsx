@@ -278,7 +278,7 @@ const CTFs = () => {
         links={[
           { text: 'Leaderboard', path: '/leaderboard' },
           { text: 'Challenges', path: '#' },
-          { text: 'Team', path: '#' } // Change this when the team page is made
+          { text: 'Team', path: '/team' }
         ]}
       />
       <div className="mt-4 flex w-screen flex-row justify-center overflow-visible text-3xl">

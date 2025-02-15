@@ -8,6 +8,7 @@ function Speaker({
   name = 'Ankit Prasad',
   subname = 'Mr. Prasad',
   ct = '',
+  customaudio='',
   image
 }) {
   const containerRef = useRef(null)
@@ -75,6 +76,7 @@ function Speaker({
             text={name}
             time={1}
             className="text-left font-neuebit text-6xl uppercase text-white"
+            audioSrc={customaudio ? customaudio : '/sfx/type.wav'}
           />
           <br />
           <AnimatedText
