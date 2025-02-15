@@ -8,7 +8,7 @@ const challengeTypes = [
   "OSINT",
 ];
 
-function getTypesFromMask(mask: number) {
+export default function getTypesFromMask(mask: number) {
   const result: string[] = [];
 
   for (let i = 0; i < challengeTypes.length; i++) {
