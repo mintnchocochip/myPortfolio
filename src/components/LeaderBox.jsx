@@ -3,9 +3,21 @@ import AnimatedText from './text'
 const LeaderBox = ({ teamName, teamPoints, ctfsSolved, number }) => {
   return (
     <div className="flex h-[calc(25vw)] w-[calc(33vw-3vw-1vw)] flex-col justify-between border-2 border-zinc-500 p-5 font-neuebit">
-      <h3 className="mb-auto text-xl">
-        <AnimatedText text={`NO.${number}`} className="mb-auto text-xl" />
-      </h3>
+      <div className="mb-auto flex flex-row items-center justify-between">
+        <img
+          src="public/icons/hud left.png"
+          alt="hud left"
+          className="h-5 w-5"
+        />
+        <h3 className="text-xl">
+          <AnimatedText text={`NO.${number}`} className="text-3xl" />
+        </h3>
+        <img
+          src="public/icons/hud right.png"
+          alt="hud right"
+          className="h-5 w-5"
+        />
+      </div>
       <h4 className="text-left text-2xl text-enigma-green">
         <AnimatedText text={teamName} />
       </h4>
