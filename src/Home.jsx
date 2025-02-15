@@ -32,6 +32,7 @@ function Home() {
   }, [])
 
   return (
+
     <div>
       <Join className="z-20" />
       <nav className="absolute top-0 z-20 flex w-full justify-between px-10 py-5 mix-blend-difference">
@@ -46,7 +47,8 @@ function Home() {
           <Prize className='w-screen h-screen'/>
         </Canvas>
       </div> */}
-      <Content />
+      {/* <Content /> */}
+
       <Scene className="fixed top-0" />
       <Rules />
       {/* <Speakers /> */}

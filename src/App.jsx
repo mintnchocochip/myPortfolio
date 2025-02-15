@@ -1,39 +1,41 @@
-import React, { useState } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import Home from './Home'
-import About from './About'
-import Leaderboard from './Leaderboard'
-import SignUp from './SignUp'
-import PageNotFound from './404'
-import PageTransition from './components/PageTransition'
-import { gsap } from 'gsap'
-import './App.css'
-import ChallengePage from './ChallengePage'
-import Rules from './components/Rules'
+import React, { useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import Home from "./Home";
+import About from "./About";
+import Leaderboard from "./Leaderboard";
+import SignUp from "./SignUp";
+import PageNotFound from "./404";
+import PageTransition from "./components/PageTransition";
+import { gsap } from "gsap";
+import "./App.css";
+import ChallengePage from "./ChallengePage";
+import Rules from "./components/Rules";
+import CTFs from "./questions/page";
 // import ErtdfgcvbBGprivacy from "./components/ertdfgcvbprivacy";
 
 function App() {
-  const location = useLocation()
-  const [showTransition, setShowTransition] = useState(false)
+  const location = useLocation();
+  const [showTransition, setShowTransition] = useState(false);
 
   const handleEnter = (node, done) => {
-    setShowTransition(true)
+    setShowTransition(true);
     gsap.fromTo(
       node,
       { opacity: 0 },
-      { opacity: 1, duration: 0.5, onComplete: done }
-    )
-  }
+      { opacity: 1, duration: 0.5, onComplete: done },
+    );
+  };
 
   const handleExit = (node, done) => {
-    setShowTransition(true)
+    setShowTransition(true);
     gsap.fromTo(
       node,
       { opacity: 1 },
-      { opacity: 0, duration: 0.5, onComplete: done }
-    )
-  }
+      { opacity: 0, duration: 0.5, onComplete: done },
+    );
+  };
+
 
   return (
     <>
@@ -55,13 +57,15 @@ function App() {
             <Route path="/challenge" element={<ChallengePage />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/rules" element={<Rules />} />
+            <Route path="/ctfs" element={<CTFs />} />
+
             {/* <Route path="/privacy" element={<ErtdfgcvbBGprivacy />} /> */}
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
