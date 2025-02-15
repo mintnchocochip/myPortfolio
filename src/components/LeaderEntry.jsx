@@ -34,6 +34,7 @@ const RowEntry = ({ rank, team, score, solved }) => {
 }
 
 const LeaderEntry = () => {
+  const [searchTerm, setSearchTerm] = useState('')
   const [teams] = useState([
     { team: 'gammawarriors', score: 860, solved: 6 },
     { team: '0xdeadbeef', score: 860, solved: 6 },
@@ -47,14 +48,22 @@ const LeaderEntry = () => {
     { team: 'Xenos', score: 860, solved: 6 }
   ])
 
-  const sortedTeams = [...teams].sort(
-    (a, b) => b.score - a.score || b.solved - a.solved
+  const sortedTeams = [...teams].sort((a, b) => b.score - a.score || b.solved - a.solved)
+
+  const filteredTeams = sortedTeams.filter(team =>
+    team.team.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   return (
     <div className="mx-auto flex flex-col items-center border border-zinc-500 p-0">
       <div className="flex w-full bg-transparent p-2 text-sm text-white">
-        <div className="w-full text-center">TYPE TEAMNAME</div>
+        <input
+          type="text"
+          placeholder="TYPE TEAM NAME"
+          className="w-full bg-transparent text-center outline-none font-mono text-white placeholder-gray-400"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
 
       <div className="flex w-full flex-row border border-zinc-500 bg-enigma-green p-1 px-6 text-sm text-white">
@@ -73,15 +82,18 @@ const LeaderEntry = () => {
       </div>
 
       <div className="max-h-96 w-full overflow-y-scroll border-t border-gray-700 font-mono">
-        {sortedTeams.map((team, index) => (
-          <RowEntry
-            key={index}
-            rank={index + 1}
-            team={team.team}
-            score={team.score}
-            solved={team.solved}
-          />
-        ))}
+        {filteredTeams.map((team) => {
+          const originalRank = sortedTeams.findIndex(t => t.team === team.team) + 1;
+          return (
+            <RowEntry
+              key={team.team}
+              rank={originalRank}
+              team={team.team}
+              score={team.score}
+              solved={team.solved}
+            />
+          )
+        })}
       </div>
     </div>
   )
