@@ -27,10 +27,10 @@ const timeSpent = 100
 
 const textContent = [
   'Registration',
-  'Speakers',
+  'Workshops',
   'Jeopardy',
   'Attack & Defense',
-  'More CTF stuff'
+  'Prize Ceremony'
 ]
 
 function Text({ text }) {
