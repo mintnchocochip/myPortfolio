@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../Header'
 import TeamCreation from './TeamCreation'
 
-const TEAM_NAME = 'TEAM NAME'
+const TEAM_NAME = 'TEAM NAME TEAM NAME'
 const Rank = '5'
 const TeamMembers = [
   'Anaanananananana',
@@ -13,7 +13,7 @@ const points = 9000
 
 const TeamPage = () => {
   return (
-    <div className="flex h-screen flex-col">
+    <div className="flex h-screen w-full flex-col">
       <Header
         links={[
           { text: 'Leaderboard', path: '/leaderboard' },
@@ -21,28 +21,33 @@ const TeamPage = () => {
           { text: 'Team', path: '#' }
         ]}
       />
-      <TeamCreation />
-      {/* <div className="flex w-screen flex-grow justify-center font-neuebit px-16 text-8xl">
+      <div className="flex w-screen flex-grow justify-center px-16 font-neuebit text-8xl">
         <div className="flex h-full w-full flex-col gap-10">
-          <div className="text-[1.25ch] md:text-[clamp(2ch,0.5vw,3ch)] text-left text-enigma-green leading-none">
-            {TEAM_NAME}<sup className='text-white text-[clamp(2ch,0.5ch,3ch)]'>#{Rank}</sup>
+          <div className="text-left text-[1.25ch] leading-none text-enigma-green md:text-[clamp(4ch,0.5vw,5ch)]">
+            {TEAM_NAME}
+            <sup className="text-[clamp(2ch,0.5ch,3ch)] text-white">
+              #{Rank}
+            </sup>
           </div>
-          <div className="flex h-full w-full flex-col-reverse justify-center gap-5 md:gap-10 md:flex-row py-5">
-            <div className="flex w-full md:w-5/6 flex-col-reverse gap-5 md:gap-1 text-left md:flex-col">
+          <div className="flex h-full w-full flex-col-reverse justify-center gap-5 py-5 md:flex-row md:gap-10">
+            <div className="flex w-full flex-col-reverse gap-5 text-left md:w-5/6 md:flex-col md:gap-10">
               {TeamMembers.map((member, index) => (
-                <div key={index} className="border border-white p-2 px-5 text-[1.25ch] md:text-[clamp(2ch,0.5vw,3ch)] leading-none overflow-hidden whitespace-nowrap overflow-ellipsis">
+                <div
+                  key={index}
+                  className="overflow-hidden overflow-ellipsis whitespace-nowrap border border-white p-2 px-5 text-[1ch] leading-none md:text-[clamp(2ch,0.5vw,3ch)]"
+                >
                   {member}
                 </div>
               ))}
-              <div className="text-[1.25ch] md:text-[clamp(2ch,0.5vw,3ch)] leading-none text-left">
+              <div className="text-left text-[1ch] leading-none md:text-[clamp(2ch,0.5vw,3ch)]">
                 TOTAL POINTS:{' '}
                 <span className="text-enigma-green">{points}</span>
               </div>
             </div>
-            <div className="h-[clamp(22rem,0.1rem,25rem)] w-auto border border-white p-2 md:w-1/2"></div>
+            <div className="h-[clamp(23rem,0.1rem,26rem)] w-auto border border-white p-2 md:w-1/2"></div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }

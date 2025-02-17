@@ -13,7 +13,10 @@ const TeamCreation = () => {
     if (teamName.trim()) {
       console.log('Team name submitted:', teamName)
       // team creation logic goes here
-      const generatedCode = Math.random().toString(36).substring(2, 8).toUpperCase()
+      const generatedCode = Math.random()
+        .toString(36)
+        .substring(2, 8)
+        .toUpperCase()
       setTeamCode(generatedCode)
       setShowCode(true)
     }
@@ -35,9 +38,11 @@ const TeamCreation = () => {
   }
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center w-screen font-neuebit">
+    <div className="flex h-screen w-screen flex-col items-center justify-center font-neuebit">
       <div className="flex flex-row">
-        <div className='mb-8 text-7xl text-enigma-green'>{mode === 'create' ? 'CREATE A TEAM' : 'JOIN A TEAM'}</div>
+        <div className="mb-8 text-7xl text-enigma-green">
+          {mode === 'create' ? 'CREATE A TEAM' : 'JOIN A TEAM'}
+        </div>
       </div>
 
       {mode === 'create' ? (
@@ -53,13 +58,13 @@ const TeamCreation = () => {
               value={teamName}
               onChange={(e) => setTeamName(e.target.value)}
               placeholder="ENTER TEAM NAME TO CREATE"
-              className="w-full text-2xl border border-white bg-transparent p-4 text-white transition-colors focus:border-blue-500 focus:outline-none cursor-text"
+              className="w-full cursor-text border border-white bg-transparent p-4 text-2xl text-white transition-colors focus:border-blue-500 focus:outline-none"
               required
             />
 
             <button
               type="submit"
-              className="mt-4 bg-white px-8 py-3 rounded-none font-semibold text-black transition-colors hover:bg-gray-200 text-2xl"
+              className="mt-4 rounded-none bg-white px-8 py-3 text-2xl font-semibold text-black transition-colors hover:bg-gray-200"
             >
               CREATE TEAM
             </button>
@@ -72,7 +77,7 @@ const TeamCreation = () => {
                 time={0.2}
                 className="mb-8 text-5xl"
               />
-              <p className='mb-8 text-6xl'>{teamCode}</p>
+              <p className="mb-8 text-6xl">{teamCode}</p>
             </div>
           )}
         </>
@@ -88,13 +93,13 @@ const TeamCreation = () => {
             value={joinCode}
             onChange={(e) => setJoinCode(e.target.value)}
             placeholder="ENTER TEAM CODE TO JOIN"
-            className="w-full border text-2xl border-white bg-transparent p-4 text-white transition-colors focus:border-blue-500 focus:outline-none"
+            className="w-full border border-white bg-transparent p-4 text-2xl text-white transition-colors focus:border-blue-500 focus:outline-none"
             required
           />
 
           <button
             type="submit"
-            className="bg-white px-8 py-3 font-semibold text-black transition-colors hover:bg-gray-200 text-2xl"
+            className="bg-white px-8 py-3 text-2xl font-semibold text-black transition-colors hover:bg-gray-200"
           >
             JOIN TEAM
           </button>
@@ -103,9 +108,11 @@ const TeamCreation = () => {
 
       <button
         onClick={switchMode}
-        className="mt-12 text-white text-2xl underline uppercase hover:text-gray-300 transition-colors"
+        className="mt-12 text-2xl uppercase text-white underline transition-colors hover:text-gray-300"
       >
-        {mode === 'create' ? 'Want to join a team instead?' : 'Want to create a team instead?'}
+        {mode === 'create'
+          ? 'Want to join a team instead?'
+          : 'Want to create a team instead?'}
       </button>
     </div>
   )
