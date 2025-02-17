@@ -7,7 +7,7 @@ function Speaker({
   values = {},
   name = "Ankit Prasad",
   subname = "Mr. Prasad",
-  ct="",
+  ct = "",
   image,
 }) {
   const containerRef = useRef(null);
@@ -26,40 +26,21 @@ function Speaker({
 
     timeline.fromTo(
       lineRefs.current,
-      {
-        scaleX: 0,
-        transformOrigin: "left",
-      },
-      {
-        scaleX: 1,
-        duration: 0.8,
-        ease: "power3.out",
-      }
+      { scaleX: 0, transformOrigin: "left" },
+      { scaleX: 1, duration: 0.8, ease: "power3.out" }
     );
 
     timeline.fromTo(
       rowRefs.current,
-      {
-        x: "-100%",
-      },
-      {
-        x: 0,
-        duration: 0.3,
-        ease: "power3.out",
-      },
+      { x: "-100%" },
+      { x: 0, duration: 0.3, ease: "power3.out" },
       "-=0.8"
     );
 
     timeline.fromTo(
       valueRefs.current,
-      {
-        x: "-100%",
-      },
-      {
-        x: 0,
-        duration: 0.3,
-        ease: "power3.out",
-      },
+      { x: "-100%" },
+      { x: 0, duration: 0.3, ease: "power3.out" },
       "-=0.8"
     );
 
@@ -77,18 +58,15 @@ function Speaker({
             time={1}
             className="text-3xl md:text-5xl lg:text-6xl text-white font-neuebit text-left uppercase"
           />
-          <div className="text-2xl md:text-4xl lg:text-6xl text-white pb-3 font-neuebit text-left">
-            {subname}
-          </div>
           <img
             src={image}
-            alt=""
+            alt="Speaker"
             className="w-full h-[40vh] md:h-[50vh] lg:h-[60vh] object-cover rounded-lg shadow-lg"
           />
         </div>
 
-        {/* Right section - Values Table */}
-        <div ref={containerRef} className="w-full text-white font-neubit mt-3">
+        {/* Right section - Values Table (Hidden on Small Screens) */}
+        <div ref={containerRef} className="hidden sm:block w-full text-white font-neubit mt-3">
           {Object.entries(values).map(([key, value], index) => (
             <div key={key}>
               <div className="flex flex-col md:flex-row md:flex-wrap justify-start items-start md:items-center">
