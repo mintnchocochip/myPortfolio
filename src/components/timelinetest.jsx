@@ -25,9 +25,9 @@ const cubePositions = [
 
 const rotationArr = [
   [0, 0, 0],
-  [0, -PI/4, 0],
-  [0, PI/4, 0],
-  [0, -PI/4, 0],
+  [0, -PI / 4, 0],
+  [0, PI / 4, 0],
+  [0, -PI / 4, 0],
   [0, 0, 0]
 ]
 
@@ -46,8 +46,7 @@ const textContent = [
 function Text({ text }) {
   const { viewport } = useThree()
   const font = new FontLoader().parse(ppneuebit)
-  
-  
+
   let getResponsiveSize = useCallback(() => {
     const isMobile = viewport.width < 768
     return isMobile ? 1.2 : 5
@@ -170,10 +169,10 @@ export default function Scene() {
 
   return (
     <div>
-      <div className="relative z-20 px-4 sm:px-6 lg:px-10 py-4 sm:py-5 lg:py-7 text-left">
+      <div className="relative z-20 px-4 py-4 text-left sm:px-6 sm:py-5 lg:px-10 lg:py-7">
         <AnimatedText
           text="TIMELINE"
-          className="w-screen cursor-pointer text-left font-neuebit text-4xl sm:text-5xl md:text-6xl lg:text-8xl uppercase"
+          className="w-screen cursor-pointer text-left font-neuebit text-4xl uppercase sm:text-5xl md:text-6xl lg:text-8xl"
           customText="グミヸ✨"
           time={2}
           preStyle="font-neuebit uppercase text-4xl sm:text-5xl md:text-6xl lg:text-8xl text-yellow-500 z-50 cursor-pointer text-left"

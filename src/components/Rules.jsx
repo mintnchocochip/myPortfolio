@@ -45,35 +45,35 @@ function Rules() {
             />
           </div>
           <div className="mb-5 flex w-full flex-row flex-wrap gap-5 uppercase">
-  <AnimatedText
-    text="Web"
-    className="border border-white px-4 py-2 text-2xl md:text-4xl text-enigma-green"
-  />
-  <AnimatedText
-    text="Crypto"
-    className="border border-white px-4 py-2 text-2xl md:text-4xl text-enigma-green"
-  />
-  <AnimatedText
-    text="OSINT"
-    className="border border-white px-4 py-2 text-2xl md:text-4xl text-enigma-green"
-  />
-  <AnimatedText
-    text="Binary"
-    className="border border-white px-4 py-2 text-2xl md:text-4xl text-enigma-green"
-  />
-  <AnimatedText
-    text="Reverse Engineering"
-    className="border border-white px-4 py-2 text-2xl md:text-4xl text-enigma-green"
-  />
-  <AnimatedText
-    text="Forensics"
-    className="border border-white px-4 py-2 text-2xl md:text-4xl text-enigma-green"
-  />
-  <AnimatedText
-    text="Misc"
-    className="border border-white px-4 py-2 text-2xl md:text-4xl text-enigma-green"
-  />
-</div>
+            <AnimatedText
+              text="Web"
+              className="border border-white px-4 py-2 text-2xl text-enigma-green md:text-4xl"
+            />
+            <AnimatedText
+              text="Crypto"
+              className="border border-white px-4 py-2 text-2xl text-enigma-green md:text-4xl"
+            />
+            <AnimatedText
+              text="OSINT"
+              className="border border-white px-4 py-2 text-2xl text-enigma-green md:text-4xl"
+            />
+            <AnimatedText
+              text="Binary"
+              className="border border-white px-4 py-2 text-2xl text-enigma-green md:text-4xl"
+            />
+            <AnimatedText
+              text="Reverse Engineering"
+              className="border border-white px-4 py-2 text-2xl text-enigma-green md:text-4xl"
+            />
+            <AnimatedText
+              text="Forensics"
+              className="border border-white px-4 py-2 text-2xl text-enigma-green md:text-4xl"
+            />
+            <AnimatedText
+              text="Misc"
+              className="border border-white px-4 py-2 text-2xl text-enigma-green md:text-4xl"
+            />
+          </div>
           <div className="space-y-12">
             <div className="grid gap-6 md:grid-cols-2" ref={container}>
               <div className="border-enigmtext-enigma-green flex flex-col border p-6 transition-colors hover:border-opacity-75">
