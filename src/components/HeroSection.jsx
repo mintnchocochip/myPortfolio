@@ -103,71 +103,71 @@ const HeroSection = () => {
               preStyle="text-black md:text-[3em] mix mix-blend-difference bg-enigma-green pt-2 cursor-cell w-full"
             />
           </div>
-          <div className="flex w-full max-w-full flex-col flex-wrap align-middle">
+          <div className="flex w-full max-w-full flex-col flex-wrap py-0 align-middle">
             <div className="flex w-full flex-wrap justify-end gap-x-8">
               <AnimatedText
                 text="FIGHT"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green px-3 cursor-cell"
               />
               <AnimatedText
                 text="TO"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green px-3 cursor-cell"
               />
               <AnimatedText
                 text="SURVIVE"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green px-3 cursor-cell"
               />
             </div>
             <div className="flex w-full flex-wrap justify-end gap-x-8">
               <AnimatedText
                 text="ALL'S"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green px-3 cursor-cell"
               />
               <AnimatedText
                 text="FAIR"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green px-3 cursor-cell"
               />
               <AnimatedText
                 text="IN"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green px-3 cursor-cell"
               />
               <AnimatedText
                 text="LOVE"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green px-3 cursor-cell"
               />
               <AnimatedText
                 text="AND"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green px-3 cursor-cell"
               />
               <AnimatedText
                 text="WAR"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green px-3 cursor-cell"
               />
             </div>
             <div className="flex w-full flex-wrap justify-end gap-x-8">
               <AnimatedText
                 text="THIS"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green px-3 cursor-cell"
               />
               <AnimatedText
                 text="IS"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green px-3 cursor-cell"
               />
               <AnimatedText
                 text="WAR"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-black mix mix-blend-difference bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-black mix mix-blend-difference bg-enigma-green px-3 cursor-cell"
               />
             </div>
           </div>
