@@ -168,7 +168,7 @@ export default function Scene() {
   const sceneRef = useRef(null)
 
   return (
-    <div>
+    <div className='overflow-y-hidden'>
       <div className="relative z-20 px-4 py-4 text-left sm:px-6 sm:py-5 lg:px-10 lg:py-7">
         <AnimatedText
           text="TIMELINE"
