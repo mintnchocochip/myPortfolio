@@ -17,18 +17,18 @@ export default function Join({ className }) {
       <img
         src={JoinImg}
         alt="JoinImg"
-        className="fixed bottom-32 right-2 m-6 flex h-32 items-center justify-center rounded-none px-6 py-4 text-right md:bottom-4 md:right-0"
+        className="fixed bottom-4 right-2 m-6 flex h-32 items-center justify-center rounded-none px-6 py-4 text-right md:bottom-4 md:right-0"
       />
       <div>
         <AnimatedText
           text="CHECK-IN"
-          className="x-6 fixed bottom-44 right-[3.25rem] m-6 flex h-24 items-center justify-center rounded-none py-4 pt-2 text-right font-neuebit text-xl text-black md:bottom-14 md:right-10"
+          className="x-6 fixed bottom-16 right-[3.25rem] m-6 flex h-24 items-center justify-center rounded-none py-4 pt-2 text-right font-neuebit text-xl text-black md:bottom-14 md:right-10"
         />
         <AnimatedText
           text="JOIN NOW"
-          className="x-6 h-22 fixed bottom-36 right-14 m-6 flex items-center justify-center rounded-none py-4 text-right font-neuebit text-6xl text-black md:bottom-8 md:right-10"
+          className="x-6 h-22 fixed bottom-8 right-14 m-6 flex items-center justify-center rounded-none py-4 text-right font-neuebit text-6xl text-black md:bottom-8 md:right-10"
         />
-        <p className="x-6 fixed bottom-28 right-16 m-6 flex h-24 items-center justify-center rounded-none py-4 text-right font-neuebit text-3xl text-black md:bottom-0">
+        <p className="z-50 x-6 fixed bottom-0 right-16 m-6 flex h-24 items-center justify-center rounded-none py-4 text-right font-neuebit text-3xl text-black md:bottom-0">
           04 Mar 25
         </p>
       </div>
