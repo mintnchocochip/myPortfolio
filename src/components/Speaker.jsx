@@ -1,51 +1,52 @@
-import React, { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import AnimatedText from "./text";
+import React, { useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import AnimatedText from './text'
 
 function Speaker({
   values = {},
-  name = "Ankit Prasad",
-  subname = "Mr. Prasad",
-  ct = "",
-  image,
+  name = 'Ankit Prasad',
+  subname = 'Mr. Prasad',
+  ct = '',
+  customaudio = '',
+  image
 }) {
-  const containerRef = useRef(null);
-  const rowRefs = useRef([]);
-  const lineRefs = useRef([]);
-  const valueRefs = useRef([]);
+  const containerRef = useRef(null)
+  const rowRefs = useRef([])
+  const lineRefs = useRef([])
+  const valueRefs = useRef([])
 
   useGSAP(() => {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top center",
-        toggleActions: "play reverse play reverse",
-      },
-    });
+        start: 'top center',
+        toggleActions: 'play reverse play reverse'
+      }
+    })
 
     timeline.fromTo(
       lineRefs.current,
-      { scaleX: 0, transformOrigin: "left" },
-      { scaleX: 1, duration: 0.8, ease: "power3.out" }
-    );
+      { scaleX: 0, transformOrigin: 'left' },
+      { scaleX: 1, duration: 0.8, ease: 'power3.out' }
+    )
 
     timeline.fromTo(
       rowRefs.current,
-      { x: "-100%" },
-      { x: 0, duration: 0.3, ease: "power3.out" },
-      "-=0.8"
-    );
+      { x: '-100%' },
+      { x: 0, duration: 0.3, ease: 'power3.out' },
+      '-=0.8'
+    )
 
     timeline.fromTo(
       valueRefs.current,
-      { x: "-100%" },
-      { x: 0, duration: 0.3, ease: "power3.out" },
-      "-=0.8"
-    );
+      { x: '-100%' },
+      { x: 0, duration: 0.3, ease: 'power3.out' },
+      '-=0.8'
+    )
 
-    timeline.reverse(0.1);
-  }, []);
+    timeline.reverse(0.1)
+  }, [])
 
   return (
     <div className="w-full px-4 md:px-10 pt-6 md:pt-10">
@@ -57,6 +58,13 @@ function Speaker({
             text={name}
             time={1}
             className="text-3xl md:text-5xl lg:text-6xl text-white font-neuebit text-left uppercase"
+            audioSrc={customaudio || '/sfx/type.wav'}
+          />
+          <AnimatedText
+            customText={ct}
+            text={subname}
+            time={1}
+            className="text-2xl md:text-4xl lg:text-5xl text-white font-neuebit text-left uppercase"
           />
           <img
             src={image}
@@ -87,7 +95,7 @@ function Speaker({
                     <div ref={(el) => (valueRefs.current[index] = el)}>
                       <AnimatedText
                         text={value}
-                        time={1}
+                        time={0.2}
                         className="text-base md:text-lg text-white tracking-wider uppercase font-neuebit w-full"
                       />
                     </div>
@@ -107,7 +115,7 @@ function Speaker({
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Speaker;
+export default Speaker

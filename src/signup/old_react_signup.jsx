@@ -1,18 +1,20 @@
-import React from 'react';
+import React from 'react'
 
 const SignUpPage = () => {
   return (
-    <div style={{
-      margin: 0,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minWidth: '320px',
-      minHeight: '100vh',
-      backgroundColor: '#111111',
-      color: 'rgba(255, 255, 255, 0.87)',
-      fontFamily: "'Orbitron', sans-serif"
-    }}>
+    <div
+      style={{
+        margin: 0,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minWidth: '320px',
+        minHeight: '100vh',
+        backgroundColor: '#111111',
+        color: 'rgba(255, 255, 255, 0.87)',
+        fontFamily: "'Orbitron', sans-serif"
+      }}
+    >
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
@@ -172,43 +174,47 @@ const SignUpPage = () => {
 
       <div className="signup-container">
         <h2>Enigma25 Sign Up</h2>
-        <form onSubmit={(e) => {
-          e.preventDefault();
-          // Add your signup here
-        }}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            // Add your signup here
+          }}
+        >
           <p>Username</p>
-          <input 
-            type="text" 
-            className="input-field" 
-            placeholder="Choose a username" 
-            required 
+          <input
+            type="text"
+            className="input-field"
+            placeholder="Choose a username"
+            required
           />
-          
+
           <p>Email</p>
-          <input 
-            type="email" 
-            className="input-field" 
-            placeholder="Enter your email" 
-            required 
+          <input
+            type="email"
+            className="input-field"
+            placeholder="Enter your email"
+            required
           />
-          
+
           <p>Password</p>
-          <input 
-            type="password" 
-            className="input-field" 
-            placeholder="Choose a password" 
-            required 
+          <input
+            type="password"
+            className="input-field"
+            placeholder="Choose a password"
+            required
           />
-          
+
           <p>Confirm Password</p>
-          <input 
-            type="password" 
-            className="input-field" 
-            placeholder="Confirm your password" 
-            required 
+          <input
+            type="password"
+            className="input-field"
+            placeholder="Confirm your password"
+            required
           />
-          
-          <button type="submit" className="btn">Create Account</button>
+
+          <button type="submit" className="btn">
+            Create Account
+          </button>
         </form>
         <button
           type="button"
@@ -221,7 +227,7 @@ const SignUpPage = () => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SignUpPage;
+export default SignUpPage

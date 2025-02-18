@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react'
+import Speakers from './components/Speakers'
 
 const About = () => {
-    return (
-        <div className="flex items-center justify-center min-h-screen bg-enigma-black">
-            <h1 className="text-4xl font-bold">About</h1>
-        </div>
-    );
-};
+  useEffect(() => {
+    const hasReloaded = localStorage.getItem('hasReloaded')
+    if (!hasReloaded) {
+      localStorage.setItem('hasReloaded', 'true')
+      setTimeout(() => {
+        window.location.reload()
+      }, 1000)
+    }
+  }, [])
 
-export default About;
+  return (
+    <div className="">
+      <Speakers />
+    </div>
+  )
+}
+
+export default About
