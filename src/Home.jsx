@@ -10,7 +10,8 @@ import Content from './components/content.jsx'
 import Lenis from 'lenis'
 import Speakers from './components/Speakers.jsx'
 import Rules from './components/Rules.jsx'
-
+import { Canvas } from '@react-three/fiber'
+import Prize from './components/Prize.jsx'
 function Home() {
   useEffect(() => {
     const lenis = new Lenis({
@@ -39,26 +40,26 @@ function Home() {
         <Hamburger className="fixed right-0" />
       </nav>
 
-      <video
-        src="/videos/0001-0301.mkv"
-        className="absolute left-0 top-0 h-full w-full object-cover mix-blend-screen"
-        loop
-        autoPlay
-        muted
-      ></video>
-      {/* <ErtdfgcvbBG className="top-0 z-0" /> */}
+        <div className="relative h-screen w-screen">
+        <video
+          src="/videos/0001-0301.mkv"
+          className="absolute left-0 top-0 h-full w-full object-cover mix-blend-screen"
+          loop
+          autoPlay
+          muted
+        ></video>
       <HeroSection className="mix-blend-difference" />
-      {/* <div className="h-screen">
+      </div>
+      {/*<div className="h-screen">
         <Canvas className='w-screen h-screen'>
           <Prize className='w-screen h-screen'/>
         </Canvas>
-      </div> */}
+      </div>*/}
       {/* <Content /> */}
 
       <Scene className="fixed top-0" />
       <Rules />
       {/* <Speakers /> */}
-
       <Footer />
     </div>
   )
