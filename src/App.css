@@ -12,10 +12,16 @@
 
 #root {
   max-width: 100%;
+  overflow-x: hidden;
   margin: 0 auto;
   padding: 0rem;
   text-align: center;
 }
+
+body {
+  position: relative
+}
+
 
 @font-face {
   font-family: 'Calcio';

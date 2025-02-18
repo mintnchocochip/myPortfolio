@@ -14,6 +14,15 @@ gsap.registerPlugin(ScrollTrigger)
 extend({ TextGeometry })
 
 const PI = Math.PI
+let isMobile = 0
+
+const textContent = [
+  'Grouping',
+  'Workshops',
+  'Jeopardy',
+  'Round-2',
+  'Registration'
+]
 
 const cubePositions = [
   [0, 0, 0],
@@ -34,14 +43,6 @@ const rotationArr = [
 const height = 0.08
 const speed = 0.75
 const timeSpent = 100
-
-const textContent = [
-  'Grouping',
-  'Workshops',
-  'Jeopardy',
-  'Round-2',
-  'Registration'
-]
 
 function Text({ text }) {
   const { viewport } = useThree()
@@ -125,6 +126,10 @@ function CameraController({ triggerRef }) {
   const smoothTarget = new THREE.Vector3()
   const offset = new THREE.Vector3(4, 0, 0)
 
+  let getResponsiveSize = useCallback(() => {
+    isMobile = window.innerWidth < 768;
+  }, []);
+
   useGSAP(() => {
     if (!triggerRef.current) return
 
@@ -132,9 +137,9 @@ function CameraController({ triggerRef }) {
       scrollTrigger: {
         trigger: triggerRef.current,
         start: 'top 0%',
-        end: '+=' + window.innerHeight * 3,
+        end: '+=' + window.innerHeight * 5,
         scrub: 1,
-        pin: true
+        pin: true,
       }
     })
 
@@ -168,7 +173,7 @@ export default function Scene() {
   const sceneRef = useRef(null)
 
   return (
-    <div className='overflow-y-hidden'>
+    <>
       <div className="relative z-20 px-4 py-4 text-left sm:px-6 sm:py-5 lg:px-10 lg:py-7">
         <AnimatedText
           text="TIMELINE"
@@ -180,7 +185,7 @@ export default function Scene() {
       </div>
 
       <Element name="timeline">
-        <div ref={sceneRef} className="h-screen w-full">
+        <div ref={sceneRef} className="h-screen w-full overflow-x-hidden overflow-y-hidden">
           <Canvas>
             <Fog />
             <CameraController triggerRef={sceneRef} />
@@ -194,6 +199,6 @@ export default function Scene() {
           </Canvas>
         </div>
       </Element>
-    </div>
+    </>
   )
 }
