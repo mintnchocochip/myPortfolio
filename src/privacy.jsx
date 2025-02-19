@@ -1,9 +1,9 @@
-import ErtdfgcvbBG from "./components/ertdfgcvbprivacy";
+import ErtdfgcvbBG from './components/ertdfgcvbprivacy'
 
 export default function Privacy() {
-    return(
-        <>
-        <ErtdfgcvbBG />
-        </>
-    )
+  return (
+    <>
+      <ErtdfgcvbBG />
+    </>
+  )
 }
