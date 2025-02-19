@@ -15,7 +15,7 @@ import CTFs from './questions/page'
 import PowerPage from './powerups/Page'
 import TeamPage from './components/team/TeamPage'
 import TeamCreation from './components/team/TeamCreation'
-
+import LoginPage from '../src/login/LoginPage'
 // import ErtdfgcvbBGprivacy from "./components/ertdfgcvbprivacy";
 
 function App() {
@@ -64,6 +64,7 @@ function App() {
             <Route path="/powerups" element={<PowerPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/team-login" element={<TeamCreation />} />
+            <Route path="/login" element={<LoginPage />} />
 
             {/* <Route path="/privacy" element={<ErtdfgcvbBGprivacy />} /> */}
             <Route path="*" element={<PageNotFound />} />
