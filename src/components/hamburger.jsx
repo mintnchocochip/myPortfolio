@@ -36,6 +36,7 @@ export default function Hamburger() {
         ease: 'back.out(1.6)'
       })
     } else {
+      //TODO: hamburger menu closing animation looks broken (going out of page bounds)
       gsap.to(menuRef.current, {
         width: 'auto',
         duration: 0.5,
@@ -133,49 +134,6 @@ export default function Hamburger() {
           </div>
         )}
       </div>
-      {isOpen && (
-        <div className="menu p-4 text-right text-3xl">
-          <ul>
-            <li>
-              <Link to="/prizes" onClick={handleLinkClick}>
-                <AnimatedText
-                  className="text-black hover:bg-white hover:text-black"
-                  text="Prizes"
-                />
-              </Link>
-            </li>
-            <li>
-              <ScrollLink
-                to="content"
-                smooth={true}
-                duration={500}
-                onClick={handleLinkClick}
-              >
-                <AnimatedText
-                  className="text-black hover:bg-white hover:text-black"
-                  text="Timeline"
-                />
-              </ScrollLink>
-            </li>
-            <li>
-              <Link to="/rules" onClick={handleLinkClick}>
-                <AnimatedText
-                  className="text-black hover:bg-white hover:text-black"
-                  text="Rules"
-                />
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" onClick={handleLinkClick}>
-                <AnimatedText
-                  text="About"
-                  className="text-black hover:bg-white hover:text-black"
-                />
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
     </div>
   )
 }
