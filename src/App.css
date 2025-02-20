@@ -19,9 +19,8 @@
 }
 
 body {
-  position: relative
+  position: relative;
 }
-
 
 @font-face {
   font-family: 'Calcio';
