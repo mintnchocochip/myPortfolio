@@ -2,11 +2,11 @@
   "name": "enigma",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://ppmpreetham.github.io/enigma25",
+  "homepage": ".",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "format": "prettier --write .",
     "build": "vite build",

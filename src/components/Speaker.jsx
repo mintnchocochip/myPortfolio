@@ -8,7 +8,7 @@ function Speaker({
   name = 'Ankit Prasad',
   subname = 'Mr. Prasad',
   ct = '',
-  customaudio='',
+  customaudio = '',
   image
 }) {
   const containerRef = useRef(null)

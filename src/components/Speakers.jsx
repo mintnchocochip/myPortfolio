@@ -19,11 +19,12 @@ function Speakers() {
         subname="Linux Basics"
         image="/cool-peeps/yeyati.jpg"
         values={{
-          "Command Line Interface": "Master navigation, file manipulation, and shell fundamentals.",
-          "Bash Scripting": "Automate tasks using Bash commands and scripts.",
-          "File System Hierarchy": "Understand Linux directory structure.",
-          "User & Group Management": "Handle users and permissions.",
-          "File Permissions": "Control access with chmod and chown."
+          'Command Line Interface':
+            'Master navigation, file manipulation, and shell fundamentals.',
+          'Bash Scripting': 'Automate tasks using Bash commands and scripts.',
+          'File System Hierarchy': 'Understand Linux directory structure.',
+          'User & Group Management': 'Handle users and permissions.',
+          'File Permissions': 'Control access with chmod and chown.'
         }}
       ></Speaker>
       <Speaker
@@ -49,16 +50,17 @@ function Speakers() {
         subname="Web"
         image="/cool-peeps/goutham.jpg"
         values={{
-          "SQL Injection using OR/And Clause": "Bypass auth using OR/AND logic.",
-          "Exploiting Where conditions": "Manipulate WHERE to leak data.",
-          "Union attacks": "Merge queries using UNION.",
-          "XSS Reflected attack": "Immediate script reflection.",
-          "XSS Stored attack": "Stored scripts compromise users.",
-          "XSS DOM attack": "Inject scripts via DOM.",
-          "File Upload Vulnerabilities": "Weak upload checks risk systems.",
-          "Uploading web shells": "Hide scripts as files.",
-          "Bypassing file restrictions": "Circumvent file validations.",
-          "Path traversal via File Upload": "Exploit directory traversal."
+          'SQL Injection using OR/And Clause':
+            'Bypass auth using OR/AND logic.',
+          'Exploiting Where conditions': 'Manipulate WHERE to leak data.',
+          'Union attacks': 'Merge queries using UNION.',
+          'XSS Reflected attack': 'Immediate script reflection.',
+          'XSS Stored attack': 'Stored scripts compromise users.',
+          'XSS DOM attack': 'Inject scripts via DOM.',
+          'File Upload Vulnerabilities': 'Weak upload checks risk systems.',
+          'Uploading web shells': 'Hide scripts as files.',
+          'Bypassing file restrictions': 'Circumvent file validations.',
+          'Path traversal via File Upload': 'Exploit directory traversal.'
         }}
         customaudio="/sfx/parrots.wav"
       ></Speaker>

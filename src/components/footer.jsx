@@ -43,16 +43,6 @@ export default function Footer() {
             <li>
               <a
                 className="text-gray-300 no-underline hover:text-green-500 hover:underline"
-                href="https://x.com/lugvitc"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AnimatedText text="Twitter" />
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-gray-300 no-underline hover:text-green-500 hover:underline"
                 href="https://instagram.com/lugvitc"
                 target="_blank"
                 rel="noopener noreferrer"

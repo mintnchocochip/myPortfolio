@@ -103,7 +103,7 @@ const HeroSection = () => {
               preStyle="w-full text-[1.5em] md:text-[3em] text-black md:text-[3em] mix mix-blend-difference bg-enigma-green pt-2 cursor-cell w-full"
             />
           </div>
-          <div className="flex w-full max-w-full flex-col flex-wrap align-middle">
+          <div className="flex w-full max-w-full flex-col flex-wrap py-0 align-middle">
             <div className="flex w-full flex-wrap justify-end gap-x-8">
               <AnimatedText
                 text="FIGHT"
