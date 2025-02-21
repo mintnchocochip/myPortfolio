@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import ErtdfgcvbBG from './components/ertdfgcvb game of life'
+import ErtdfgcvbBG from './components/ertdfgcvb/ertdfgcvb game of life'
 import { gsap } from 'gsap'
 import ChevronSvg from '/icons/chevron.svg'
 import { Link } from 'react-router-dom'

@@ -16,7 +16,6 @@ import PowerPage from './powerups/Page'
 import TeamPage from './components/team/TeamPage'
 import TeamCreation from './components/team/TeamCreation'
 import LoginPage from '../src/login/LoginPage'
-// import ErtdfgcvbBGprivacy from "./components/ertdfgcvbprivacy";
 
 function App() {
   const location = useLocation()
