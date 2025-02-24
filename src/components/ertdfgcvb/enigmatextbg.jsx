@@ -1,27 +1,67 @@
-import React, { useEffect } from 'react'
-import { run } from '../assets/ertdfgcvb/programsJS/src/run.js'
-import * as program from '../assets/ertdfgcvb/programsJS/privacy.js'
+import React, { useEffect, useState } from 'react'
+import { run } from '../../assets/ertdfgcvb/programsJS/src/run.js'
 import '../assets/ertdfgcvb/style.css'
 
-const ErtdfgcvbBGprivacy = () => {
+const useMediaQuery = (query) => {
+  const [matches, setMatches] = useState(false)
+
   useEffect(() => {
-    const settings = {
-      element: document.querySelector('pre')
+    const media = window.matchMedia(query)
+    if (media.matches !== matches) {
+      setMatches(media.matches)
+    }
+    const listener = () => setMatches(media.matches)
+    media.addEventListener('change', listener)
+    return () => media.removeEventListener('change', listener)
+  }, [matches, query])
+
+  return matches
+}
+
+const ErtdfgcvbBG = () => {
+  const isMdOrLarger = useMediaQuery('(min-width: 768px)')
+  const [program, setProgram] = useState(null)
+
+  useEffect(() => {
+    const loadProgram = async () => {
+      if (isMdOrLarger) {
+        const module = await import(
+          '../../assets/ertdfgcvb/programsJS/cube_desktop.js'
+        )
+        setProgram(module)
+      } else {
+        const module = await import('../../assets/ertdfgcvb/programsJS/cube.js')
+        setProgram(module)
+      }
     }
 
-    run(program, settings)
-      .then(function (e) {
-        console.log(e)
-      })
-      .catch(function (e) {
-        console.warn(e.message)
-        console.log(e.error)
-      })
-  }, [])
+    loadProgram()
+  }, [isMdOrLarger])
+
+  useEffect(() => {
+    if (program) {
+      const settings = {
+        element: document.querySelector('pre')
+      }
+
+      run(program, settings)
+        .then(function (e) {
+          console.log(e)
+        })
+        .catch(function (e) {
+          console.warn(e.message)
+          console.log(e.error)
+        })
+    }
+  }, [program])
+
+  if (!program) {
+    return null
+  }
 
   const text_col = 'black'
   return (
-    <div>
+    <div className="absolute top-0">
       <pre
         data-selection-enabled="false"
         style={{ userSelect: 'none' }}
@@ -510,4 +550,4 @@ const ErtdfgcvbBGprivacy = () => {
   )
 }
 
-export default ErtdfgcvbBGprivacy
+export default ErtdfgcvbBG
