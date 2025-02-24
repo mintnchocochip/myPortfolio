@@ -33,7 +33,7 @@ const TeamCreation = () => {
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-center font-neuebit">
       <div className="flex flex-row">
-        <div className="mb-8 text-7xl text-enigma-green">
+        <div className="mb-8 text-8xl text-enigma-green">
           {mode === 'create' ? 'CREATE A TEAM' : 'JOIN A TEAM'}
         </div>
       </div>
@@ -61,13 +61,13 @@ const TeamCreation = () => {
                   type="submit"
                   className="rounded-none bg-white px-8 py-3 text-2xl font-semibold text-black transition-colors hover:bg-enigma-green"
                 >
-                  CREATE TEAM
+                  <AnimatedText text={'CREATE TEAM'} className='cursor-pointer' />
                 </button>
                 <button
                   onClick={switchMode}
                   className="rounded-none bg-white px-8 py-3 text-2xl font-semibold text-black transition-colors hover:bg-enigma-green"
                 >
-                  JOIN TEAM
+                  <AnimatedText text={'JOIN TEAM'} className='cursor-pointer' />
                 </button>
               </div>
             </form>
@@ -91,15 +91,15 @@ const TeamCreation = () => {
             <div className="mt-4 flex gap-4">
               <button
                 type="submit"
-                className="rounded-none bg-white px-8 py-3 text-2xl font-semibold text-black transition-colors hover:bg-enigma-green"
+                className="rounded-none bg-white px-8 py-3 text-2xl font-semibold text-black transition-colors hover:bg-enigma-green hover:border-none"
               >
-                JOIN TEAM
+                <AnimatedText text="JOIN TEAM" className='cursor-pointer' />
               </button>
               <button
                 onClick={switchMode}
-                className="rounded-none bg-white px-8 py-3 text-2xl font-semibold text-black transition-colors hover:bg-enigma-green hover:text-black"
+                className="rounded-none bg-white px-8 py-3 text-2xl font-semibold text-black transition-colors hover:bg-enigma-green hover:border-none"
               >
-                CREATE TEAM
+                <AnimatedText text="CREATE TEAM" className='cursor-pointer' />
               </button>
             </div>
           </form>
