@@ -3,11 +3,13 @@ import CTFQuestionItem from './CTFQuestionItem'
 import { useSmoothScroll } from '../hooks/useSmoothScroll'
 
 interface Question {
-  questionId: string
-  question: string
+  id: string
+  name: string
   description: string
+  tags: number
   points: number
-  solved: number
+  // solved: number
+  author: string
 }
 
 interface CTFListProps {
@@ -27,9 +29,9 @@ const CTFList = ({ ctfList, onHover, onClick }: CTFListProps) => {
     () =>
       ctfList.map((ctf, index) => (
         <CTFQuestionItem
-          questionId={ctf.questionId}
-          question={ctf.question}
-          key={`ctf-${index}-${ctf.questionId}`}
+          questionId={ctf.id}
+          question={ctf.name}
+          key={`ctf-${index}-${ctf.id}`}
           onHover={(questionId: string) => {
             onHover(questionId)
           }}
