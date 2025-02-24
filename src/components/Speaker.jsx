@@ -27,40 +27,21 @@ function Speaker({
 
     timeline.fromTo(
       lineRefs.current,
-      {
-        scaleX: 0,
-        transformOrigin: 'left'
-      },
-      {
-        scaleX: 1,
-        duration: 0.8,
-        ease: 'power3.out'
-      }
+      { scaleX: 0, transformOrigin: 'left' },
+      { scaleX: 1, duration: 0.8, ease: 'power3.out' }
     )
 
     timeline.fromTo(
       rowRefs.current,
-      {
-        x: '-100%'
-      },
-      {
-        x: 0,
-        duration: 0.3,
-        ease: 'power3.out'
-      },
+      { x: '-100%' },
+      { x: 0, duration: 0.3, ease: 'power3.out' },
       '-=0.8'
     )
 
     timeline.fromTo(
       valueRefs.current,
-      {
-        x: '-100%'
-      },
-      {
-        x: 0,
-        duration: 0.3,
-        ease: 'power3.out'
-      },
+      { x: '-100%' },
+      { x: 0, duration: 0.3, ease: 'power3.out' },
       '-=0.8'
     )
 
@@ -68,59 +49,61 @@ function Speaker({
   }, [])
 
   return (
-    <div className="flex w-screen items-center justify-between px-10 pt-10">
-      <div className="flex w-full flex-nowrap gap-32 border-t-2 border-white">
-        <div className="font-neubit w-[40vw] text-left">
+    <div className="w-full px-4 md:px-10 pt-6 md:pt-10">
+      <div className="w-full flex flex-col md:flex-row md:flex-nowrap border-t-2 border-white md:gap-8 lg:gap-32">
+        {/* Left section - Speaker Info */}
+        <div className="w-full md:w-[40%] lg:w-[40vw] font-neubit text-left mb-8 md:mb-0">
           <AnimatedText
             customText={ct}
             text={name}
             time={1}
-            className="text-left font-neuebit text-6xl uppercase text-white"
-            audioSrc={customaudio ? customaudio : '/sfx/type.wav'}
+            className="text-3xl md:text-5xl lg:text-6xl text-white font-neuebit text-left uppercase"
+            audioSrc={customaudio || '/sfx/type.wav'}
           />
-          <br />
           <AnimatedText
             customText={ct}
             text={subname}
             time={1}
-            className="text-left font-neuebit text-5xl uppercase text-white"
+            className="text-2xl md:text-4xl lg:text-5xl text-white font-neuebit text-left uppercase"
           />
           <img
             src={image}
-            alt=""
-            width="1024"
-            height="1024"
-            className="w-90 h-90 rounded-lg mix-blend-screen shadow-lg"
+            alt="Speaker"
+            className="w-full h-[40vh] md:h-[50vh] lg:h-[60vh] object-cover rounded-lg shadow-lg"
           />
         </div>
 
-        <div ref={containerRef} className="font-neubit mt-3 w-full text-white">
+        {/* Right section - Values Table (Hidden on Small Screens) */}
+        <div ref={containerRef} className="hidden sm:block w-full text-white font-neubit mt-3">
           {Object.entries(values).map(([key, value], index) => (
             <div key={key}>
-              <div className="flex flex-wrap items-center justify-start">
-                <div className="w-[25vw] overflow-hidden">
+              <div className="flex flex-col md:flex-row md:flex-wrap justify-start items-start md:items-center">
+                {/* Key */}
+                <div className="overflow-hidden w-full md:w-auto">
                   <div ref={(el) => (rowRefs.current[index] = el)}>
                     <AnimatedText
                       text={key}
                       time={1}
-                      className="w-full font-neuebit text-lg uppercase tracking-wider text-green-500"
+                      className="text-base md:text-lg text-green-500 tracking-wider uppercase font-neuebit w-full"
                     />
                   </div>
                 </div>
 
-                <div className="ml-4 flex-grow">
+                {/* Value */}
+                <div className="ml-4 md:ml-[15vw] lg:ml-[25vw]">
                   <div className="overflow-hidden">
                     <div ref={(el) => (valueRefs.current[index] = el)}>
                       <AnimatedText
                         text={value}
                         time={0.2}
-                        className="w-full font-neuebit text-lg uppercase tracking-wider text-white"
+                        className="text-base md:text-lg text-white tracking-wider uppercase font-neuebit w-full"
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="w-full flex-grow py-3">
+                {/* Line */}
+                <div className="flex-grow w-full py-2 md:py-3">
                   <div
                     ref={(el) => (lineRefs.current[index] = el)}
                     className="h-[1px] w-full bg-white"
