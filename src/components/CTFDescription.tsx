@@ -29,11 +29,11 @@ const CTFDescription = ({
           {author || 'Author'}
         </span>
       </div>
-      <div className="flex w-full flex-row justify-end">
+      <div className="flex w-full flex-row justify-end flex-wrap">
         {tags.map((tag) => (
           <span
             key={tag}
-            className="w-fit text-ellipsis border border-white px-8 py-4 text-right font-neuebit text-3xl uppercase text-enigma-yellow"
+            className="w-fit text-ellipsis border border-white px-8 py-4 text-right font-neuebit text-3xl uppercase text-enigma-yellow "
           >
             {tag}
           </span>
