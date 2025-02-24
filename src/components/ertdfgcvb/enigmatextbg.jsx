@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { run } from '../../assets/ertdfgcvb/programsJS/src/run.js'
-import '../assets/ertdfgcvb/style.css'
+import '../../assets/ertdfgcvb/style.css'
 
 const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(false)
