@@ -1,11 +1,14 @@
 import React, { useState, FormEvent } from 'react';
 import AnimatedText from '../text';
+import axios from 'axios';
+import api from '../../utils/api';
 
 const TeamCreation = () => {
   const [teamName, setTeamName] = useState('');
   const [teamCode, setTeamCode] = useState('');
   const [showCode, setShowCode] = useState(false);
   const [joinCode, setJoinCode] = useState('');
+  const [error, setError] = useState("");
   const [mode, setMode] = useState<'create' | 'join'>('create');
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -18,10 +21,32 @@ const TeamCreation = () => {
     }
   };
 
-  const handleJoinSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleJoinSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (joinCode.trim()) {
       console.log('Joining team with code:', joinCode);
+    }
+
+    try {
+      const response = await api.post('/auth/login',{
+        "name":"NIGGESH123",
+        "password": "NIGGA!@#"
+      })
+
+      console.log(response)
+
+      if (response.status === 200) {
+        if (typeof window !== "undefined") {
+          localStorage.setItem("token", response.data.access_token);
+          window.location.href = `${window.location.origin}/team-login`;
+        }
+      }
+    } catch (err: unknown) {
+      if (axios.isAxiosError(err)) {
+        if (err.response) {
+          setError(err.response.data.msg_code.toString());
+        }
+      }
     }
   };
 
