@@ -91,13 +91,13 @@ const TeamCreation = () => {
             <div className="mt-4 flex gap-4">
               <button
                 type="submit"
-                className="bg-white px-8 py-3 text-2xl font-semibold text-black transition-colors hover:bg-enigma-green"
+                className="rounded-none bg-white px-8 py-3 text-2xl font-semibold text-black transition-colors hover:bg-enigma-green"
               >
                 JOIN TEAM
               </button>
               <button
                 onClick={switchMode}
-                className="bg-white px-8 py-3 text-2xl font-semibold text-black transition-colors hover:bg-enigma-green hover:text-black"
+                className="rounded-none bg-white px-8 py-3 text-2xl font-semibold text-black transition-colors hover:bg-enigma-green hover:text-black"
               >
                 CREATE TEAM
               </button>
