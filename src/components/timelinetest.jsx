@@ -127,8 +127,8 @@ function CameraController({ triggerRef }) {
   const offset = new THREE.Vector3(4, 0, 0)
 
   let getResponsiveSize = useCallback(() => {
-    isMobile = window.innerWidth < 768;
-  }, []);
+    isMobile = window.innerWidth < 768
+  }, [])
 
   useGSAP(() => {
     if (!triggerRef.current) return
@@ -139,7 +139,7 @@ function CameraController({ triggerRef }) {
         start: 'top 0%',
         end: '+=' + window.innerHeight * 5,
         scrub: 1,
-        pin: true,
+        pin: true
       }
     })
 
@@ -185,7 +185,10 @@ export default function Scene() {
       </div>
 
       <Element name="timeline">
-        <div ref={sceneRef} className="h-screen w-full overflow-x-hidden overflow-y-hidden">
+        <div
+          ref={sceneRef}
+          className="h-screen w-full overflow-x-hidden overflow-y-hidden"
+        >
           <Canvas>
             <Fog />
             <CameraController triggerRef={sceneRef} />

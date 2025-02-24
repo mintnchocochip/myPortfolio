@@ -35,12 +35,12 @@ function Home() {
   return (
     <div>
       <Join className="z-20" />
-      <nav className="absolute top-0 z-20 flex w-full justify-between px-10 py-5 mix-blend-difference">
+      <nav className="absolute top-0 z-20 flex w-full justify-between px-10 py-5">
         <div className="pt-1 text-left font-neuebit text-5xl">ENIGMA</div>
         <Hamburger className="fixed right-0" />
       </nav>
 
-        <div className="relative h-screen w-screen">
+      <div className="relative h-screen w-screen">
         <video
           src="/videos/0001-0301.mkv"
           className="absolute left-0 top-0 h-full w-full object-cover mix-blend-screen"
@@ -48,7 +48,7 @@ function Home() {
           autoPlay
           muted
         ></video>
-      <HeroSection className="mix-blend-difference" />
+        <HeroSection />
       </div>
       {/*<div className="h-screen">
         <Canvas className='w-screen h-screen'>

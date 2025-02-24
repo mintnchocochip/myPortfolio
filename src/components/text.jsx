@@ -76,7 +76,7 @@ const AnimatedText = ({
   }, [])
 
   return (
-    <span className="z-50">
+    <span>
       <span
         className={`${finalClass} z-50 inline`}
         onMouseOver={handleMouseOver}
