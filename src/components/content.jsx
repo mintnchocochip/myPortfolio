@@ -76,11 +76,11 @@ function Content() {
               alt="kali at password"
               className="h-full w-auto"
             />
-            <h2 className="text-9xl">Placeholder</h2>
-            <h2 className="text-9xl">Placeholder</h2>
-            <h2 className="text-9xl">Placeholder</h2>
-            <h2 className="text-9xl">Placeholder</h2>
-            <h2 className="text-9xl">Placeholder</h2>
+            <h2 className="text-9xl text-enigma-green">Placeholder</h2>
+            <h2 className="text-9xl text-enigma-green">Placeholder</h2>
+            <h2 className="text-9xl text-enigma-green">Placeholder</h2>
+            <h2 className="text-9xl text-enigma-green">Placeholder</h2>
+            <h2 className="text-9xl text-enigma-green">Placeholder</h2>
           </div>
           <img
             src="/images/qr-better.png"

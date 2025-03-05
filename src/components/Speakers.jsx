@@ -2,6 +2,7 @@ import React from 'react'
 import Speaker from './Speaker.jsx'
 import AnimatedText from './text.jsx'
 import { useState, useEffect } from 'react'
+import Header from './Header.jsx'
 
 function Speakers() {
   const [hasReloaded, setHasReloaded] = useState(false)
@@ -16,6 +17,13 @@ function Speakers() {
 
   return (
     <>
+      <Header
+        links={[
+          { text: 'Leaderboard', path: '/leaderboard' },
+          { text: 'Challenges', path: '#' },
+          { text: 'Team', path: '/team' }
+        ]}
+      />
       <div className="z-20 px-10 text-left">
         <AnimatedText
           text="SPEAKERS"

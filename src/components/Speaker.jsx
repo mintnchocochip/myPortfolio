@@ -20,9 +20,7 @@ function Speaker({
   const lineRefs = useRef([])
   const valueRefs = useRef([])
 
-  // Use useEffect to ensure ScrollTrigger works consistently
   useEffect(() => {
-    // Create and handle timeline inside useEffect
     if (containerRef.current) {
       const timeline = gsap.timeline({
         scrollTrigger: {
@@ -30,8 +28,6 @@ function Speaker({
           start: 'top center',
           end: 'bottom center',
           toggleActions: 'play none none reverse'
-          // Uncomment for debugging
-          // markers: true,
         }
       })
 
@@ -55,7 +51,6 @@ function Speaker({
         '-=0.8'
       )
 
-      // Clean up function to kill ScrollTrigger instances when component unmounts
       return () => {
         if (timeline.scrollTrigger) {
           timeline.scrollTrigger.kill()
@@ -63,13 +58,13 @@ function Speaker({
         timeline.kill()
       }
     }
-  }, []) // Empty dependency array ensures this runs once after initial render
+  }, [])
 
   return (
     <div className="w-full px-4 pt-6 md:px-10 md:pt-10">
       <div className="flex w-full flex-col border-t-2 border-white md:flex-row md:flex-nowrap md:gap-8 lg:gap-32">
         {/* Left section - Speaker Info */}
-        <div className="font-neubit mb-8 w-full text-left md:mb-0 md:w-[40%] lg:w-[40vw]">
+        <div className="font-neubit mb-8 flex w-full flex-col text-left md:mb-0 md:w-[40%] lg:w-[40vw]">
           <AnimatedText
             customText={ct}
             text={name}
@@ -86,7 +81,7 @@ function Speaker({
           <img
             src={image}
             alt="Speaker"
-            className="h-[40vh] w-full rounded-lg object-cover shadow-lg md:h-[50vh] lg:h-[60vh]"
+            className="h-[40vh] w-full rounded-lg object-cover mix-blend-difference shadow-lg md:h-[50vh] lg:h-[60vh]"
           />
         </div>
 

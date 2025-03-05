@@ -103,6 +103,28 @@ const HeroSection = () => {
               preStyle="w-full text-[1.5em] md:text-[3em] text-black md:text-[3em]  bg-enigma-green pt-2 cursor-cell w-full"
             />
           </div>
+          {window.innerWidth > 768 && (
+            <div className="absolute bottom-5 flex flex-row items-center gap-10 mix-blend-screen">
+              <div className="flex flex-row items-center">
+                <img
+                  src="/icons/computer.jpg"
+                  alt="computer icon"
+                  className="h-[12vh] w-[24vh]"
+                />
+                <img
+                  src="/icons/enigmabar.jpg"
+                  alt="computer icon"
+                  className="h-[10vh] w-[20vh]"
+                />
+              </div>
+              <div className="place-items-start items-start text-base text-enigma-green mix-blend-difference">
+                <p>how do you know you are a robot?</p>
+                <p>how do you know you are a program?</p>
+                <p>how do you know you are a virus?</p>
+                <p>how are you sure of anything at all?</p>
+              </div>
+            </div>
+          )}
           <div className="relative flex w-full max-w-full flex-col flex-wrap py-0 align-middle md:space-y-1">
             <div className="relative z-30 flex w-full flex-wrap justify-end gap-x-4 md:static md:gap-x-8">
               <AnimatedText
