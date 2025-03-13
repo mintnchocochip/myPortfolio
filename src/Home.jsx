@@ -42,7 +42,7 @@ function Home() {
 
       <div className="relative h-screen w-screen">
         <video
-          src="/videos/0001-0301.mkv"
+          src="/videos/0001-0301.mp4"
           className="absolute left-0 top-0 h-full w-full object-cover mix-blend-screen"
           loop
           autoPlay

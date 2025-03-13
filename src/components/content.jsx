@@ -61,7 +61,7 @@ function Content() {
             <div className="flex h-full w-auto flex-row gap-x-2">
               <h2 className="text-9xl">Speakers</h2>
               <img
-                src="/images/content/speaker.jpeg"
+                src="/images/content/speaker.jpg"
                 alt="speaker at password"
                 className="h-full w-auto"
               />
@@ -72,7 +72,7 @@ function Content() {
               />
             </div>
             <img
-              src="/images/content/kali.jpeg"
+              src="/images/content/kali.jpg"
               alt="kali at password"
               className="h-full w-auto"
             />
