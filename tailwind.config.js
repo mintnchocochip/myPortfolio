@@ -26,7 +26,8 @@ export default {
 
       fontSize: {
         'big-phone-xl': '55vw',
-        'big-desktop-xl': '58vw'
+        'big-desktop-xl': '58vw',
+        'big-text': '15vw'
       },
       height: {
         'big-height': '110vh'
