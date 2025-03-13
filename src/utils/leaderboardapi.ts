@@ -14,7 +14,7 @@ interface ApiConfig {
 }
 
 const config: ApiConfig = {
-  baseURL: 'http://pc.lugvitc.net/api',
+  baseURL: 'https://pwncore.wlan0.in/api',
   headers: {
     'Content-Type': 'application/json'
   }
