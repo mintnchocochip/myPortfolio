@@ -11,30 +11,22 @@ function Content() {
   const wrapperRef = useRef(null)
 
   useGSAP(() => {
-    // Calculate the total width of all content minus the viewport width
-    // This ensures we scroll through ALL content
-    let scrollWidth =
-      wrapperRef.current.scrollWidth - scrollRef.current.offsetWidth
+    let scrollWidth = wrapperRef.current.scrollWidth
 
-    // Create the animation
     const tween = gsap.to(wrapperRef.current, {
       x: -scrollWidth,
       ease: 'sine.inOut'
     })
 
-    // Create the ScrollTrigger
     ScrollTrigger.create({
       trigger: scrollRef.current,
-      start: 'top top', // Start at the top of the viewport
-      end: `+=${scrollWidth}`, // End after scrolling the full content width
+      start: 'top top',
+      end: `+=${scrollWidth}`,
       pin: true,
       animation: tween,
       scrub: 2
-      // Add markers for debugging (remove in production)
-      // markers: true,
     })
 
-    // Cleanup function
     return () => {
       ScrollTrigger.killAll()
     }
@@ -56,7 +48,7 @@ function Content() {
           <div
             ref={wrapperRef}
             className="z-30 flex h-screen flex-row items-center gap-x-2 bg-enigma-green px-10 font-neuebit text-black"
-            style={{ minWidth: 'max-content' }} // Ensure the container expands to fit all content
+            style={{ minWidth: 'max-content' }}
           >
             <div className="flex h-full w-auto flex-row gap-x-2">
               <h2 className="text-9xl">Participants</h2>
@@ -70,13 +62,18 @@ function Content() {
               <h2 className="text-9xl">Speakers</h2>
               <img
                 src="/images/content/speaker.jpeg"
-                alt="participants for c0day3"
+                alt="speaker at password"
+                className="h-full w-auto"
+              />
+              <img
+                src="/images/content/speaker_2.jpg"
+                alt="speaker 2 at password"
                 className="h-full w-auto"
               />
             </div>
             <img
-              src="/images/content/IMG_20240917_103232440.jpg"
-              alt="participants for c0day3"
+              src="/images/content/kali.jpeg"
+              alt="kali at password"
               className="h-full w-auto"
             />
             <h2 className="text-9xl">Placeholder</h2>

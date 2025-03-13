@@ -103,73 +103,73 @@ const HeroSection = () => {
               preStyle="w-full text-[1.5em] md:text-[3em] text-black md:text-[3em]  bg-enigma-green pt-2 cursor-cell w-full"
             />
           </div>
-          <div className="flex w-full max-w-full flex-col flex-wrap py-0 align-middle">
-            <div className="flex w-full flex-wrap justify-end gap-x-8">
+          <div className="relative flex w-full max-w-full flex-col flex-wrap py-0 align-middle md:space-y-1">
+            <div className="relative z-30 flex w-full flex-wrap justify-end gap-x-4 md:static md:gap-x-8">
               <AnimatedText
                 text="FIGHT"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-[0.6em] md:text-[1em] text-black  bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-[0.6em] md:text-[1em] text-black bg-enigma-green pt-0.5 md:pt-1 px-2 md:px-3 cursor-cell"
               />
               <AnimatedText
                 text="TO"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-[0.6em] md:text-[1em] text-black  bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-[0.6em] md:text-[1em] text-black bg-enigma-green pt-0.5 md:pt-1 px-2 md:px-3 cursor-cell"
               />
               <AnimatedText
                 text="SURVIVE"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-[0.6em] md:text-[1em] text-black  bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-[0.6em] md:text-[1em] text-black bg-enigma-green pt-0.5 md:pt-1 px-2 md:px-3 cursor-cell"
               />
             </div>
-            <div className="flex w-full flex-wrap justify-end gap-x-8">
+            <div className="relative z-30 flex w-full flex-wrap justify-end gap-x-4 md:static md:gap-x-8">
               <AnimatedText
                 text="ALL'S"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-[0.6em] md:text-[1em] text-black  bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-[0.6em] md:text-[1em] text-black bg-enigma-green pt-0.5 md:pt-1 px-2 md:px-3 cursor-cell"
               />
               <AnimatedText
                 text="FAIR"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-[0.6em] md:text-[1em] text-black  bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-[0.6em] md:text-[1em] text-black bg-enigma-green pt-0.5 md:pt-1 px-2 md:px-3 cursor-cell"
               />
               <AnimatedText
                 text="IN"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-[0.6em] md:text-[1em] text-black  bg-enigma-green pt-2  px-3 cursor-cell"
+                preStyle="text-[0.6em] md:text-[1em] text-black bg-enigma-green pt-0.5 md:pt-1 px-2 md:px-3 cursor-cell"
               />
               <AnimatedText
                 text="LOVE"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-[0.6em] md:text-[1em] text-black  bg-enigma-green pt-2  px-1.25 cursor-cell"
+                preStyle="text-[0.6em] md:text-[1em] text-black bg-enigma-green pt-0.5 md:pt-1 px-1 md:px-1.25 cursor-cell"
               />
               <AnimatedText
                 text="AND"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-[0.6em] md:text-[1em] text-black  bg-enigma-green pt-2  px-1.25 cursor-cell"
+                preStyle="text-[0.6em] md:text-[1em] text-black bg-enigma-green pt-0.5 md:pt-1 px-1 md:px-1.25 cursor-cell"
               />
               <AnimatedText
                 text="WAR"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-[0.6em] md:text-[1em] text-black  bg-enigma-green pt-2  px-1.25 cursor-cell"
+                preStyle="text-[0.6em] md:text-[1em] text-black bg-enigma-green pt-0.5 md:pt-1 px-1 md:px-1.25 cursor-cell"
               />
             </div>
-            <div className="flex w-full flex-wrap justify-end gap-x-8">
+            <div className="relative z-30 flex w-full flex-wrap justify-end gap-x-4 md:static md:gap-x-8">
               <AnimatedText
                 text="THIS"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-[0.6em] md:text-[1em] text-black  bg-enigma-yellow pt-2  px-3 cursor-cell"
+                preStyle="text-[0.6em] md:text-[1em] text-black bg-enigma-yellow pt-0.5 md:pt-1 px-2 md:px-3 cursor-cell"
                 time="0.5"
               />
               <AnimatedText
                 text="IS"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-[0.6em] md:text-[1em] text-black  bg-enigma-yellow pt-2  px-3 cursor-cell"
+                preStyle="text-[0.6em] md:text-[1em] text-black bg-enigma-yellow pt-0.5 md:pt-1 px-2 md:px-3 cursor-cell"
                 time="0.75"
               />
               <AnimatedText
                 text="WAR"
                 className="text-[0.6em] md:text-[1em]"
-                preStyle="text-[0.6em] md:text-[1em] text-black  bg-enigma-yellow pt-2  px-3 cursor-cell"
+                preStyle="text-[0.6em] md:text-[1em] text-black bg-enigma-yellow pt-0.5 md:pt-1 px-2 md:px-3 cursor-cell"
                 time="5"
               />
             </div>
