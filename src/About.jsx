@@ -1,19 +1,23 @@
 import React, { useEffect } from 'react'
 import Speakers from './components/Speakers'
+import { useNavigate } from 'react-router'
 
 const About = () => {
+  const navigate = useNavigate()
+
   useEffect(() => {
-    const hasReloaded = localStorage.getItem('hasReloaded')
-    if (!hasReloaded) {
-      localStorage.setItem('hasReloaded', 'true')
-      setTimeout(() => {
-        window.location.reload()
-      }, 1000)
-    }
-  }, [])
+    const interval = setInterval(() => {
+      const someCondition = false // Replace with your actual condition
+      if (someCondition) {
+        navigate(0)
+      }
+    }, 1000) // Adjust the interval time as needed
+
+    return () => clearInterval(interval) // Cleanup the interval on component unmount
+  }, [navigate])
 
   return (
-    <div className="">
+    <div>
       <Speakers />
     </div>
   )

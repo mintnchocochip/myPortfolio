@@ -1,8 +1,19 @@
 import React from 'react'
 import Speaker from './Speaker.jsx'
 import AnimatedText from './text.jsx'
+import { useState, useEffect } from 'react'
 
 function Speakers() {
+  const [hasReloaded, setHasReloaded] = useState(false)
+
+  useEffect(() => {
+    const hasReloaded = localStorage.getItem('hasReloaded')
+    if (!hasReloaded) {
+      localStorage.setItem('hasReloaded', 'true')
+      window.location.reload()
+    }
+  }, [hasReloaded])
+
   return (
     <>
       <div className="z-20 px-10 text-left">

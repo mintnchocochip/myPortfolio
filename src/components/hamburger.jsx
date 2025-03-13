@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { gsap } from 'gsap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import AnimatedText from './text'
 import { Link as ScrollLink } from 'react-scroll'
 import { useGSAP } from '@gsap/react'
@@ -48,6 +48,10 @@ export default function Hamburger() {
   const handleLinkClick = () => {
     setIsOpen(false)
   }
+  const handleLinkClickReload = () => {
+    setIsOpen(false)
+    useNavigate(0)
+  }
 
   return (
     <div className="flex justify-end">
@@ -69,7 +73,7 @@ export default function Hamburger() {
             <NavLink title={'Rules'} link={'rules'} />
           </li>
           <li>
-            <Link to="/about" onClick={handleLinkClick}>
+            <Link to="/about" onClick={handleLinkClickReload}>
               <AnimatedText
                 text="About"
                 className="text-2xl text-white hover:bg-enigma-green hover:p-2 hover:text-black"
@@ -123,7 +127,7 @@ export default function Hamburger() {
                 </Link>
               </li>
               <li>
-                <Link to="/about" onClick={handleLinkClick}>
+                <Link to="/about" onClick={handleLinkClickReload}>
                   <AnimatedText
                     text="About"
                     className="text-black hover:bg-white hover:text-black"
