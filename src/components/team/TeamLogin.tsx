@@ -1,22 +1,22 @@
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 import axios from 'axios'
 import api from '../../utils/api'
 import { Link } from 'react-router-dom'
 
-const TeamCreation = () => {
+const TeamLogin = () => {
   const [teamName, setTeamName] = useState('')
   const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      window.location.href = `${window.location.origin}/team`
+    }
+  }, [])
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-
-    // Validate passwords match
-    if (password !== confirmPassword) {
-      setError('Passwords do not match')
-      return
-    }
 
     // Validate required fields
     if (!teamName || !password) {
@@ -25,10 +25,9 @@ const TeamCreation = () => {
     }
 
     try {
-      const response = await api.post('/auth/signup', {
+      const response = await api.post('/auth/login', {
         name: teamName,
-        password: password,
-        tags: []
+        password: password
       })
 
       console.log(response)
@@ -36,15 +35,13 @@ const TeamCreation = () => {
       if (response.status === 200 || response.status === 201) {
         if (typeof window !== 'undefined') {
           localStorage.setItem('token', response.data.access_token)
-          window.location.href = `${window.location.origin}/teamLogin`
+          window.location.href = `${window.location.origin}/team`
         }
       }
     } catch (err: unknown) {
       if (axios.isAxiosError(err)) {
         if (err.response) {
-          setError(
-            err.response.data.msg_code?.toString() || 'Failed to create team'
-          )
+          setError(err.response.data.msg_code?.toString() || 'Login failed')
         }
       } else {
         setError('An unknown error occurred')
@@ -56,7 +53,7 @@ const TeamCreation = () => {
     <div>
       <div className="flex h-screen w-screen flex-col items-center justify-center font-neuebit">
         <div className="flex flex-row">
-          <div className="mb-8 text-8xl text-enigma-green">CREATE A TEAM</div>
+          <div className="mb-8 text-8xl text-enigma-green">TEAM LOGIN</div>
         </div>
         {error && <div className="mb-4 text-4xl text-red-500">{error}</div>}
         <form
@@ -86,27 +83,16 @@ const TeamCreation = () => {
             />
           </div>
           <div>
-            <label htmlFor="confirmPassword">CONFIRM PASSWORD </label>
-            <input
-              type="password"
-              name="confirmPassword"
-              id="confirmPassword"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              className="border-1 border border-white"
-            />
-          </div>
-          <div>
             <button
               type="submit"
               className="rounded-none bg-enigma-green p-4 text-black"
             >
-              CREATE TEAM
+              LOGIN
             </button>
           </div>
           <div className="text-2xl">
-            <Link to="/teamLogin" className="text-enigma-green">
-              Already have a team? Join here.
+            <Link to="/teamSignUp" className="text-enigma-green">
+              Don't have a team yet? Create one here.
             </Link>
           </div>
         </form>
@@ -115,4 +101,4 @@ const TeamCreation = () => {
   )
 }
 
-export default TeamCreation
+export default TeamLogin

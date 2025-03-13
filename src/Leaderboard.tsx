@@ -6,7 +6,7 @@ import api from './utils/leaderboardapi'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-const refreshrate = 30 // in seconds (cuz screw ms)
+const refreshrate = 10 // in seconds (cuz screw ms)
 
 interface Team {
   name: string
@@ -24,6 +24,7 @@ function Leaderboard() {
       try {
         const response = await api.get('/leaderboard')
         if (response.status === 200) {
+          console.log('refreshed')
           setTeams(response.data)
           setError('')
         }
