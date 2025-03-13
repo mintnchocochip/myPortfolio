@@ -2,51 +2,65 @@
 import React, { useState } from 'react'
 import AnimatedText from './text'
 
+interface TeamData {
+  team: string
+  score: number
+  solved: number
+}
+
+interface LeaderEntryProps {
+  apiTeams?: TeamData[]
+}
+
 const RowEntry = ({ rank, team, score, solved }) => {
   return (
-    <div className="group flex w-full border-b-2 border-zinc-500 bg-transparent p-2 px-6 text-white hover:bg-enigma-green">
+    <div className="group flex w-full border-b-2 border-zinc-500 bg-transparent p-2 px-3 text-white hover:bg-enigma-green md:px-6">
       <div className="w-1/6 text-left">
         <AnimatedText
           text={rank.toString()}
-          className="text-white group-hover:text-black"
+          className="text-xs text-white group-hover:text-black sm:text-sm md:text-base"
         />
       </div>
       <div className="w-1/2 text-left">
         <AnimatedText
           text={team}
-          className="text-white group-hover:text-black"
+          className="text-xs text-white group-hover:text-black sm:text-sm md:text-base"
         />
       </div>
       <div className="w-1/6 text-left">
         <AnimatedText
           text={score.toString()}
-          className="text-white group-hover:text-black"
+          className="text-xs text-white group-hover:text-black sm:text-sm md:text-base"
         />
       </div>
       <div className="w-1/6 text-left">
         <AnimatedText
           text={solved.toString()}
-          className="text-white group-hover:text-black"
+          className="text-xs text-white group-hover:text-black sm:text-sm md:text-base"
         />
       </div>
     </div>
   )
 }
 
-const LeaderEntry = () => {
+const LeaderEntry = ({ apiTeams }: LeaderEntryProps) => {
   const [searchTerm, setSearchTerm] = useState('')
-  const [teams] = useState([
-    { team: 'gammawarriors', score: 860, solved: 6 },
-    { team: '0xdeadbeef', score: 860, solved: 6 },
-    { team: 'ANANTos', score: 860, solved: 6 },
-    { team: 'RE-JUVENATE', score: 860, solved: 6 },
-    { team: 'Triple-A BATTERY', score: 860, solved: 6 },
-    { team: 'n00ch', score: 860, solved: 6 },
-    { team: 'poppy', score: 860, solved: 6 },
-    { team: 'FeatherTap', score: 860, solved: 6 },
-    { team: 'The_Default', score: 860, solved: 6 },
-    { team: 'Xenos', score: 860, solved: 6 }
+
+  // api data else secret default data
+  const [defaultTeams] = useState([
+    { team: 'you', score: 860, solved: 6 },
+    { team: 'have', score: 860, solved: 6 },
+    { team: 'been', score: 860, solved: 6 },
+    { team: 'pwned', score: 860, solved: 6 },
+    { team: ' ', score: 860, solved: 6 },
+    { team: 'to', score: 860, solved: 6 },
+    { team: 'unpwn,', score: 860, solved: 6 },
+    { team: 'solve', score: 860, solved: 6 },
+    { team: 'the', score: 860, solved: 6 },
+    { team: 'questions', score: 860, solved: 6 }
   ])
+
+  const teams = apiTeams?.length ? apiTeams : defaultTeams
 
   const sortedTeams = [...teams].sort(
     (a, b) => b.score - a.score || b.solved - a.solved
@@ -58,17 +72,17 @@ const LeaderEntry = () => {
 
   return (
     <div className="mx-auto flex flex-col items-center border border-zinc-500 p-0">
-      <div className="flex w-full bg-transparent p-2 text-sm text-white">
+      <div className="flex w-full cursor-text bg-transparent p-2 text-sm text-white">
         <input
           type="text"
           placeholder="TYPE TEAM NAME"
-          className="w-full bg-transparent text-center font-mono text-white placeholder-gray-400 outline-none"
+          className="w-full cursor-text bg-transparent text-center font-mono text-white placeholder-gray-400 outline-none"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
 
-      <div className="flex w-full flex-row border border-zinc-500 bg-enigma-green p-1 px-6 text-sm text-white">
+      <div className="flex w-full flex-row border border-zinc-500 bg-enigma-green p-1 px-3 text-xs text-white sm:text-sm md:px-6 md:text-base">
         <div className="w-1/6">
           <div className="w-fit bg-black text-left">RANK</div>
         </div>
@@ -83,7 +97,7 @@ const LeaderEntry = () => {
         </div>
       </div>
 
-      <div className="max-h-96 w-full overflow-y-scroll border-t border-gray-700 font-mono">
+      <div className="max-h-60 w-full overflow-y-scroll border-t border-gray-700 font-mono md:max-h-96">
         {filteredTeams.map((team) => {
           const originalRank =
             sortedTeams.findIndex((t) => t.team === team.team) + 1

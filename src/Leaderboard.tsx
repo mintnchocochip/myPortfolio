@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Hamburger from './components/hamburger'
 import LeaderBox from './components/LeaderBox'
 import LeaderEntry from './components/LeaderEntry'
-import api from './utils/api'
+import api from './utils/leaderboardapi'
 import axios from 'axios'
 
 const refreshrate = 30 // in seconds (cuz screw ms)
