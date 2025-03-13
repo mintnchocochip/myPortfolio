@@ -55,7 +55,7 @@ function App() {
           <Routes location={location}>
             <Route exact path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="/challenge" element={<ChallengePage />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/rules" element={<Rules />} />
