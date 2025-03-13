@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
@@ -11,44 +11,74 @@ function Content() {
   const wrapperRef = useRef(null)
 
   useGSAP(() => {
+    // Calculate the total width of all content minus the viewport width
+    // This ensures we scroll through ALL content
     let scrollWidth =
-      wrapperRef.current.offsetWidth - scrollRef.current.offsetWidth
+      wrapperRef.current.scrollWidth - scrollRef.current.offsetWidth
 
+    // Create the animation
     const tween = gsap.to(wrapperRef.current, {
       x: -scrollWidth,
       ease: 'sine.inOut'
     })
 
+    // Create the ScrollTrigger
     ScrollTrigger.create({
       trigger: scrollRef.current,
-      start: 'top',
-      end: '+=' + scrollWidth,
+      start: 'top top', // Start at the top of the viewport
+      end: `+=${scrollWidth}`, // End after scrolling the full content width
       pin: true,
       animation: tween,
       scrub: 2
+      // Add markers for debugging (remove in production)
+      // markers: true,
     })
-  })
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.killAll()
+    }
+  }, [])
 
   return (
     <div className="relative">
       <Element name="content">
-        <div className="z-20 px-10 py-7 text-left">
-          <AnimatedText
-            text="CONTENT"
-            className="lg:9xl z-50 w-screen cursor-pointer text-left font-neuebit text-6xl uppercase md:text-8xl"
-            customText="@!#$%^&*"
-            time={2}
-            preStyle="font-neuebit uppercase text-6xl md:text-8xl lg:9xl text-yellow-500 z-50 cursor-pointer text-left"
-          />
-        </div>
         <div ref={scrollRef} className="relative z-20 flex overflow-x-hidden">
+          <div className="z-20 px-10 py-7 text-left">
+            <AnimatedText
+              text="PREVIOUS EDITIONS"
+              className="lg:9xl z-50 w-screen cursor-pointer text-left font-neuebit text-6xl uppercase md:text-8xl"
+              customText="@!#$%^&*"
+              time={2}
+              preStyle="font-neuebit uppercase text-6xl md:text-8xl lg:9xl text-yellow-500 z-50 cursor-pointer text-left"
+            />
+          </div>
           <div
             ref={wrapperRef}
-            className="z-30 flex h-screen flex-row items-center gap-x-20 bg-enigma-green px-10 font-neuebit text-black"
+            className="z-30 flex h-screen flex-row items-center gap-x-2 bg-enigma-green px-10 font-neuebit text-black"
+            style={{ minWidth: 'max-content' }} // Ensure the container expands to fit all content
           >
-            <img src="/images/content/20240917_110702.jpg" alt="participants for c0day3" className='h-full w-auto'/>
-            <h2 className="text-9xl">Participants</h2>
-            <img src="/images/content/IMG_20240917_103232440.jpg" alt="participants for c0day3" className='h-full w-auto'/>
+            <div className="flex h-full w-auto flex-row gap-x-2">
+              <h2 className="text-9xl">Participants</h2>
+              <img
+                src="/images/content/participants.jpg"
+                alt="participants for password"
+                className="h-full w-auto"
+              />
+            </div>
+            <div className="flex h-full w-auto flex-row gap-x-2">
+              <h2 className="text-9xl">Speakers</h2>
+              <img
+                src="/images/content/speaker.jpeg"
+                alt="participants for c0day3"
+                className="h-full w-auto"
+              />
+            </div>
+            <img
+              src="/images/content/IMG_20240917_103232440.jpg"
+              alt="participants for c0day3"
+              className="h-full w-auto"
+            />
             <h2 className="text-9xl">Placeholder</h2>
             <h2 className="text-9xl">Placeholder</h2>
             <h2 className="text-9xl">Placeholder</h2>
