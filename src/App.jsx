@@ -15,7 +15,9 @@ import CTFs from './questions/page'
 import PowerPage from './powerups/Page'
 import TeamPage from './components/team/TeamPage'
 import TeamCreation from './components/team/TeamCreation'
+import TeamLogin from './components/team/TeamLogin'
 import LoginPage from '../src/login/LoginPage'
+import TeamManagement from './components/team/TeamManagement'
 
 function App() {
   const location = useLocation()
@@ -62,7 +64,9 @@ function App() {
             <Route path="/challenges" element={<CTFs />} />
             <Route path="/powerups" element={<PowerPage />} />
             <Route path="/team" element={<TeamPage />} />
-            <Route path="/team-login" element={<TeamCreation />} />
+            <Route path="/teamSignUp" element={<TeamCreation />} />
+            <Route path="/teamLogin" element={<TeamLogin />} />
+            <Route path="/team-management" element={<TeamManagement />} />
             <Route path="/login" element={<LoginPage />} />
 
             {/* <Route path="/privacy" element={<ErtdfgcvbBGprivacy />} /> */}
