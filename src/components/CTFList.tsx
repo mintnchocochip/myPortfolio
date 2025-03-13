@@ -30,7 +30,9 @@ const CTFList = ({ ctfList, onHover, onClick }: CTFListProps) => {
       ctfList.map((ctf, index) => (
         <CTFQuestionItem
           questionId={ctf.id}
-          question={ctf.name}
+          question={
+            ctf.name.length > 64 ? ctf.name.substring(0, 64) + '...' : ctf.name
+          }
           key={`ctf-${index}-${ctf.id}`}
           onHover={(questionId: string) => {
             onHover(questionId)

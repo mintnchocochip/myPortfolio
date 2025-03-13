@@ -17,8 +17,10 @@ const CTFDescription = ({
   return (
     <div className="flex w-[40%] flex-col">
       <span className="w-full text-ellipsis border border-white p-8 text-left font-neuebit text-3xl uppercase">
-        {description ||
-          'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat ratione nemo ipsum iure amet mollitia dolores eveniet assumenda ab? Quidem earum, esse nam nemo quis labore doloremque beatae eaque veniam.'}
+        {description.length > 400
+          ? description.substring(0, 400) + '...'
+          : description ||
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat ratione nemo ipsum iure amet mollitia dolores eveniet assumenda ab? Quidem earum, esse nam nemo quis labore doloremque beatae eaque veniam.'}
       </span>
       <div className="flex w-full flex-row justify-between border border-white px-8 py-4 text-3xl">
         <span className="text-3xl">
@@ -26,14 +28,16 @@ const CTFDescription = ({
           <AnimatedText text={'POINTS'} />
         </span>
         <span className="uppercase text-enigma-yellow">
-          {author || 'Author'}
+          {author.length > 64
+            ? author.substring(0, 64) + '...'
+            : author || 'Author'}
         </span>
       </div>
-      <div className="flex w-full flex-row justify-end flex-wrap">
+      <div className="flex w-full flex-row flex-wrap justify-end">
         {tags.map((tag) => (
           <span
             key={tag}
-            className="w-fit text-ellipsis border border-white px-8 py-4 text-right font-neuebit text-3xl uppercase text-enigma-yellow "
+            className="w-fit text-ellipsis border border-white px-8 py-4 text-right font-neuebit text-3xl uppercase text-enigma-yellow"
           >
             {tag}
           </span>

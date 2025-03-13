@@ -6,10 +6,16 @@ import AnimatedText from '../components/text'
 import Header from '../components/Header'
 import api from '../utils/api'
 import axios from 'axios'
+import ChallengePage from '../ChallengePage'
+import checktoken from '../utils/checktoken'
+
+if (checktoken() === false) {
+  window.location.href = '/login'
+}
 
 // For now, the Question interface is basic, when you guys integrate it with the backend, you need to only change the interface here, as everywhere else it is just used to send the required data, like the questionId, the question, the description and the questionType.
 interface Question {
-  id: string
+  id: Number
   name: string
   description: string
   tags: number
@@ -23,14 +29,18 @@ const CTFs = () => {
   const [selectedQuestionType, setSelectedQuestionType] =
     React.useState<string>('')
 
-  const [error, setError] = useState("");
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [error, setError] = useState('')
+  const [questions, setQuestions] = useState<Question[]>([])
+  const [showModal, setShowModal] = useState(false)
 
   // So this selected question ID contains whatever you click, I will create a function below that logs the current selected question ID in the console so that during backend integration, it will be easy for you. Everything else happens on its own in the individual components.
   const [selectedQuestionId, setSelectedQuestionId] = React.useState<string>('')
 
   const doAction = (questionId: string) => {
     console.log('Selected question ID: ', questionId)
+    if (questionId) {
+      setShowModal(true)
+    }
   }
 
   useEffect(() => {
@@ -41,21 +51,26 @@ const CTFs = () => {
     const getData = async () => {
       try {
         const response = await api.get('/ctf/list')
+        console.log(response)
         if (response.status === 200) {
-          setQuestions(response.data);
+          setQuestions(response.data)
         }
       } catch (err: unknown) {
         if (axios.isAxiosError(err)) {
           if (err.response) {
-            setError(err.response.data.msg_code.toString());
+            setError(err.response.data.msg_code.toString())
           }
         }
       }
-    };
-  
-    getData();
-  }, []);
-  
+    }
+
+    getData()
+  }, [])
+
+  const selectedQuestion = questions.find(
+    (question) => question.id === Number(selectedQuestionId)
+  )
+
   return (
     <div className="flex h-screen w-screen flex-col font-neuebit">
       <Header
@@ -97,9 +112,7 @@ const CTFs = () => {
         <CTFList
           ctfList={questions.filter((question) =>
             selectedQuestionType
-              ? getTypesFromMask(question.tags).includes(
-                  selectedQuestionType
-                )
+              ? getTypesFromMask(question.tags).includes(selectedQuestionType)
               : true
           )}
           onHover={setHoveredQuestionId}
@@ -107,29 +120,41 @@ const CTFs = () => {
         />
         <CTFDescription
           description={
-            questions.find(
-              (question) => question.id === hoveredQuestionId
-            )?.description || ''
+            questions.find((question) => question.id === hoveredQuestionId)
+              ?.description || ''
           }
           points={
-            questions.find(
-              (question) => question.id === hoveredQuestionId
-            )?.points || 0
+            questions.find((question) => question.id === hoveredQuestionId)
+              ?.points || 0
           }
           author={
-            questions.find(
-              (question) => question.id === hoveredQuestionId
-            )?.author || ''
+            questions.find((question) => question.id === hoveredQuestionId)
+              ?.author || ''
           }
           tags={
             getTypesFromMask(
-              questions.find(
-                (question) => question.id === hoveredQuestionId
-              )?.tags || 0
+              questions.find((question) => question.id === hoveredQuestionId)
+                ?.tags || 0
             ) || []
           }
         />
       </div>
+      {/* modal */}
+      {showModal && selectedQuestion && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
+          <div className="h-screen w-screen">
+            <ChallengePage
+              ctfName={selectedQuestion.name}
+              ctfDescription={selectedQuestion.description}
+              creator={selectedQuestion.author}
+              points={selectedQuestion.points}
+              id={selectedQuestion.id}
+              tag={getTypesFromMask(selectedQuestion.tags)}
+              solved={0}
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
