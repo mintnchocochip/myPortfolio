@@ -4,6 +4,7 @@ import LeaderBox from './components/LeaderBox'
 import LeaderEntry from './components/LeaderEntry'
 import api from './utils/leaderboardapi'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const refreshrate = 30 // in seconds (cuz screw ms)
 
@@ -88,7 +89,12 @@ function Leaderboard() {
   return (
     <div className="w-screen py-2">
       <nav className="sticky top-0 z-20 flex w-full justify-between px-10 py-5">
-        <div className="pt-1 text-left font-neuebit text-5xl">ENIGMA</div>
+        <Link
+          to="/"
+          className="cursor-pointer pt-1 text-left font-neuebit text-5xl"
+        >
+          ENIGMA
+        </Link>
         <Hamburger className="fixed right-0" />
       </nav>
       <div className="mx-auto mb-10 w-[90%] items-center">
