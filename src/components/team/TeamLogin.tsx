@@ -60,7 +60,7 @@ const TeamLogin = () => {
           onSubmit={handleSubmit}
           className="flex flex-col gap-y-4 text-6xl"
         >
-          <div>
+          <div className="flex flex-row items-center justify-end gap-6">
             <label htmlFor="teamname">TEAMNAME </label>
             <input
               type="text"
@@ -68,10 +68,10 @@ const TeamLogin = () => {
               id="teamname"
               value={teamName}
               onChange={(e) => setTeamName(e.target.value)}
-              className="border-1 border border-white"
+              className="border-1 ml-4 border border-white"
             />
           </div>
-          <div>
+          <div className="flex flex-row items-center justify-end gap-6">
             <label htmlFor="password">PASSWORD </label>
             <input
               type="password"
@@ -79,7 +79,7 @@ const TeamLogin = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="border-1 border border-white"
+              className="border-1 ml-4 border border-white"
             />
           </div>
           <div>

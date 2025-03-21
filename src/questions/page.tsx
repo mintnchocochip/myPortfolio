@@ -9,10 +9,6 @@ import axios from 'axios'
 import ChallengePage from '../ChallengePage'
 import checktoken from '../utils/checktoken'
 
-if (checktoken() === false) {
-  window.location.href = '/login'
-}
-
 // For now, the Question interface is basic, when you guys integrate it with the backend, you need to only change the interface here, as everywhere else it is just used to send the required data, like the questionId, the question, the description and the questionType.
 interface Question {
   id: Number
@@ -25,6 +21,12 @@ interface Question {
 }
 
 const CTFs = () => {
+  useEffect(() => {
+    if (checktoken() === false) {
+      window.location.href = '/teamLogin'
+    }
+  }, [])
+
   const [hoveredQuestionId, setHoveredQuestionId] = React.useState<string>('')
   const [selectedQuestionType, setSelectedQuestionType] =
     React.useState<string>('')

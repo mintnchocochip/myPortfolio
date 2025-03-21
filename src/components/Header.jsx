@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import AnimatedText from './text'
 import { useGSAP } from '@gsap/react'
 
-export default function Header({ links }) {
+export default function Header({ links }, className) {
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef(null)
 
@@ -35,7 +35,9 @@ export default function Header({ links }) {
 
   // For now, the Header is not absolute, make it absolute if you want later, but make sure to see other pages as well.
   return (
-    <div className="flex w-full items-center justify-between px-16 py-8 font-neuebit text-3xl">
+    <div
+      className={`fixed flex w-full items-center justify-between px-16 py-8 font-neuebit text-3xl ${className}`}
+    >
       <span>
         <Link to="/" onClick={handleLinkClick} className="text-3xl">
           ENIGMA

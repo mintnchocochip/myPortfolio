@@ -2,6 +2,7 @@ import React, { FormEvent, useState } from 'react'
 import axios from 'axios'
 import api from '../../utils/api'
 import { Link } from 'react-router-dom'
+import Header from '../Header'
 
 const TeamCreation = () => {
   const [teamName, setTeamName] = useState('')
@@ -54,6 +55,13 @@ const TeamCreation = () => {
 
   return (
     <div>
+      <Header
+        links={[
+          { text: 'Leaderboard', path: '/leaderboard' },
+          { text: 'Challenges', path: '#' },
+          { text: 'Team', path: '/team' }
+        ]}
+      />
       <div className="flex h-screen w-screen flex-col items-center justify-center font-neuebit">
         <div className="flex flex-row">
           <div className="mb-8 text-8xl text-enigma-green">CREATE A TEAM</div>
@@ -63,8 +71,10 @@ const TeamCreation = () => {
           onSubmit={handleSubmit}
           className="flex flex-col gap-y-4 text-6xl"
         >
-          <div>
-            <label htmlFor="teamname">TEAMNAME </label>
+          <div className="flex justify-end gap-4">
+            <label htmlFor="teamname" className="mr-2 cursor-text">
+              TEAMNAME{' '}
+            </label>
             <input
               type="text"
               name="teamname"
@@ -74,8 +84,10 @@ const TeamCreation = () => {
               className="border-1 border border-white"
             />
           </div>
-          <div>
-            <label htmlFor="password">PASSWORD </label>
+          <div className="flex justify-end gap-4">
+            <label htmlFor="password" className="mr-2 cursor-text">
+              PASSWORD{' '}
+            </label>
             <input
               type="password"
               name="password"
@@ -85,8 +97,10 @@ const TeamCreation = () => {
               className="border-1 border border-white"
             />
           </div>
-          <div>
-            <label htmlFor="confirmPassword">CONFIRM PASSWORD </label>
+          <div className="flex justify-end gap-4">
+            <label htmlFor="confirmPassword" className="mr-2 cursor-text">
+              CONFIRM PASSWORD{' '}
+            </label>
             <input
               type="password"
               name="confirmPassword"
